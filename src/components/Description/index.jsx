@@ -5,10 +5,10 @@ import { useLayoutEffect, useRef } from 'react'
 
 export default function Description() {
   const phrases = [
-    "미켈란젤로의 천지창조에서 신이 아담에게",
-    "손을 뻗어 생명력을 불어넣는 것처럼,",
-    "동적으로 개발된 인터랙티브 웹은",
-    "정적이었던 웹이 살아 움직이게 합니다.",
+    "멋진 걸 좋아하고,",
+    "멋진 웹을 좋아해서",
+    "웹퍼블리싱부터 시작해",
+    "인터랙티브 개발로 영역을 넓히고 있습니다.",
   ]
 
   return (
@@ -36,7 +36,7 @@ function AnimatedText({children}) {
         scrub: true,
         markers: false,
       },
-      left: "-200px",
+      left: "-120px",
       opacity: 0,
     })
   }, [])
