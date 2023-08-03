@@ -42,13 +42,12 @@ export default function Intro() {
     {
       y: "0%",
       duration: .15,
-      stagger: 0.05,
+      stagger: 0.03,
     })
-    tl.to(".text1 .letter", {
+    tl.to(".text1", {
       y: "-100%",
       delay: 0.75,
-      duration: .15,
-      stagger: 0.05,
+      duration: 0.5,
     })
     tl.fromTo(".text2 .letter", 
     {
@@ -57,13 +56,12 @@ export default function Intro() {
     {
       y: "-100%",
       duration: .15,
-      stagger: 0.05,
+      stagger: 0.03,
     })
-    tl.to(".text2 .letter", {
+    tl.to(".text2", {
       y: "-200%",
       delay: 0.75,
-      duration: .15,
-      stagger: 0.05,
+      duration: 1,
     })
     tl.fromTo(".text3 .letter", 
     {
@@ -71,9 +69,8 @@ export default function Intro() {
     },
     {
       y: "-200%",
-      delay: 0.25,
       duration: .15,
-      stagger: 0.05,
+      stagger: 0.03,
     })
 
     /* background images reveal after text rolling animation */
@@ -91,8 +88,8 @@ export default function Intro() {
     {
       height: 580,
       opacity: 1,
-      delay: -1.5,
-      duration: 2,
+      duration: 1.5,
+      delay: -1,
       ease: "power4.inOut"
     })
 
