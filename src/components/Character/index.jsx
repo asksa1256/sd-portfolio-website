@@ -60,7 +60,7 @@ export default function Character() {
               <span className={styles.deco}></span>
               <h4>도전</h4>
               <p className={styles.desc}>
-                <h5>:Challenge</h5>
+                <span className={styles.en}>:Challenge</span>
                 언제나 새로운 기술에 열려있는 마음으로, 실험과 시도를 멈추지 않습니다.
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function Character() {
               <span className={styles.deco}></span>
               <h4>균형</h4>
               <p className={styles.desc}>
-                <h5>:Balance</h5>
+                <span className={styles.en}>:Balance</span>
                 새로움을 접목시키면서도 웹 접근성, 브라우저 호환성과 같은 기본 규칙을 지켜서 둘 사이의 균형을 유지합니다.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function Character() {
               <span className={styles.deco}></span>
               <h4>유연함</h4>
               <p className={styles.desc}>
-                <h5>:Flexibility</h5>
+                <span className={styles.en}>:Flexibility</span>
                 변하기 쉬운 사용자의 요구사항과, 구현할 수 있는 기술 사이의 타협점을 잘 찾아서 적용합니다.
               </p>
             </div>
