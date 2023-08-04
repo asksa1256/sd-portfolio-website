@@ -113,9 +113,10 @@
   transform: rotate(180deg);
 }
 
-.card h5 {
-  font-family: 'Pretendard', sans-serif;
+.card .en {
+  display: block;
   margin-bottom: 8px;
+  font-family: 'Pretendard', sans-serif;
 }
 
 .tiltWrap {
