@@ -1,3 +1,7 @@
+section.intro {
+  margin-bottom: 40px;
+}
+
 .backgroundImage {
   position: absolute;
   left: 0;
@@ -47,12 +51,4 @@
   color: #fff;
   mix-blend-mode: difference;
   overflow: hidden;
-}
-.introHeadingWrap h2 {
-  margin: 0;
-  color: #fff;
-  font-family: 'Unbounded', sans-serif;
-  font-size: 80px;
-  font-weight: 400;
-  text-align: center;
 }

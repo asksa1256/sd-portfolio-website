@@ -1,6 +1,5 @@
 import styles from './style.module.css'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
 import { useEffect, useRef } from 'react'
 
 export default function Description() {
@@ -12,16 +11,14 @@ export default function Description() {
   const bigEllipseText = useRef(null);
 
   const phrases = [
-    "멋진 걸 좋아하고,",
-    "멋진 웹을 좋아해서",
-    "웹 퍼블리싱과 인터랙션 개발을 넘어",
+    "멋지고 편한 것을 좋아해서",
+    "멋지고 편한 웹을 만들기 위해",
+    "인터랙션 개발, 웹 퍼블리싱으로부터",
     "프론트엔드 개발로",
     "영역을 넓혀 가고 있습니다."
   ]
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     gsap.to(circle.current, {
       scrollTrigger: {
         trigger: bigEllipse.current,
@@ -67,7 +64,7 @@ export default function Description() {
   }, [])
 
   return (
-    <div className={styles.description}>
+    <section className={styles.description}>
       <div className={styles.left}>
       {
         phrases.map((phrase, index) => {
@@ -103,8 +100,7 @@ export default function Description() {
           </svg>
         </div>
       </div>
-    </div>
-    
+    </section>
   )
 }
 
@@ -112,8 +108,6 @@ function AnimatedText({children}) {
   const text = useRef(null);
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-
     gsap.from(text.current, {
       scrollTrigger: {
         trigger: text.current,

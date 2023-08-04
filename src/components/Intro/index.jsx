@@ -108,14 +108,13 @@ export default function Intro() {
   })
 
   return (
-    <div className={styles.intro}>
-      
+    <section className={styles.intro}>
       <div 
         ref={backgroundImage}
         className={styles.backgroundImage}
       >
         <Image
-          src={'/images/main_img1.jpg'}
+          src="/images/main_img1.jpg"
           alt="background image"
           fill
         />
@@ -134,7 +133,7 @@ export default function Intro() {
           initial={{opacity:0}}
         >
           <Image
-            src={'/images/main_img2.jpg'}
+            src="/images/main_img2.jpg"
             alt="image"
             fill
           />
@@ -159,8 +158,7 @@ export default function Intro() {
           }
         </motion.div>
       </div>
-
-    </div>
+    </section>
   )
 }
 
