@@ -5,6 +5,7 @@ import Intro from '@/components/Intro'
 import Description from '@/components/Description'
 import Projects from '@/components/Projects'
 import Ability from '@/components/Ability'
+import Character from '@/components/Character'
 
 export default function Home() {
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function Home() {
     <main className={styles.main}>
       <Intro/>
       <Description/>
+      <Character/>
     </main>
   )
 }

@@ -101,7 +101,41 @@ input::placeholder,
 * {
   box-sizing: border-box;
 }
+
 body {
   background-color: black;
+  color: #fff;
   font-family: 'Pretendard', sans-serif;
+}
+
+section:not(:first-of-type) {
+  position: relative;
+  width: 100%;
+  margin-bottom: 240px;
+  padding: 0 60px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Unbounded', 'Pretendard', sans-serif;
+}
+
+h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 400;
+  text-align: center;
+}
+
+h3 {
+  font-size: 72px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.headingWrap {
+  height: 90px;
+  margin: 60px 0 120px;
+  mix-blend-mode: difference;
+  overflow: hidden;
 }
