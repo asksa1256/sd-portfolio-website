@@ -84,10 +84,10 @@ export default function Character() {
             <div className={styles.tiltInner}>
               <span className={styles.deco}></span>
               <span className={styles.deco}></span>
-              <h4>유연함</h4>
+              <h4>끈기</h4>
               <p className={styles.desc}>
-                <span className={styles.en}>:Flexibility</span>
-                변하기 쉬운 사용자의 요구사항과, 구현할 수 있는 기술 사이의 타협점을 잘 찾아서 적용합니다.
+                <span className={styles.en}>:Patience</span>
+                구현하기로 한 것은 될 때까지 시도합니다.
               </p>
             </div>
           </Tilt>
