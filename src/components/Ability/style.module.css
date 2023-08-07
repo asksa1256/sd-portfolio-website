@@ -1,14 +1,38 @@
-.description {
-  position: relative;
-  width: 100%;
-  margin-top: 50vh;
-  padding: 60px;
-  text-transform: uppercase;
-  color: #fff;
-  z-index: 1;
+.ability {
+  /* position: relative; */
 }
 
-.description p {
+.ability h3 {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.object {
   position: relative;
-  font-size: 52px;
+  display: inline-block;
+  width: 86px;
+  height: 86px;
+  background: url(../../../public/images/arrow-right-line-wt.svg) no-repeat center;
+  background-size: cover;
+  vertical-align: middle;
+  opacity: 0;
+}
+
+.abilityList {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  text-align: right;
+  mix-blend-mode: difference;
+}
+
+.abilityList li {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 64px;
+  overflow: hidden;
+}
+
+.abilityList li span {
+  transform: translateY(100%);
 }

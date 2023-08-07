@@ -24,6 +24,7 @@ export default function Home() {
       <Intro/>
       <Description/>
       <Character/>
+      <Ability/>
     </main>
   )
 }

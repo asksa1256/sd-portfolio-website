@@ -133,7 +133,7 @@ export default function Intro() {
           initial={{opacity:0}}
         >
           <Image
-            src="/images/main_img2.jpg"
+            src="/images/main_img2.png"
             alt="image"
             fill
           />
