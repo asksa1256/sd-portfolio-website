@@ -133,9 +133,19 @@ h3 {
   text-align: center;
 }
 
+.sectionTitle {
+  margin: 60px 0 120px;
+  overflow: hidden;
+}
+
 .headingWrap {
   height: 90px;
-  margin: 60px 0 120px;
+  margin-bottom: 4px;
   mix-blend-mode: difference;
   overflow: hidden;
+}
+
+.tip {
+  position: relative;
+  text-align: center;
 }
