@@ -1,12 +1,55 @@
 import styles from './style.module.css'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
+import Image from 'next/image';
 import { useEffect, useRef } from 'react'
+
+const abilityArr = [
+  {
+    name: 'HTML5',
+    iconUrl: '/images/logo_html.png',
+  },
+  {
+    name: 'CSS3',
+    iconUrl: '/images/logo_css.png',
+  },
+  {
+    name: 'JavaScript',
+    iconUrl: '/images/logo_js.png',
+  },
+  {
+    name: 'JQuery',
+    iconUrl: '/images/logo_jquery.png',
+  },
+  {
+    name: 'Vue.js',
+    iconUrl: '/images/logo_vue.png',
+  },
+  {
+    name: 'TypeScript',
+    iconUrl: '/images/logo_ts.png',
+  },
+  {
+    name: 'React.js',
+    iconUrl: '/images/logo_react.png',
+  },
+  {
+    name: 'Next.js',
+    iconUrl: '/images/logo_nextjs.png',
+  },
+  {
+    name: 'XD',
+    iconUrl: '/images/logo_xd.png',
+  },
+  {
+    name: 'Photoshop',
+    iconUrl: '/images/logo_ps.png',
+  },
+]
 
 export default function Ability() {
   const ability = useRef(null);
   const object = useRef(null);
-  const listArr = useRef([]);
+  // const listArr = useRef([]);
 
   useEffect(() => {
     gsap.registerPlugin();
@@ -40,7 +83,7 @@ export default function Ability() {
     })
 
     /* list animation */
-    gsap.to(listArr.current, {
+    gsap.to(".itemInner", {
       scrollTrigger: {
         trigger: ability.current,
         start: "800px bottom",
@@ -56,22 +99,13 @@ export default function Ability() {
   return (
     <section className={styles.ability} ref={ability}>
       <div className='sectionTitle'>
-        <div className='headingWrap'>
+        <div className={styles.headingWrap}>
           <SplittingText>Ability</SplittingText>
           <span className={styles.object} ref={object}></span>
         </div>
       </div>
       <ul className={styles.abilityList}>
-        <li><span ref={el => listArr.current[0] = el}>HTML5</span></li>
-        <li><span ref={el => listArr.current[1] = el}>CSS3</span></li>
-        <li><span ref={el => listArr.current[2] = el}>JavaScript</span></li>
-        <li><span ref={el => listArr.current[3] = el}>JQuery</span></li>
-        <li><span ref={el => listArr.current[4] = el}>Vue.js</span></li>
-        <li><span ref={el => listArr.current[5] = el}>TypeScript</span></li>
-        <li><span ref={el => listArr.current[6] = el}>React.js</span></li>
-        <li><span ref={el => listArr.current[7] = el}>Next.js</span></li>
-        <li><span ref={el => listArr.current[8] = el}>XD</span></li>
-        <li><span ref={el => listArr.current[9] = el}>PhotoShop</span></li>
+        <AbilityItem/>
       </ul>
     </section>
   )
@@ -95,5 +129,27 @@ function SplittingText({children}) {
 
   return (
     <h3 ref={characterTitle}>{children}</h3>
+  )
+}
+
+function AbilityItem() {
+  const listArr = useRef([]);
+
+  return (
+    abilityArr.map((item, i) => {
+      return (
+        <li key={'item' + i}>
+          <span className='itemInner' ref={el => listArr.current[i] = el}>
+            <Image 
+              src={item.iconUrl}
+              alt='' 
+              fill
+              className={styles.icon}
+            />
+            <em>{item.name}</em>
+          </span>
+        </li>
+      )
+    })
   )
 }

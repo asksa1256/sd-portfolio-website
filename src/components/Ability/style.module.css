@@ -1,5 +1,10 @@
-.ability {
-  /* position: relative; */
+.ability .headingWrap {
+  height: 90px;
+  margin-bottom: 4px;
+  mix-blend-mode: difference;
+  overflow: hidden;
+  mix-blend-mode: color-burn;
+  filter: invert(0.7);
 }
 
 .ability h3 {
@@ -24,15 +29,29 @@
   top: 60px;
   right: 60px;
   text-align: right;
-  mix-blend-mode: difference;
 }
 
 .abilityList li {
   font-family: 'Unbounded', sans-serif;
   font-size: 64px;
   overflow: hidden;
+  mix-blend-mode: color-burn;
 }
 
 .abilityList li span {
   transform: translateY(100%);
+}
+
+.abilityList .icon {
+  position: relative !important;
+  width: auto !important;
+  height: 50px !important;
+  margin-right: 20px;
+  mix-blend-mode: color-burn;
+  vertical-align: middle;
+}
+
+.abilityList em {
+  filter: invert(0.7) brightness(110%);
+  vertical-align: middle;
 }
