@@ -1,12 +1,16 @@
 import styles from './style.module.css'
-import {useState, useRef, useLayoutEffect} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import gsap from 'gsap'
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/all'
 
+const sectionName = "projects";
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(0);
   const imageContainer = useRef(null);
+  const project = useRef(null);
+  const pjTitleObject = useRef(null);
 
   const projects = [
     {
@@ -27,8 +31,21 @@ export default function Projects() {
     },
   ]
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    /* section title rolling animation */
+    gsap.set(`.letter.${sectionName}`, { y: "100%",});
+    gsap.to(`.letter.${sectionName}`, {
+      scrollTrigger: {
+        trigger: projects.current,
+        start: "0px bottom",
+        toggleActions: "play none none reverse",
+      },
+        y: "0%",
+        stagger: 0.025,
+    })
+
     ScrollTrigger.create({
       trigger: imageContainer.current,
       start: "top-=100px",
@@ -39,7 +56,13 @@ export default function Projects() {
   }, [])
 
   return (
-    <div className={styles.projects}>
+    <section className={styles.projects} ref={projects}>
+      <div className='sectionTitle'>
+        <div className='headingWrap'>
+          <SplittingText>Projects</SplittingText>
+          <span className={styles.object} ref={pjTitleObject}></span>
+        </div>
+      </div>
       <div className={styles.projectDescription}>
         <div ref={imageContainer} className={styles.imageContainer}>
           <Image
@@ -68,6 +91,27 @@ export default function Projects() {
           } )
         }
       </ul>
-    </div>
+    </section>
+  )
+}
+
+function SplittingText({children}) {
+  const text = useRef(null);
+
+  useEffect(() => {
+    /* text split */
+    let innerText = text.current.innerText;
+    text.current.innerText = "";
+
+    for (let letter of innerText) {
+      let span = document.createElement("span");
+      span.innerText = letter.trim() === "" ? "\xa0" : letter;
+      span.classList.add("letter", sectionName);
+      text.current.appendChild(span);
+    }
+  }, [])
+
+  return (
+    <h3 ref={text}>{children}</h3>
   )
 }

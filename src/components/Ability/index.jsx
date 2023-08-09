@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import Image from 'next/image';
 import { useEffect, useRef } from 'react'
 
+const sectionName = "ability";
+
 const abilityArr = [
   {
     name: 'HTML5',
@@ -49,14 +51,13 @@ const abilityArr = [
 export default function Ability() {
   const ability = useRef(null);
   const object = useRef(null);
-  // const listArr = useRef([]);
 
   useEffect(() => {
     gsap.registerPlugin();
 
     /* section title rolling animation */
-    gsap.set(".letter", { y: "100%",});
-    gsap.to(".letter", {
+    gsap.set(`.letter.${sectionName}`, { y: "100%",});
+    gsap.to(`.letter.${sectionName}`, {
       scrollTrigger: {
         trigger: ability.current,
         start: "700px bottom",
@@ -112,23 +113,23 @@ export default function Ability() {
 }
 
 function SplittingText({children}) {
-  const characterTitle = useRef(null);
+  const text = useRef(null);
 
   useEffect(() => {
     /* text split */
-    let innerText = characterTitle.current.innerText;
-    characterTitle.current.innerText = "";
+    let innerText = text.current.innerText;
+    text.current.innerText = "";
 
     for (let letter of innerText) {
       let span = document.createElement("span");
       span.innerText = letter.trim() === "" ? "\xa0" : letter;
-      span.classList.add("letter");
-      characterTitle.current.appendChild(span);
+      span.classList.add("letter", sectionName);
+      text.current.appendChild(span);
     }
   }, [])
 
   return (
-    <h3 ref={characterTitle}>{children}</h3>
+    <h3 ref={text}>{children}</h3>
   )
 }
 
