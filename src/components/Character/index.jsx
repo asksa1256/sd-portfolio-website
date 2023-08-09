@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { useEffect, useRef } from 'react'
 import Tilt from 'react-parallax-tilt';
 
+const sectionName = "character";
+
 export default function Character() {
   const object = useRef(null);
   const character = useRef(null);
@@ -13,10 +15,10 @@ export default function Character() {
 
   useEffect(() => {
     /* section title rolling animation */
-    gsap.set(".letter", { y: "100%",});
+    gsap.set(`.letter.${sectionName}`, { y: "100%",});
     gsap.set(".tip", { y: "100%",});
 
-    gsap.to(".letter", {
+    gsap.to(`.letter.${sectionName}`, {
       scrollTrigger: {
         trigger: character.current,
         start: "-100px bottom",
@@ -134,7 +136,7 @@ export default function Character() {
                 <h4>끈기</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Patience</span>
-                  구현하기로 한 것은 될 때까지 시도합니다.
+                  구현하기로 한 것은 될 때까지 시도하고, 에러는 해결할 때까지 포기하지 않습니다.
                 </p>
               </div>
             </Tilt>
@@ -147,22 +149,22 @@ export default function Character() {
 }
 
 function SplittingText({children}) {
-  const characterTitle = useRef(null);
+  const text = useRef(null);
 
   useEffect(() => {
     /* text split */
-    let innerText = characterTitle.current.innerText;
-    characterTitle.current.innerText = "";
+    let innerText = text.current.innerText;
+    text.current.innerText = "";
 
     for (let letter of innerText) {
       let span = document.createElement("span");
       span.innerText = letter.trim() === "" ? "\xa0" : letter;
-      span.classList.add("letter");
-      characterTitle.current.appendChild(span);
+      span.classList.add("letter", sectionName);
+      text.current.appendChild(span);
     }
   }, [])
 
   return (
-    <h3 ref={characterTitle}>{children}</h3>
+    <h3 ref={text}>{children}</h3>
   )
 }

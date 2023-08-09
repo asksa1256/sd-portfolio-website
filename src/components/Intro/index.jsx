@@ -98,8 +98,7 @@ export default function Intro() {
         trigger: document.documentElement,
         start: "top",
         end: "+=500px", // top 지점에서부터 500px 동안 애니메이션
-        scrub: true,  // 스크롤바와 연동
-        markers: false,
+        scrub: false,  // 스크롤바와 연동
       }
     })
     scrollTl
