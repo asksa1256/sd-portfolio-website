@@ -25,7 +25,7 @@ export default function Home() {
       <Description/>
       <Character/>
       <Ability/>
-      <Projects/>
+      {/* <Projects/> */}
     </main>
   )
 }

@@ -1,11 +1,17 @@
 .projects {
   display: flex;
   flex-direction: column;
-  margin-top: 50vh;
+  margin-top: 28vh;
+  /* background: url(../../../public/images/main_img_right.jpg) no-repeat center;
+  background-size: contain; */
 }
 
 .projects h3 {
   text-align: right;
+}
+
+.projects .sectionTitle {
+  margin-top: 10vh;
 }
 
 .projectDescription {

@@ -108,6 +108,7 @@ export default function Ability() {
       <ul className={styles.abilityList}>
         <AbilityItem/>
       </ul>
+      {/* horizontal scroll - projects section */}
     </section>
   )
 }

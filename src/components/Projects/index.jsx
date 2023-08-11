@@ -57,7 +57,7 @@ export default function Projects() {
 
   return (
     <section className={styles.projects} ref={projects}>
-      <div className='sectionTitle'>
+      <div className={`${styles.sectionTitle} sectionTitle`}>
         <div className='headingWrap'>
           <SplittingText>Projects</SplittingText>
           <span className={styles.object} ref={pjTitleObject}></span>

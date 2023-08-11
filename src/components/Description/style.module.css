@@ -1,10 +1,5 @@
 .description {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   margin-top: 50vh;
   padding: 0 60px;
   text-transform: uppercase;
@@ -12,27 +7,23 @@
   z-index: 1;
 }
 
-.description p {
+.phrases {
+  position: relative;
+}
+
+.phrases:last-child {
+  text-align: right;
+}
+
+.phrases p {
   position: relative;
   font-size: 52px;
 }
 
-.description > .left,
-.description > .right {
-  width: 50%;
-  flex-shrink: 0;
-}
-
-.description > .right {
-  position: relative;
-  align-self: flex-start;
-}
-
 .circleWrap {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+  position: relative;
+  height: 300px;
+  margin: 100px auto;
   fill: transparent;
   stroke: #fff;
   stroke-width: 2;
