@@ -11,11 +11,16 @@ export default function Description() {
   const bigEllipseText = useRef(null);
 
   const phrases = [
-    "멋지고 편한 것을 좋아해서",
-    "멋지고 편한 웹을 만들기 위해",
-    "인터랙션 개발, 웹 퍼블리싱부터",
-    "프론트엔드 개발로",
-    "영역을 넓혀 가고 있습니다."
+    "천지창조에서 아담과 신이 만나",
+    "새로운 존재가 탄생하듯,",
+    "디자인과 코드가 만나",
+    "새로운 웹을 만드는 과정을 좋아합니다.",
+  ]
+
+  const phrases2 = [
+    "그 중에서도 정적인 웹을 동적으로 만들어주는",
+    "웹 퍼블리싱부터 시작해 인터랙티브 웹 개발,",
+    "프론트엔드 개발로 영역을 넓혀 가고 있습니다."
   ]
 
   useEffect(() => {
@@ -65,40 +70,45 @@ export default function Description() {
 
   return (
     <section className={styles.description}>
-      <div className={styles.left}>
-      {
-        phrases.map((phrase, index) => {
-          return <AnimatedText key={index}>{phrase}</AnimatedText>
-        })
-      }
+      <div className={styles.phrases}>
+        {
+          phrases.map((phrase, index) => {
+            return <AnimatedText key={index}>{phrase}</AnimatedText>
+          })
+        }
       </div>
-      <div className={styles.right}>
-        <div className={styles.circleWrap}>
-          <svg 
-            className={styles.circle} 
-            viewBox="0 0 600 250"
-            perserveaspectratio="xMinYMid"
-          >
-            <circle cx="110" cy="150" r="40" ref={circle}></circle>
-            <text x="110" y="150" textAnchor="middle" alignmentBaseline='middle' ref={circleText}>인터랙션 개발</text>
-          </svg>
-          <svg 
-            className={styles.ellipse} 
-            viewBox="0 0 600 250"
-            perserveaspectratio="xMinYMid"
-          >
-            <ellipse cx="250" cy="150" rx="220" ry="75" ref={ellipse}></ellipse>
-            <text x="250" y="150" textAnchor="middle" alignmentBaseline='middle' ref={ellipseText}>웹 퍼블리싱</text>
-          </svg>
-          <svg 
-            className={`${styles.ellipse} ${styles.big}`} 
-            viewBox="0 0 600 250"
-            perserveaspectratio="xMinYMid"
-          >
-            <ellipse cx="320" cy="150" rx="320" ry="100" ref={bigEllipse}></ellipse>
-            <text x="540" y="150" textAnchor="middle" alignmentBaseline='middle' ref={bigEllipseText}>프론트엔드 개발</text>
-          </svg>
-        </div>
+      <div className={styles.circleWrap}>
+        <svg 
+          className={styles.circle} 
+          viewBox="0 0 600 250"
+          perserveaspectratio="xMinYMid"
+        >
+          <circle cx="110" cy="150" r="40" ref={circle}></circle>
+          <text x="110" y="150" textAnchor="middle" alignmentBaseline='middle' ref={circleText}>웹 퍼블리싱</text>
+        </svg>
+        <svg 
+          className={styles.ellipse} 
+          viewBox="0 0 600 250"
+          perserveaspectratio="xMinYMid"
+        >
+          <ellipse cx="250" cy="150" rx="220" ry="75" ref={ellipse}></ellipse>
+          <text x="250" y="150" textAnchor="middle" alignmentBaseline='middle' ref={ellipseText}>인터랙티브 웹 개발</text>
+        </svg>
+        <svg 
+          className={`${styles.ellipse} ${styles.big}`} 
+          viewBox="0 0 600 250"
+          perserveaspectratio="xMinYMid"
+        >
+          <ellipse cx="320" cy="150" rx="320" ry="100" ref={bigEllipse}></ellipse>
+          <text x="540" y="150" textAnchor="middle" alignmentBaseline='middle' ref={bigEllipseText}>프론트엔드 개발</text>
+        </svg>
+      </div>
+      <div className={styles.phrases}>
+        {
+          phrases2.map((phrase, index) => {
+            return <AnimatedText key={index}>{phrase}</AnimatedText>
+          })
+        }
       </div>
     </section>
   )
