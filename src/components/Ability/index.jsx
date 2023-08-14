@@ -9,42 +9,52 @@ const abilityArr = [
   {
     name: 'HTML5',
     iconUrl: '/images/logo_html.png',
+    color: '#F4652E',
   },
   {
     name: 'CSS3',
     iconUrl: '/images/logo_css.png',
+    color: '#3E9DD6',
   },
   {
     name: 'JavaScript',
     iconUrl: '/images/logo_js.png',
+    color: '#F0DC4E',
   },
   {
     name: 'JQuery',
     iconUrl: '/images/logo_jquery.png',
+    color: '#147DC2',
   },
   {
     name: 'Vue.js',
     iconUrl: '/images/logo_vue.png',
+    color: '#41B880',
   },
   {
     name: 'TypeScript',
     iconUrl: '/images/logo_ts.png',
+    color: '#017ACD',
   },
   {
     name: 'React.js',
     iconUrl: '/images/logo_react.png',
+    color: '#49B0FD',
   },
   {
     name: 'Next.js',
     iconUrl: '/images/logo_nextjs.png',
+    color: '#000',
   },
   {
     name: 'XD',
     iconUrl: '/images/logo_xd.png',
+    color: '#470136',
   },
   {
     name: 'Photoshop',
     iconUrl: '/images/logo_ps.png',
+    color: '#001E36',
   },
 ]
 
@@ -71,26 +81,23 @@ export default function Ability() {
     const objectTl = gsap.timeline({
       scrollTrigger: {
         trigger: ability.current,
-        start: "800px bottom",
+        start: "700px bottom",
         toggleActions: "play none none reverse",
       },
     });
     objectTl.to(object.current, {
-      delay: 2,
+      delay: 0.5,
       opacity: 1,
-    })
-    objectTl.to(object.current, {
-      left: "1%",
     })
 
     /* list animation */
     gsap.to(".itemInner", {
       scrollTrigger: {
         trigger: ability.current,
-        start: "800px bottom",
+        start: "700px bottom",
         toggleActions: "play none none reverse",
       },
-      delay: 2.5,
+      delay: 2,
       y: "0%",
       stagger: 0.05,
     })
@@ -98,17 +105,16 @@ export default function Ability() {
   }, [])
 
   return (
-    <section className={styles.ability} ref={ability}>
-      <div className='sectionTitle'>
+    <section className={`${styles.ability} ability`} ref={ability}>
+      <div className={`${styles.sectionTitle} sectionTitle`}>
         <div className={styles.headingWrap}>
-          <SplittingText>Ability</SplittingText>
           <span className={styles.object} ref={object}></span>
+          <SplittingText>Ability</SplittingText>
         </div>
       </div>
       <ul className={styles.abilityList}>
         <AbilityItem/>
       </ul>
-      {/* horizontal scroll - projects section */}
     </section>
   )
 }
@@ -137,10 +143,22 @@ function SplittingText({children}) {
 function AbilityItem() {
   const listArr = useRef([]);
 
+  const handleMouseEnter = (e, color) => {
+    gsap.to(e.currentTarget, {backgroundColor: "#fff", color: color, y: -24})
+  }
+
+  const handleMouseLeave = (e) => {
+    gsap.to(e.currentTarget, {backgroundColor: "#000", color: "#fff", y: 0})
+  }
+
   return (
     abilityArr.map((item, i) => {
       return (
-        <li key={'item' + i}>
+        <li
+          onMouseEnter={(e) => {handleMouseEnter(e, item.color)}} 
+          onMouseLeave={(e) => {handleMouseLeave(e, item.color)}} 
+          key={'item' + i}
+        >
           <span className='itemInner' ref={el => listArr.current[i] = el}>
             <Image 
               src={item.iconUrl}

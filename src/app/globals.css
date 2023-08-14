@@ -112,7 +112,7 @@ section:not(:first-of-type) {
   position: relative;
   width: 100%;
   margin-bottom: 240px;
-  padding: 0 60px;
+  padding: 0 40px;
 }
 
 h1,h2,h3,h4,h5,h6 {
