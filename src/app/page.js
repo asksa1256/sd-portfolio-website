@@ -6,6 +6,7 @@ import Description from '@/components/Description'
 import Projects from '@/components/Projects'
 import Ability from '@/components/Ability'
 import Character from '@/components/Character'
+import IntervalMarquee from '@/components/IntervalMarquee'
 
 export default function Home() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Home() {
       <Description/>
       <Character/>
       <Ability/>
+      <IntervalMarquee/>
       {/* <Projects/> */}
     </main>
   )
