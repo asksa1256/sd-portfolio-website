@@ -11,7 +11,7 @@ export default function Character() {
   const cardsWrap = useRef(null);
   const cards = useRef(null);
   const cardArr = useRef([]);
-  const lineToBox = useRef(null);
+  const line = useRef(null);
 
   useEffect(() => {
     /* section title rolling animation */
@@ -57,15 +57,15 @@ export default function Character() {
       duration: 0.5,
     })
 
-    gsap.set(lineToBox.current, {left: "50%", top: "50%"})
+    gsap.set(line.current, {left: "50%", top: "50%"})
 
     const cardsTl = gsap.timeline({
       scrollTrigger: {
         trigger: cardsWrap.current,
         start: "top 250px",
-        end: "+=300%",
+        end: "+=200%",
         scrub: true,
-        pin: true
+        pin: true,
       }
     });
     cardsTl.to(cardArr.current[0], {
@@ -77,16 +77,17 @@ export default function Character() {
     cardsTl.to(cards.current, {
       rotateY: "90deg",
     })
-    cardsTl.to(lineToBox.current, {
+    cardsTl.to(line.current, {
       opacity: 1,
     })
-    cardsTl.to(lineToBox.current, {
-      width: "100vw",
-      height: "102vh",
+    cardsTl.to(line.current, {
+      height: "2px",
     })
-    cardsTl.to(lineToBox.current, {
-      borderRadius: 0,
-      borderColor: "transparent",
+    cardsTl.to(line.current, {
+      borderWidth: "1px",
+    })
+    cardsTl.to(line.current, {
+      width: "100vw",
     })
   }, [])
   
@@ -142,7 +143,7 @@ export default function Character() {
             </Tilt>
           </li>
         </ul>
-        <div className={styles.lineToBox} ref={lineToBox}></div>
+        <div className={styles.line} ref={line}></div>
       </div>
     </section>
   )

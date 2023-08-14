@@ -1,5 +1,6 @@
 .character {
   position: relative;
+  margin-bottom: 0 !important;
 }
 
 .object {
@@ -153,15 +154,13 @@
   width: 75%;
 }
 
-.lineToBox {
+.line {
   position: absolute;
   display: inline-block;
   width: 2px;
   height: 400px;
-  background: url(../../../public/images/main_img_left.jpg) no-repeat center;
-  background-size: cover;
   border: 2px solid #fff;
-  opacity: 0;
-  transform: translate(-50%, -50%);
   border-radius: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
