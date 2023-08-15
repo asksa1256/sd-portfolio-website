@@ -30,6 +30,11 @@
   font-weight: 700;
   src: url(../../public/font/Unbounded-Bold.ttf) format("truetype");
 }
+@font-face {
+  font-family: 'BricolageGrotesque';
+  font-weight: 400;
+  src: url(../../public/font/BricolageGrotesque_Condensed-Regular.ttf) format("truetype");
+}
 
 /* reset */
 * {color:inherit; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:inherit; line-height:inherit;box-sizing: border-box;}
