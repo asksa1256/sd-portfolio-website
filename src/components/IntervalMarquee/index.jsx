@@ -9,8 +9,17 @@ export default function IntervalMarquee() {
   }, [])
 
   return (
-    <div className={styles.marquee}>
-      marquee
+    <div className={styles.marqueeContainer}>
+      <div className={styles.marquee}>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+      </div>
+      <div className={styles.marquee}>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+        <p>Projects<span className={styles.arrow}>↓↓↓</span></p>
+      </div>
     </div>
   )
 }

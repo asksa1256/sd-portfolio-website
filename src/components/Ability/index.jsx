@@ -97,7 +97,7 @@ export default function Ability() {
         start: "700px bottom",
         toggleActions: "play none none reverse",
       },
-      delay: 2,
+      delay: 0.75,
       y: "0%",
       stagger: 0.05,
     })

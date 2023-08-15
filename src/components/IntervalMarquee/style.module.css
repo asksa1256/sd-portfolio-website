@@ -1,60 +1,47 @@
-.description {
+.marqueeContainer {
   position: relative;
-  margin-top: 50vh;
-  padding: 0 60px;
-  text-transform: uppercase;
-  color: #fff;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 200px 0;
 }
 
-.phrases {
-  position: relative;
-}
-
-.phrases:last-child {
-  text-align: right;
-}
-
-.phrases p {
-  position: relative;
-  font-size: 52px;
-}
-
-.circleWrap {
-  position: relative;
-  height: 300px;
-  margin: 100px auto;
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 2;
-}
-
-.circleWrap svg {
+.marquee {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 300px;
+  padding: 24px 0;
+  white-space: nowrap;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  background: #000;
+  transform: rotate(-10deg);
 }
 
-.circleWrap text {
-  font-size: 12px;
-  font-weight: 500;
-  stroke: transparent;
-  fill: #fff;
+.marquee:nth-child(2) {
+  transform: rotate(3deg);
+  z-index: -1;
 }
 
-.circle circle {
-  stroke-dasharray: 465;
-  stroke-dashoffset: 465;
+.marquee p {
+  position: relative;
+  display: inline-block;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
 }
 
-.ellipse {
-  stroke-dasharray: 1510;  
-  stroke-dashoffset: 1510;
+.marquee p:before {
+  content: '●';
+  font-size: 36px;
+  vertical-align: middle;
+  margin: 0 40px;
 }
 
-.ellipse.big {
-  stroke-dasharray: 1510;  
-  stroke-dashoffset: 1510;
+.arrow {
+  margin-left: 48px;
+  font-family: 'BricolageGrotesque', cursive;
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 4px;
 }
