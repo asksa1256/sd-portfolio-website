@@ -61,6 +61,7 @@ const abilityArr = [
 export default function Ability() {
   const ability = useRef(null);
   const object = useRef(null);
+  const preventMouseEvent = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin();
@@ -97,9 +98,18 @@ export default function Ability() {
         start: "700px bottom",
         toggleActions: "play none none reverse",
       },
-      delay: 0.75,
       y: "0%",
+      delay: 0.75,
       stagger: 0.05,
+    })
+
+    gsap.to(preventMouseEvent.current, {
+      scrollTrigger: {
+        trigger: ability.current,
+        start: "700px bottom",
+      },
+      visibility: "hidden",
+      delay: 1.5,
     })
     
   }, [])
@@ -114,6 +124,7 @@ export default function Ability() {
       </div>
       <ul className={styles.abilityList}>
         <AbilityItem/>
+        <li className={styles.preventMouseEvent} ref={preventMouseEvent}></li>
       </ul>
     </section>
   )
