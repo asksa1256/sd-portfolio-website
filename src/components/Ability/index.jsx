@@ -95,7 +95,8 @@ export default function Ability() {
     gsap.to(".itemInner", {
       scrollTrigger: {
         trigger: ability.current,
-        start: "700px bottom",
+        start: "top-=200px",
+        end: "bottom",
         toggleActions: "play none none reverse",
       },
       y: "0%",
@@ -106,10 +107,24 @@ export default function Ability() {
     gsap.to(preventMouseEvent.current, {
       scrollTrigger: {
         trigger: ability.current,
-        start: "700px bottom",
+        start: "top-=200px",
+        end: "bottom",
+        toggleActions: "play none none reverse",
       },
       visibility: "hidden",
       delay: 1.5,
+    })
+
+    gsap.to(".itemInner", {
+      scrollTrigger: {
+        trigger: ability.current,
+        start: "bottom-=400px",
+        end: "bottom",
+        toggleActions: "play none none reverse",
+      },
+      stagger: 0.05,
+      y: "100%",
+      opacity: 0,
     })
     
   }, [])
