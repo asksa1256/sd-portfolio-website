@@ -34,7 +34,7 @@ section.ability {
 }
 
 .abilityList {
-  
+  position: relative;
 }
 
 .abilityList li {
@@ -67,4 +67,14 @@ section.ability {
 
 .abilityList em {
   vertical-align: middle;
+}
+
+.abilityList li.preventMouseEvent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: transparent;
 }

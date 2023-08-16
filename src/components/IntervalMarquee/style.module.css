@@ -2,25 +2,31 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
-  margin: 200px 0;
+  width: 100vw;
+  height: 500px;
+  margin: 200px 0 600px;
+  overflow: hidden;
 }
 
 .marquee {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 110px;
   padding: 24px 0;
   white-space: nowrap;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff;
   background: #000;
-  transform: rotate(-10deg);
+  transform: rotate(-3deg);
 }
 
 .marquee:nth-child(2) {
-  transform: rotate(3deg);
+  transform: rotate(7deg) translateY(150px);
   z-index: -1;
+}
+
+.marquee:nth-child(2) p {
+  transform: translateX(-100%);
 }
 
 .marquee p {
@@ -39,7 +45,7 @@
 }
 
 .arrow {
-  margin-left: 48px;
+  margin: 0 48px;
   font-family: 'BricolageGrotesque', cursive;
   font-size: 100px;
   font-weight: 400;
