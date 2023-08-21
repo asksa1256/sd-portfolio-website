@@ -27,7 +27,7 @@ export default function Home() {
       <Character/>
       <Ability/>
       <IntervalMarquee/>
-      {/* <Projects/> */}
+      <Projects/>
     </main>
   )
 }
