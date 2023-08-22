@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -16,13 +16,6 @@ export default function Intro() {
     "Frontend Developer",
     "Leesangdal"
   ]
-
-  // useEffect vs useLayoutEffect
-  // useEffect: DOM이 mount 된 후에 코드를 실행
-  // useLayoutEffect: DOM이 mount 되기 전에 코드를 실행
-  // 화면이 깜빡일 때는 useLayoutEffect를 사용.
-  // 그 외 데이터 fetch / event handler / state reset 등 대부분의 경우에는 useEffect 사용을 권장.
-  // react 환경에서 gsap 적용법: useRef를 이용해 ref명.current로 요소를 선택하여 사용.
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

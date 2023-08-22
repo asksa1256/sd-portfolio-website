@@ -1,0 +1,53 @@
+.description {
+  margin-top: 50vh;
+  padding: 0 60px;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 1;
+}
+
+.phrases {
+  position: relative;
+  &:last-child {
+    text-align: right;
+  }
+  p {
+    position: relative;
+    font-size: 52px;
+  }
+}
+
+.circleWrap {
+  position: relative;
+  height: 300px;
+  margin: 100px auto;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2;
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 300px;
+  }
+  text {
+    font-size: 12px;
+    font-weight: 500;
+    stroke: transparent;
+    fill: #fff;
+  }
+  circle {
+    stroke-dasharray: 465;
+    stroke-dashoffset: 465;
+  }
+}
+
+.ellipse {
+  stroke-dasharray: 1510;  
+  stroke-dashoffset: 1510;
+  &.big {
+    stroke-dasharray: 1510;  
+    stroke-dashoffset: 1510;
+  }
+}
