@@ -1,6 +1,6 @@
 "use client"
 import {useEffect} from 'react'
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import Intro from '@/components/Intro'
 import Description from '@/components/Description'
 import Projects from '@/components/Projects'

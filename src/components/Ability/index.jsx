@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import gsap from 'gsap'
 import Image from 'next/image';
 import { useEffect, useRef } from 'react'

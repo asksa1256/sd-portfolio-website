@@ -1,4 +1,4 @@
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import gsap from 'gsap'
 import { useEffect, useRef } from 'react'
 import Tilt from 'react-parallax-tilt';
