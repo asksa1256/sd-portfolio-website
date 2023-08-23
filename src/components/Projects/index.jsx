@@ -1,20 +1,47 @@
 import styles from './style.module.scss'
-import {useState, useRef, useEffect} from 'react'
-import gsap from 'gsap'
+import { useRef } from 'react'
 import Image from 'next/image';
-import { ScrollTrigger } from 'gsap/all'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import useDimension from '@/useDimension'
+import Link from 'next/link';
 
 const images = [
-  "pj-1.jpg",
-  "pj-2.jpg",
-  "pj-3.jpg",
-  "pj-4.jpg",
-  "pj-5.jpg",
-  "pj-6.jpg",
-  "pj-7.jpg",
-  "pj-8.jpg",
+  {
+    "id": 1,
+    "src": "pj-1.jpg",
+  },
+  {
+    "id": 2,
+    "src": "pj-2.jpg",
+  },
+  {
+    "id": 3,
+    "src": "pj-3.jpg",
+  },
+  {
+    "id": 4,
+    "src": "pj-4.jpg",
+  },
+  {
+    "id": 5,
+    "src": "pj-5.jpg",
+  },
+  {
+    "id": 6,
+    "src": "pj-6.jpg",
+  },
+  {
+    "id": 7,
+    "src": "pj-7.jpg",
+  },
+  {
+    "id": 8,
+    "src": "pj-8.jpg",
+  },
+  {
+    "id": 9,
+    "src": "pj-9.jpg",
+  },
 ]
 
 export default function Projects() {
@@ -31,7 +58,7 @@ export default function Projects() {
 
   return (
     <section className={styles.projects}>
-      <div className={styles.gallery} ref={container}>
+      <ul className={styles.gallery} ref={container}>
         <Column 
           images={[images[0], images[1], images[2]]} 
           y={y}
@@ -41,27 +68,33 @@ export default function Projects() {
           y={y2}
         />
         <Column 
-          images={[images[6], images[7]]}
+          images={[images[6], images[7], images[8]]}
           y={y3}
         />
-      </div>
+      </ul>
       <div className={styles.spacer}></div>
     </section>
   )
 }
 
-const Column = ({images, y=0}) => {
+const Column = ({images,  y=0}) => {
   return (
     <motion.div style={{y}} className={styles.column}>
       {
-        images.map((src, idx) => {
-          return <div key={idx} className={styles.imageContainer}>
-            <Image
-              src={`/images/${src}`}
-              alt="image"
-              fill
-            />
-          </div>
+        images.map((props, idx) => {
+          return (
+            <li 
+              key={idx} 
+              className={styles.imageContainer}
+            >
+              <Link className={styles.link} href={`/project/${props.id}`}></Link>
+              <Image
+                src={`/images/${props.src}`}
+                alt="image"
+                fill
+              />
+            </li>
+          )
         })
       }
     </motion.div>
