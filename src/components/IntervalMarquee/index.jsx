@@ -36,6 +36,7 @@ export default function IntervalMarquee() {
       xPercent = 0;
     }
 
+    if (!(firstText.current[0] !== null && secondText.current[0] !== null)) return;
     gsap.set([firstText.current[0], secondText.current[0]], {xPercent: xPercent})
 
     xPercent += speed * direction;
@@ -50,6 +51,7 @@ export default function IntervalMarquee() {
       xPercent = 0;
     }
 
+    if (!(firstText.current[0] !== null && secondText.current[0] !== null)) return;
     gsap.set([firstText.current[1], secondText.current[1]], {xPercent: -xPercent})
 
     xPercent += speed * direction;
