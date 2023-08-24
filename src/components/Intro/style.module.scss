@@ -1,3 +1,5 @@
+@import "../../app/styles/mixin";
+
 section.intro {
   margin-bottom: 40px;
 }
@@ -45,5 +47,24 @@ section.intro {
     color: #fff;
     mix-blend-mode: difference;
     overflow: hidden;
+  }
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .introContainer {
+    h2 {
+      font-size: 32px;
+    }
+    .introHeadingWrap {
+      height: 40px;
+    }
   }
 }
