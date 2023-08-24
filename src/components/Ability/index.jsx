@@ -56,6 +56,16 @@ const abilityArr = [
     iconUrl: '/images/logo_ps.png',
     color: '#001E36',
   },
+  {
+    name: 'GitHub',
+    iconUrl: '/images/logo_ps.png',
+    color: '#001E36',
+  },
+  {
+    name: 'GitLab',
+    iconUrl: '/images/logo_ps.png',
+    color: '#001E36',
+  },
 ]
 
 export default function Ability() {

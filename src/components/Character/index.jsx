@@ -2,6 +2,7 @@ import styles from './style.module.scss'
 import gsap from 'gsap'
 import { useEffect, useRef } from 'react'
 import Tilt from 'react-parallax-tilt';
+import useDimension from '@/useDimension'
 
 const sectionName = "character";
 
@@ -12,6 +13,7 @@ export default function Character() {
   const cards = useRef(null);
   const cardArr = useRef([]);
   const line = useRef(null);
+  const {width} = useDimension();
 
   useEffect(() => {
     /* section title rolling animation */
@@ -57,38 +59,41 @@ export default function Character() {
       duration: 0.5,
     })
 
-    gsap.set(line.current, {left: "50%", top: "50%"})
-
-    const cardsTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: cardsWrap.current,
-        start: "top 250px",
-        end: "+=200%",
-        scrub: true,
-        pin: true,
-      }
-    });
-    cardsTl.to(cardArr.current[0], {
-      left: "18%"
-    })
-    cardsTl.to(cardArr.current[2], {
-      left: "-18%",
-    })
-    cardsTl.to(cards.current, {
-      rotateY: "90deg",
-    })
-    cardsTl.to(line.current, {
-      opacity: 1,
-    })
-    cardsTl.to(line.current, {
-      height: "2px",
-    })
-    cardsTl.to(line.current, {
-      borderWidth: "1px",
-    })
-    cardsTl.to(line.current, {
-      width: "100vw",
-    })
+    if (width > 420) {
+      gsap.set(line.current, {left: "50%", top: "50%"})
+  
+      const cardsTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: cardsWrap.current,
+          start: "top 250px",
+          end: "+=200%",
+          scrub: true,
+          pin: true,
+        }
+      });
+      cardsTl.to(cardArr.current[0], {
+        left: "18%"
+      })
+      cardsTl.to(cardArr.current[2], {
+        left: "-18%",
+      })
+      cardsTl.to(cards.current, {
+        rotateY: "90deg",
+      })
+      cardsTl.to(line.current, {
+        opacity: 1,
+      })
+      cardsTl.to(line.current, {
+        height: "2px",
+      })
+      cardsTl.to(line.current, {
+        borderWidth: "1px",
+      })
+      cardsTl.to(line.current, {
+        width: "100vw",
+      })
+    }
+    
   }, [])
   
 
@@ -99,9 +104,9 @@ export default function Character() {
           <SplittingText>Characteristic</SplittingText>
           <span className={styles.object} ref={object}></span>
         </div>
-        <p className='tip'>: 카드에 마우스를 올려보세요.</p>
+        <p className='tip'>{width > 420 ? ": 카드에 마우스를 올려보세요." : ": 카드를 클릭해보세요."}</p>
       </div>
-      <div className={cardsWrap} ref={cardsWrap}>
+      <div className={styles.cardsWrap} ref={cardsWrap}>
         <ul className={styles.cards} ref={cards}>
           <li className={`${styles.card} ${styles.card1}`} ref={el => cardArr.current[0] = el}>
             <Tilt className={styles.tiltWrap}>
