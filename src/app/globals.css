@@ -156,6 +156,192 @@ h3 {
   text-align: center;
 }
 
+/* 상세 페이지 공통 스타일 */
+.projectDetail h2,
+.projectDetail h4 {
+  font-family: 'Pretendard', sans-serif;
+}
+
+.detailTop {
+  position: relative;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.detailTop .layer {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #000;
+  opacity: 0;
+}
+
+.detailContent {
+  display: flex;
+  padding: 80px 100px;
+}
+
+.detailContent.detailSummary {
+  display: block;
+}
+
+.detailContent .left,
+.detailContent .right {
+  width: 50%;
+}
+
+.detailContent h4 {
+  font-size: 24px;
+}
+
+.detailContent h5 {
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.detailContent .phrase {
+  margin-bottom: 60px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg img {
+  object-fit: cover;
+}
+
+.detailTitle {
+  font-size: 72px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+.detailSubTitle {
+  margin-bottom: 42px;
+  font-size: 42px;
+  opacity: 0.5;
+}
+
+.detailList .left,
+.detailList .right {
+  width: 50%;
+}
+
+.detailList {
+  display: flex;
+  margin-top: 6rem;
+}
+
+.detailList li {
+  margin-bottom: 2rem;
+}
+
+.detailList small {
+  opacity: .5;
+}
+
+.detailList .title,
+.detailList .desc {
+  display: block;
+}
+
+.detailList .title {
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.detailList .desc .link {
+  position: relative;
+  display: inline-block;
+}
+
+.detailList .phrase {
+  width: 80%;
+  margin-bottom: 24px;
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+.chip {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.chip + .chip {
+  margin-left: 8px;
+}
+
+.marqueeContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.marquee {
+  position: absolute;
+  left: -90px;
+  bottom: 20px;
+  white-space: nowrap;
+}
+
+.marquee p {
+  position: relative;
+  display: inline-block;
+  margin-left: 40px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 150px;
+}
+
+.marquee p:before {
+  content: '-';
+  margin-right: 40px;
+}
+
+.pages {
+  display: flex;
+}
+
+.pages .prev,
+.pages .next {
+  flex: 1;
+  width: 50%;
+  height: 300px;
+  transition: all .3s;
+}
+
+.pages a:hover {
+  flex: 1.5;
+  background: rgba(255,255,255,.5);
+}
+
 /*************************** 
   반응형 
 ****************************/

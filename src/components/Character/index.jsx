@@ -48,6 +48,7 @@ export default function Character() {
     })
 
     /* cards animation */
+    if (window.innerWidth <= 420) return;
     gsap.to(cardArr.current, {
       scrollTrigger: {
         trigger: cardArr.current,
@@ -59,40 +60,38 @@ export default function Character() {
       duration: 0.5,
     })
 
-    if (width > 420) {
-      gsap.set(line.current, {left: "50%", top: "50%"})
-  
-      const cardsTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: cardsWrap.current,
-          start: "top 250px",
-          end: "+=200%",
-          scrub: true,
-          pin: true,
-        }
-      });
-      cardsTl.to(cardArr.current[0], {
-        left: "18%"
-      })
-      cardsTl.to(cardArr.current[2], {
-        left: "-18%",
-      })
-      cardsTl.to(cards.current, {
-        rotateY: "90deg",
-      })
-      cardsTl.to(line.current, {
-        opacity: 1,
-      })
-      cardsTl.to(line.current, {
-        height: "2px",
-      })
-      cardsTl.to(line.current, {
-        borderWidth: "1px",
-      })
-      cardsTl.to(line.current, {
-        width: "100vw",
-      })
-    }
+    gsap.set(line.current, {left: "50%", top: "50%"})
+
+    const cardsTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: cardsWrap.current,
+        start: "top 250px",
+        end: "+=200%",
+        scrub: true,
+        pin: true,
+      }
+    });
+    cardsTl.to(cardArr.current[0], {
+      left: "18%"
+    })
+    cardsTl.to(cardArr.current[2], {
+      left: "-18%",
+    })
+    cardsTl.to(cards.current, {
+      rotateY: "90deg",
+    })
+    cardsTl.to(line.current, {
+      opacity: 1,
+    })
+    cardsTl.to(line.current, {
+      height: "2px",
+    })
+    cardsTl.to(line.current, {
+      borderWidth: "1px",
+    })
+    cardsTl.to(line.current, {
+      width: "100vw",
+    })
     
   }, [])
   
@@ -126,10 +125,10 @@ export default function Character() {
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
-                <h4>균형</h4>
+                <h4>조화</h4>
                 <p className={styles.desc}>
-                  <span className={styles.en}>:Balance</span>
-                  새로움을 접목시키면서도 웹 접근성, 브라우저 호환성과 같은 기본 규칙을 지켜 둘 사이의 균형을 유지합니다.
+                  <span className={styles.en}>:Harmony</span>
+                  협업은 선택이 아닌 필수. 혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하기 위해 최선을 다합니다.
                 </p>
               </div>
             </Tilt>
