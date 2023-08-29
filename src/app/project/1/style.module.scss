@@ -1,0 +1,15 @@
+.detailTop {
+  background-image: url(/images/hi5-1.png);
+}
+
+.bg1 {
+  background-image: url(/images/pj1-bg1.jpg);
+}
+
+.bg4 img {
+  width: 320px;
+  border-radius: 24px;
+  + img {
+    margin-left: 24px;
+  }
+}
