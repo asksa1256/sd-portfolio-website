@@ -11,6 +11,7 @@ export default function Project1() {
   const secondText = useRef(null);
   const marquee = useRef(null);
   const layer = useRef(null);
+  const currentProjectNum = 1;
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
@@ -87,23 +88,17 @@ export default function Project1() {
             <li>
               <span className="title">링크</span>
               <div className="desc">
-                {/* <Link
-                  className="link"
-                  href="http://teraenergy.co.kr/index_2022.html"
-                >
-                  www.teraenergy.co.kr
-                </Link> */}
-                <small>*고객사 요청으로 비공개 처리 되었습니다.</small>
+                <small>*요청으로 비공개 처리 되었습니다.</small>
               </div>
             </li>
             <li>
               <span className="title">언어</span>
               <div className="desc">
-                <span className="chip">Vue.js</span>
-                <span className="chip">TypeScript</span>
                 <span className="chip">HTML</span>
                 <span className="chip">CSS</span>
-                <span className="chip">BootStrap v5.0</span>
+                <span className="chip">Vue.js</span>
+                <span className="chip">TypeScript</span>
+                <span className="chip">Bootstrap v5.0</span>
               </div>
             </li>
             <li>
@@ -133,9 +128,12 @@ export default function Project1() {
             <li>
               <span className="title">기여도</span>
               <div className="desc">
-                <div className="progressBar"></div>
                 <span className="progressTxt">70%</span>
               </div>
+            </li>
+            <li>
+              <span className="title">기타사항</span>
+              <div className="desc">-</div>
             </li>
           </ul>
           <div className="right">
@@ -171,7 +169,7 @@ export default function Project1() {
           </p>
           <h5>1-1. 해결</h5>
           <p className="phrase">
-            다행히 타 팀에 디자인에 관해 물어볼 만한 경력직 웹 디자이너가 있어서 그분과 상의하여 디자인 피드백을 자주 받고, 다른 그룹웨어 디자인 예시들을 레퍼런스 삼아 컨텐츠에 맞는 디자인을 하기 위해 노력했습니다. <br/>또한 클라이언트가 테마 변경 기능 추가를 원해서 프론트엔드 개발자들도 스타일 변경하기가 쉽도록 스타일 가이드를 작성했습니다. 
+            다른 팀의 경력직 웹 디자이너님과 상의하여 디자인 피드백을 자주 받고, 잘 만들어진 그룹웨어 예시들을 레퍼런스 삼아 컨텐츠에 맞게 디자인 했습니다. 또한 클라이언트가 테마 변경 기능 추가를 원해서 프론트엔드 개발자들도 스타일 변경하기가 쉽도록 스타일 가이드를 작성했습니다. 
           </p>
         </div>
       </div>
@@ -186,7 +184,6 @@ export default function Project1() {
       </figure>
       <div className="detailContent">
         <div className="left">
-          {/* <h4>과제</h4> */}
         </div>
         <div className="right">
           <h5>2. 새로운 언어</h5>
@@ -208,7 +205,7 @@ export default function Project1() {
         />
         {/* 컴포넌트 개발 코드 + 드래그 앤 드랍 컴포넌트 주석 캡쳐 */}
       </figure>
-      <div className="detailContent">
+      <div className="detailContent justify-center align-center flex-column text-center">
         <div className="left">
           <h4>반응형</h4>
         </div>
@@ -242,13 +239,13 @@ export default function Project1() {
       <div className="pages">
         <Link
           className="prev"
-          href="/"
+          href='/'
         >
           Prev Project
         </Link>
         <Link
           className="next"
-          href="/project/2"
+          href={`/project/${currentProjectNum+1}`}
         >
           Next Project
         </Link>

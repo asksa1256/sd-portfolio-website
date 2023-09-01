@@ -128,7 +128,7 @@ export default function Character() {
                 <h4>조화</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Harmony</span>
-                  협업은 선택이 아닌 필수. 혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하기 위해 최선을 다합니다.
+                  혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하기 위해 최선을 다합니다.
                 </p>
               </div>
             </Tilt>
