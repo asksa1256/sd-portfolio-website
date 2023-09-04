@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
 
-export default function Project1() {
+export default function Project01() {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const marquee = useRef(null);
@@ -78,10 +78,10 @@ export default function Project1() {
       </div>
       <div className="detailContent detailSummary">
         <h2 className="detailTitle">Groupware Hi5</h2>
-        <h4 className="detailSubTitle">자사 그룹웨어 솔루션 개발</h4>
+        <h4 className="detailSubTitle">자사 그룹웨어 솔루션</h4>
         <div className="detailCtg">
-          <span className="chip">디자인</span>
-          <span className="chip">퍼블리싱</span>
+          <span className="chip">웹 디자인</span>
+          <span className="chip">웹 퍼블리싱</span>
         </div>
         <div className="detailList">
           <ul className="left">
@@ -238,8 +238,8 @@ export default function Project1() {
       </figure>
       <div className="pages">
         <Link
-          className="prev"
-          href='/'
+          className="prev disabled"
+          href={`/project/${currentProjectNum-1}`}
         >
           Prev Project
         </Link>

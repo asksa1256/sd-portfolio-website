@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
 
-export default function Project2() {
+export default function Project02() {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const marquee = useRef(null);
@@ -78,9 +78,9 @@ export default function Project2() {
       </div>
       <div className="detailContent detailSummary">
         <h2 className="detailTitle">동일이엔티</h2>
-        <h4 className="detailSubTitle">홈페이지 리뉴얼</h4>
+        <h4 className="detailSubTitle">조명 사업 및 전기/통신 공사</h4>
         <div className="detailCtg">
-          <span className="chip">퍼블리싱</span>
+          <span className="chip">웹 퍼블리싱</span>
         </div>
         <div className="detailList">
           <ul className="left">
@@ -89,7 +89,7 @@ export default function Project2() {
               <div className="desc">
                 <Link
                   className="link"
-                  href="http://dient.co.kr/"
+                  href="http://dient.co.kr"
                   target="_blank"
                 >
                   dient.co.kr
@@ -103,7 +103,6 @@ export default function Project2() {
                 <span className="chip">CSS</span>
                 <span className="chip">JQuery</span>
                 <span className="chip">JavaScript</span>
-                <span className="chip">PHP</span>
               </div>
             </li>
             <li>
@@ -120,7 +119,7 @@ export default function Project2() {
             </li>
             <li>
               <span className="title">유형</span>
-              <div className="desc">홈페이지</div>
+              <div className="desc">웹사이트</div>
             </li>
             <li>
               <span className="title">기간</span>
@@ -143,7 +142,7 @@ export default function Project2() {
             <span className="title">요약</span>
             <div className="desc">
               <p className="phrase">
-                기존의 동일이엔티 홈페이지는 회사 소개와 자사 상품 목록이 나열된 페이지가 있는 단순한 형태였는데 리뉴얼을 진행하면서 카탈로그, 설치가이드, 인재채용 등 동일이엔티가 다루고 있는 상세 컨텐츠들이 추가되어 사이트가 더욱 다채로워졌습니다.
+                기존의 동일이엔티 홈페이지는 회사 소개와 자사 상품 목록이 나열된 페이지가 있는 단순한 형태였는데 디자인 리뉴얼을 진행하면서 카탈로그, 설치가이드, 인재채용 등 동일이엔티가 다루고 있는 상세 컨텐츠들이 추가되어 사이트가 더욱 다채로워졌습니다.
               </p>
               <p className="phrase">
                 또한 디자인이 정적인 디자인에서 트렌디하게 바뀌었기 때문에 그 느낌을 살리기 위해 인터랙션 요소를 너무 과하지 않은 선에서 적용했습니다. 사이트의 주 사용자가 4~50대 남성이기 때문에 애니메이션이 많으면 오히려 가독성과 사용성이 낮아질 것을 고려했습니다.
@@ -172,7 +171,7 @@ export default function Project2() {
           </p>
           <h5>해결</h5>
           <p className="phrase">
-            저는 마감 기한이 정해지고 나서도 작업 첫째, 둘째 날에는 전체적인 구조나 컨셉 등을 파악하며 그 마감 기한을 지킬 수 있을지 한번 더 점검합니다. 항상 기한 내에 작업을 마쳐왔지만, 이번에는 시간이 더 필요하다 판단해서 작업 셋째 날에 컨펌 담당자한테 기한을 4~5일 늘려달라고 요청했습니다. 마감까지 시간이 꽤 남은 시점에서 미리 말씀드렸기 때문에 별 문제 없이 클라이언트와도 상의하여 작업 기간을 늘리고, 기한에 맞춰서 작업을 성공적으로 마쳤습니다.
+            항상 기한 내에 작업을 마쳐왔지만 이번에는 그누보드의 복잡한 구조상 시간이 더 필요하다 판단해서 작업 셋째 날에 컨펌 담당자한테 기한을 4~5일 늘려달라고 요청했습니다. 마감까지 시간이 꽤 남은 시점에서 미리 말씀드렸기 때문에 별 문제 없이 클라이언트와도 상의하여 작업 기간을 늘리고, 기한에 맞춰서 작업을 성공적으로 마쳤습니다.
           </p>
         </div>
       </div>

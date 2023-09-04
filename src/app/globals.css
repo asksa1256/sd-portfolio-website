@@ -384,6 +384,11 @@ h3 {
   background: rgba(255,255,255,.5);
 }
 
+.pages a.disabled {
+  pointer-events: none;
+  color: gray;
+}
+
 /*************************** 
   반응형 
 ****************************/
