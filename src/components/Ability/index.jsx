@@ -8,63 +8,75 @@ const sectionName = "ability";
 const abilityArr = [
   {
     name: 'HTML5',
+    className: 'html5',
     iconUrl: '/images/logo_html.png',
     color: '#F4652E',
   },
   {
     name: 'CSS3',
+    className: 'css3',
     iconUrl: '/images/logo_css.png',
     color: '#3E9DD6',
   },
   {
     name: 'JavaScript',
+    className: 'javascript',
     iconUrl: '/images/logo_js.png',
     color: '#F0DC4E',
   },
   {
     name: 'JQuery',
+    className: 'jquery',
     iconUrl: '/images/logo_jquery.png',
     color: '#147DC2',
   },
   {
     name: 'Vue.js',
+    className: 'vuejs',
     iconUrl: '/images/logo_vue.png',
     color: '#41B880',
   },
   {
     name: 'TypeScript',
+    className: 'typescript',
     iconUrl: '/images/logo_ts.png',
     color: '#017ACD',
   },
   {
     name: 'React.js',
+    className: 'reactjs',
     iconUrl: '/images/logo_react.png',
     color: '#49B0FD',
   },
   {
     name: 'Next.js',
+    className: 'nextjs',
     iconUrl: '/images/logo_nextjs.png',
     color: '#000',
   },
   {
     name: 'XD',
+    className: 'xd',
     iconUrl: '/images/logo_xd.png',
     color: '#470136',
   },
   {
     name: 'Photoshop',
+    className: 'photoshop',
     iconUrl: '/images/logo_ps.png',
     color: '#001E36',
   },
   {
     name: 'GitHub',
-    iconUrl: '/images/logo_ps.png',
-    color: '#001E36',
+    className: 'github',
+    iconUrl: '/images/logo_github.png',
+    color: '#000',
   },
   {
     name: 'GitLab',
-    iconUrl: '/images/logo_ps.png',
-    color: '#001E36',
+    className: 'gitlab',
+    iconUrl: '/images/logo_gitlab.png',
+    color: '#E44326',
   },
 ]
 
@@ -180,15 +192,26 @@ function AbilityItem() {
   const listArr = useRef([]);
 
   const handleMouseEnter = (e, color) => {
-    gsap.to(e.currentTarget, {backgroundColor: "#fff", color: color, y: -24})
+    gsap.to(e.currentTarget, {
+      backgroundColor: "#fff", 
+      color: color, 
+      y: () => innerWidth > 420 ? -24 : -14
+    })
+    e.currentTarget.classList.add(styles.hovered);
   }
 
   const handleMouseLeave = (e) => {
-    gsap.to(e.currentTarget, {backgroundColor: "#000", color: "#fff", y: 0})
+    gsap.to(e.currentTarget, {
+      backgroundColor: "#000", 
+      color: "#fff", 
+      y: 0
+    })
+    e.currentTarget.classList.remove(styles.hovered);
   }
 
   return (
     abilityArr.map((item, i) => {
+      const classNm = item.className;
       return (
         <li
           onMouseEnter={(e) => {handleMouseEnter(e, item.color)}} 
@@ -201,6 +224,7 @@ function AbilityItem() {
               alt='' 
               fill
               className={styles.icon}
+              data-classname={classNm}
             />
             <em>{item.name}</em>
           </span>
