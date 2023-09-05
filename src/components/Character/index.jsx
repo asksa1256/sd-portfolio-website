@@ -48,7 +48,7 @@ export default function Character() {
     })
 
     /* cards animation */
-    if (window.innerWidth <= 420) return;
+    // if (width > 420) return;
     gsap.to(cardArr.current, {
       scrollTrigger: {
         trigger: cardArr.current,
@@ -66,16 +66,19 @@ export default function Character() {
       scrollTrigger: {
         trigger: cardsWrap.current,
         start: "top 250px",
-        end: "+=200%",
+        end: () => innerWidth > 420 ? "+=200%" : "+=500%",
         scrub: true,
         pin: true,
       }
     });
     cardsTl.to(cardArr.current[0], {
-      left: "18%"
+      left: () => innerWidth > 420 ? "18%" : "12%"
+    })
+    cardsTl.to(cardArr.current[1], {
+      left: () => innerWidth > 420 ? "0%" : "-70%"
     })
     cardsTl.to(cardArr.current[2], {
-      left: "-18%",
+      left: () => innerWidth > 420 ? "-18%" : "-152%"
     })
     cardsTl.to(cards.current, {
       rotateY: "90deg",

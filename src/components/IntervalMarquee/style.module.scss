@@ -1,3 +1,5 @@
+@import "../../app/styles/mixin";
+
 .marqueeContainer {
   position: relative;
   display: flex;
@@ -46,3 +48,32 @@
   }
 }
 
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .marqueeContainer {
+    .marquee {
+      padding: 12px 0;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      p {
+        font-size: 60px;
+        &:before {
+          content: '●';
+          font-size: 18px;
+          margin: 0 20px;
+        }
+      }
+      .arrow {
+        margin: 0 24px;
+        font-size: 60px;
+      }
+    }
+  }
+}

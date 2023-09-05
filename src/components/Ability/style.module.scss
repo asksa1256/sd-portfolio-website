@@ -1,3 +1,5 @@
+@import "../../app/styles/mixin";
+
 section.ability {
   margin-top: -250px;
   padding: 0;
@@ -48,9 +50,6 @@ section.ability {
       border-top: 1px solid #fff;
       transform: translateY(101%);
     }
-    &:nth-child(8) .icon {
-      filter: contrast(0);
-    }
     &.preventMouseEvent {
       position: absolute;
       width: 100%;
@@ -60,6 +59,9 @@ section.ability {
       z-index: 1;
       background: transparent;
     }
+    &.hovered .icon[data-classname="github"] {
+      filter: invert(0);
+    }
   }
   .icon {
     position: relative !important;
@@ -67,8 +69,51 @@ section.ability {
     height: auto !important;
     margin-right: 32px;
     vertical-align: middle;
+    &[data-classname="nextjs"] {
+      filter: contrast(0);
+    }
+    &[data-classname="github"] {
+      filter: invert(1);
+    }
   }
   em {
     vertical-align: middle;
+  }
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .ability {
+    .headingWrap {
+      height: 50px;
+      text-align: center;
+    }
+  }
+
+  .object {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .abilityList {
+    li {
+      margin-bottom: -14px;
+      font-size: 38px;
+      span {
+        padding-left: 16px;
+      }
+    }
+    .icon {
+      width: 28px !important;
+      margin-right: 12px;
+    }
   }
 }

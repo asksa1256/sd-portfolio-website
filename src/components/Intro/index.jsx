@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef, useEffect } from 'react'
 import {motion} from 'framer-motion'
+import useDimension from '@/useDimension'
 
 export default function Intro() {
   const backgroundImage = useRef(null);
@@ -105,11 +106,7 @@ export default function Intro() {
         ref={backgroundImage}
         className={styles.backgroundImage}
       >
-        <Image
-          src="/images/main_img1.jpg"
-          alt="background image"
-          fill
-        />
+        <div className={styles.img}></div>
         <motion.div
           ref={layer}
           className={styles.layer}>
@@ -125,7 +122,7 @@ export default function Intro() {
           initial={{opacity:0}}
         >
           <Image
-            src="/images/main_img2.png"
+            src="/images/main_img1-crop.jpg"
             alt="image"
             fill
           />

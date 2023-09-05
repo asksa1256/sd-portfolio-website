@@ -81,7 +81,7 @@ export default function Description() {
       <div className={styles.circleWrap}>
         <svg 
           className={styles.circle} 
-          viewBox="0 0 600 250"
+          viewBox="0 0 650 250"
           perserveaspectratio="xMinYMid"
         >
           <circle cx="110" cy="150" r="40" ref={circle}></circle>
@@ -89,7 +89,7 @@ export default function Description() {
         </svg>
         <svg 
           className={styles.ellipse} 
-          viewBox="0 0 600 250"
+          viewBox="0 0 650 250"
           perserveaspectratio="xMinYMid"
         >
           <ellipse cx="250" cy="150" rx="220" ry="75" ref={ellipse}></ellipse>
@@ -97,7 +97,7 @@ export default function Description() {
         </svg>
         <svg 
           className={`${styles.ellipse} ${styles.big}`} 
-          viewBox="0 0 600 250"
+          viewBox="0 0 650 250"
           perserveaspectratio="xMinYMid"
         >
           <ellipse cx="320" cy="150" rx="320" ry="100" ref={bigEllipse}></ellipse>

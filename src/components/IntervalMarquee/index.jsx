@@ -16,16 +16,16 @@ export default function IntervalMarquee() {
     requestAnimationFrame(marqueeAnimLeft);
     requestAnimationFrame(marqueeAnimRight);
 
-    gsap.to([marquee.current[0], marquee.current[1]], {
-      scrollTrigger: {
-        trigger: marquee.current[0],
-        start: "-=300px",
-        end: "+=300px",
-        scrub: true,
-        onUpdate: (e) => direction = e.direction * -1
-      },
-      x: "-=300px",
-    })
+    // gsap.to([marquee.current[0], marquee.current[1]], {
+    //   scrollTrigger: {
+    //     trigger: marquee.current[0],
+    //     start: "-=300px",
+    //     end: "+=300px",
+    //     scrub: true,
+    //     onUpdate: (e) => direction = e.direction * -1
+    //   },
+    //   x: "-=300px",
+    // })
   }, [])
 
   const marqueeAnimLeft = () => {
