@@ -58,6 +58,8 @@
 
 @include mobile {
   .marqueeContainer {
+    height: 350px;
+    margin-bottom: 0;
     .marquee {
       padding: 12px 0;
       border-top: 2px solid #fff;

@@ -118,7 +118,7 @@ export default function Character() {
                 <h4>도전</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Challenge</span>
-                  언제나 새로운 기술에 열린 마음으로, 실험과 시도를 멈추지 않습니다.
+                  언제나 새로운 기술에 열린 마음으로, 다양한 시도와 실험을 좋아합니다.
                 </p>
               </div>
             </Tilt>
@@ -128,10 +128,10 @@ export default function Character() {
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
-                <h4>조화</h4>
+                <h4>소통</h4>
                 <p className={styles.desc}>
-                  <span className={styles.en}>:Harmony</span>
-                  혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하기 위해 최선을 다합니다.
+                  <span className={styles.en}>:Communication</span>
+                  혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하는 것을 중요하게 생각하고 실천합니다.
                 </p>
               </div>
             </Tilt>
@@ -141,7 +141,7 @@ export default function Character() {
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
-                <h4>끈기</h4>
+                <h4>인내</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Patience</span>
                   구현하기로 한 것은 될 때까지 시도하고, 에러는 해결할 때까지 포기하지 않습니다.
