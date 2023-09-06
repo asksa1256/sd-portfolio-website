@@ -52,6 +52,7 @@ export default function Projects() {
     target: container,
     offset: ['start end', 'end start']
   })
+  
   const y = useTransform(scrollProgress.scrollYProgress, [0, 1], [0, height * 1.5]) 
   const y2 = useTransform(scrollProgress.scrollYProgress, [0, 1], [0, height * 1]) 
   const y3 = useTransform(scrollProgress.scrollYProgress, [0, 1], [0, height * 1.25])
@@ -78,13 +79,15 @@ export default function Projects() {
 }
 
 const Column = ({images,  y=0}) => {
+  const {width} = useDimension();
+
   return (
-    <motion.div style={{y}} className={styles.column}>
+    <motion.li style={width > 767 ? {y} : 0} className={styles.column}>
       {
         images.map((props, idx) => {
           return (
-            <li 
-              key={idx} 
+            <div 
+              key={idx}
               className={styles.imageContainer}
             >
               <Link className={styles.link} href={`/project/${props.id}`}></Link>
@@ -93,10 +96,10 @@ const Column = ({images,  y=0}) => {
                 alt="image"
                 fill
               />
-            </li>
+            </div>
           )
         })
       }
-    </motion.div>
+    </motion.li>
   )
 }

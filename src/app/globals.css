@@ -216,19 +216,6 @@ h3 {
   width: 50%;
 }
 
-.detailContent h4 {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.detailContent h5 {
-  font-family: 'Pretendard', sans-serif;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
 .detailContent .phrase {
   margin-bottom: 100px;
   font-size: 18px;
@@ -240,7 +227,6 @@ h3 {
 }
 
 .detailTitle {
-  margin-bottom: 12px;
   font-size: 72px;
   font-weight: 500;
   text-align: left;
@@ -249,8 +235,16 @@ h3 {
 
 .detailSubTitle {
   margin-bottom: 42px;
-  font-size: 42px;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -1px;
   opacity: 0.5;
+}
+
+.detailContent h5 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .detailList .left,
@@ -316,8 +310,6 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
 }
 
 .bg img {

@@ -1,3 +1,5 @@
+@import "../../app/styles/mixin";
+
 .projects {
   padding: 20px !important;
 }
@@ -71,5 +73,32 @@
   }
   &:hover:before {
     opacity: 1;
+  }
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .gallery {
+    flex-wrap: wrap;
+    height: auto;
+    .column {
+      height: auto;
+      .imageContainer {
+        height: calc(100vw - 54px);
+        max-height: initial;
+      }
+      &:nth-of-type(1), 
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        top: 0;
+      }
+    }
   }
 }

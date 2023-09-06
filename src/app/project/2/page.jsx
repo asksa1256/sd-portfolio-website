@@ -124,7 +124,7 @@ export default function Project02() {
             <li>
               <span className="title">기간</span>
               <div className="desc">
-                <span className="chip">퍼블리싱 14일</span>
+                <span className="chip">퍼블리싱 12일</span>
               </div>
             </li>
             <li>
