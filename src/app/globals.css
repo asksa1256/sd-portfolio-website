@@ -174,7 +174,7 @@ h3 {
 
 /* 상세 페이지 공통 스타일 */
 .projectDetail h2,
-.projectDetail h4 {
+.projectDetail h3 {
   font-family: 'Pretendard', sans-serif;
 }
 
@@ -217,7 +217,7 @@ h3 {
 }
 
 .detailContent .phrase {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -237,14 +237,22 @@ h3 {
   margin-bottom: 42px;
   font-size: 48px;
   font-weight: 400;
+  text-align: left;
   letter-spacing: -1px;
   opacity: 0.5;
 }
 
-.detailContent h5 {
-  margin-bottom: 20px;
-  font-size: 24px;
+.contentTitle {
+  margin-bottom: 30px;
+  font-size: 64px;
   font-weight: 700;
+}
+
+.contentSubTitle {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  opacity: .5;
 }
 
 .detailList .left,
@@ -350,12 +358,24 @@ h3 {
   margin-right: 40px;
 }
 
-.responsiveImages img {
-  width: 320px;
-  border-radius: 24px;
+.previewDesktop {
+  position: relative;
+  width: 1440px;
+  height: 700px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.responsiveImages img + img {
+.previewMobile {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.previewMobile + .previewMobile {
   margin-left: 24px;
 }
 
@@ -366,6 +386,9 @@ h3 {
 .pages .prev,
 .pages .next {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   height: 300px;
   transition: all .3s;
@@ -412,6 +435,82 @@ h3 {
 
   .tip {
     font-size: 14px;
+  }
+
+  .marquee p {
+    font-size: 50px;
+  }
+
+  .detailTitle {
+    font-size: 42px;
+    margin-bottom: 8px;
+  }
+
+  .detailSubTitle {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  .chip {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .chip + .chip {
+    margin-left: 4px;
+  }
+
+  .detailList {
+    flex-wrap: wrap;
+  }
+
+  .detailList .title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .detailList .phrase {
+    width: 100%;
+  }
+
+  .detailContent .left, 
+  .detailContent .right {
+    width: 100%;
+  }
+
+  .detailContent {
+    flex-wrap: wrap;
+    padding: 80px 16px;
+  }
+
+  .contentTitle {
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+
+  .contentSubTitle {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+
+  .detailContent .phrase {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .bg {
+    justify-content: flex-start;
+    padding: 0 16px;
+    overflow-x: auto;
+  }
+
+  .previewMobile + .previewMobile {
+    margin-left: 16px;
+  }
+
+  .previewDesktop {
+    width: 88%;
+    height: 20%;
   }
 }
 
