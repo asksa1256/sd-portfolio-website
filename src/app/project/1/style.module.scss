@@ -1,7 +1,26 @@
+@import "../../styles/mixin";
+
 .detailTop {
-  background-image: url(/images/hi5-1.png);
+  background-image: url(/images/hi5-1.jpg);
 }
 
-.bg1 {
+.bg1,
+.bg2,
+.bg3,
+.bg4 {
   background-image: url(/images/pj1-bg1.jpg);
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .detailTop {
+    background-image: url(/images/hi5-1-mb.png);
+  }
 }
