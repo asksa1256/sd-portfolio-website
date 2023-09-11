@@ -375,6 +375,8 @@ h3 {
   width: 1440px;
   height: 700px;
   border-radius: 8px;
+  aspect-ratio: 16/9;
+	pointer-events: none;
   overflow: hidden;
 }
 
@@ -388,11 +390,22 @@ h3 {
   width: 300px;
   height: 600px;
   border-radius: 24px;
+  aspect-ratio: 9/16;
+	pointer-events: none;
   overflow: hidden;
 }
 
 .previewMobile + .previewMobile {
   margin-left: 24px;
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  margin-left: -100%;
 }
 
 .pages {
