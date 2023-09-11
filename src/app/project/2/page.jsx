@@ -129,9 +129,7 @@ export default function Project02() {
             </li>
             <li>
               <span className="title">기여도</span>
-              <div className="desc">
-                <span className="progressTxt">100%</span>
-              </div>
+              <div className="desc">100%</div>
             </li>
             <li>
               <span className="title">기타사항</span>
@@ -139,7 +137,6 @@ export default function Project02() {
             </li>
           </ul>
           <div className="right">
-            <span className="title">요약</span>
             <div className="desc">
               <p className="phrase">
                 기존의 동일이엔티 홈페이지는 회사 소개와 자사 상품 목록이 나열된 페이지가 있는 단순한 형태였는데 디자인 리뉴얼을 진행하면서 카탈로그, 설치가이드, 인재채용 등 동일이엔티가 다루고 있는 상세 컨텐츠들이 추가되어 사이트가 더욱 다채로워졌습니다.
@@ -151,63 +148,66 @@ export default function Project02() {
           </div>
         </div>
       </div>
-      <figure className={`${styles.bg1} bg`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='동일이엔티 pc 페이지들 미리보기'
-          width='1024'
-          height='600'
-        />
-        {/* gif나 mp4파일로 보여주기.. */}
-      </figure>
+      <div className={`${styles.bg1} bg`}>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.png'
+            alt='동일이엔티 pc 페이지들 미리보기'
+            fill
+          />
+          {/* gif나 mp4파일로 보여주기.. */}
+        </figure>
+      </div>
       <div className="detailContent">
         <div className="left">
-          <h4>과제</h4>
+        <h5 className="contentSubTitle">생소했던 CMS(Content Management System)</h5>
         </div>
         <div className="right">
-          <h5>생소했던 CMS(Content Management System)</h5>
           <p className="phrase">
             동일이엔티 홈페이지는 그누보드로 제작되어 있었습니다. 그 상태에서 디자인 리뉴얼을 요청받았는데, 이전에 무료 CMS인 그누보드로 사이트 만드는 연습을 해보긴 했지만 실전에서는 처음이었습니다. 최대한 빨리 퍼블리싱 해달라는 요청에 CMS 솔루션 없이 HTML부터 만들 때와 비슷하게 반응형을 포함해서 10일로 작업 기간을 잡았지만, CMS의 파일 구조는 생각보다 훨씬 복잡했으며 전임자의 코드에서 수정을 해야 되는 부분도 있어서 기존 코드를 이해하는 것에도 시간이 필요했습니다.
           </p>
-          <h5>해결</h5>
           <p className="phrase">
             항상 기한 내에 작업을 마쳐왔지만 이번에는 그누보드의 복잡한 구조상 시간이 더 필요하다 판단해서 작업 셋째 날에 컨펌 담당자한테 기한을 4~5일 늘려달라고 요청했습니다. 마감까지 시간이 꽤 남은 시점에서 미리 말씀드렸기 때문에 별 문제 없이 클라이언트와도 상의하여 작업 기간을 늘리고, 기한에 맞춰서 작업을 성공적으로 마쳤습니다.
           </p>
         </div>
       </div>
-      <figure className={`${styles.bg2} bg`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='그누보드 적용된 동일이엔티 페이지들 영상'
-          width='1024'
-          height='600'
-        />
-        {/* 컴포넌트 개발 코드 + 드래그 앤 드랍 컴포넌트 주석 캡쳐 */}
-      </figure>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4>반응형</h4>
+      <div className={`${styles.bg2} bg`}>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.png'
+            alt='그누보드 적용된 동일이엔티 페이지들 영상'
+            fill
+          />
+          {/* 컴포넌트 개발 코드 + 드래그 앤 드랍 컴포넌트 주석 캡쳐 */}
+        </figure>
       </div>
-      <figure className={`${styles.bg3} bg responsiveImages`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='동일이엔티 반응형 이미지들'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='동일이엔티 반응형 이미지들'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='동일이엔티 반응형 이미지들'
-          width='414'
-          height='680'
-        />
+      <div className="detailContent justify-center align-center flex-column text-center">
+        <h4 className="contentTitle">Responsive</h4>
+      </div>
+      <div className={`${styles.bg3} bg`}>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.png'
+            alt='동일이엔티 반응형 이미지들'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.png'
+            alt='동일이엔티 반응형 이미지들'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.png'
+            alt='동일이엔티 반응형 이미지들'
+            fill
+          />
+        </figure>
         {/* 반응형 gif나 mp4 파일들... */}
-      </figure>
+      </div>
       <div className="pages">
         <Link
           className="prev"
