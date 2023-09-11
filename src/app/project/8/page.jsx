@@ -128,9 +128,7 @@ export default function Project08() {
             </li>
             <li>
               <span className="title">기여도</span>
-              <div className="desc">
-                <span className="progressTxt">80%</span>
-              </div>
+              <div className="desc">80%</div>
             </li>
             <li>
               <span className="title">기타사항</span>
@@ -140,7 +138,6 @@ export default function Project08() {
             </li>
           </ul>
           <div className="right">
-            <span className="title">요약</span>
             <div className="desc">
               <p className="phrase">
                 우듬지석란은 와인을 소개하는 우듬지, 차를 소개하는 석란으로 구분하여 상품을 큐레이팅 및 판매 중인 오프라인 다목적 공간입니다. 우듬지석란의 홈페이지도 두 컨셉이 구분됨에 따라 페이지를 나눠서 퍼블리싱 했으며, 각 페이지는 여러 섹션이 한 페이지에 담긴 원페이지 형식입니다. 랜딩 페이지에서 로딩 애니메이션 이후, 로고가 좌우로 흩어져 각 페이지로 안내하는 화면 흐름이 특징적입니다.
@@ -149,54 +146,56 @@ export default function Project08() {
           </div>
         </div>
       </div>
-      <figure className={`${styles.bg1} bg`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='우듬지석란 pc 미리보기'
-          width='1024'
-          height='600'
-        />
-        {/* gif나 mp4파일로 보여주기.. */}
-      </figure>
+      <div className={`${styles.bg1} bg`}>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='우듬지석란 pc 미리보기'
+            fill
+          />
+          {/* gif나 mp4파일로 보여주기.. */}
+        </figure>
+      </div>
       <div className="detailContent">
         <div className="left">
-          <h4>과제</h4>
+          <h5 className="contentSubTitle">미완성 시안</h5>
         </div>
         <div className="right">
-          <h5>미완성 상태의 시안</h5>
           <p className="phrase">
             입사 후 첫 프로젝트였는데 개발 중이던 프로젝트를 인수 받아 중간부터 작업하게 되었습니다. 그래서 이미 짜여져 있던 코드와 시안이 있었지만 모두 중간에 멈춘 상태였고 디자인부터 마무리를 해야 하는데 당시에 웹 디자이너도 없던 상황이었습니다.
           </p>
-          <h5>해결</h5>
           <p className="phrase">
             비록 웹 디자이너가 없었지만 어느 정도 만들어진 시안이 있었으므로, 컨셉을 유지하는 것에 집중해서 클라이언트의 확인을 받아가며 디자인 작업을 끝낸 뒤 퍼블리싱을 진행했습니다.
           </p>
         </div>
       </div>
       <div className="detailContent justify-center align-center flex-column text-center">
-        <h4>반응형</h4>
+        <h4 className="contentTitle">Responsive</h4>
       </div>
-      <figure className={`${styles.bg4} bg responsiveImages`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='우듬지석란 홈페이지 반응형 이미지'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='우듬지석란 홈페이지 반응형 이미지'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='우듬지석란 사용자앱 반응형 이미지'
-          width='414'
-          height='680'
-        />
-        {/* 반응형 gif나 mp4 파일들... */}
-      </figure>
+      <div className={`${styles.bg4} bg`}>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='우듬지석란 홈페이지 반응형'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='우듬지석란 홈페이지 반응형'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='우듬지석란 홈페이지 반응형'
+            fill
+          />
+        </figure>
+        {/* 반응형 gif나 mp4... */}
+      </div>
       <div className="pages">
         <Link
           className="prev"
@@ -205,7 +204,7 @@ export default function Project08() {
           Prev Project
         </Link>
         <Link
-          className="next disabled"
+          className="next"
           href={`/project/${currentProjectNum+1}`}
         >
           Next Project

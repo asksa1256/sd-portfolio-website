@@ -127,9 +127,7 @@ export default function Project01() {
             </li>
             <li>
               <span className="title">기여도</span>
-              <div className="desc">
-                <span className="progressTxt">70%</span>
-              </div>
+              <div className="desc">70%</div>
             </li>
             <li>
               <span className="title">기타사항</span>
@@ -160,7 +158,7 @@ export default function Project01() {
       </div>
       <div className="detailContent">
         <div className="left">
-          <h5 className="contentSubTitle">디자이너가 없었던 상황</h5>
+          <h5 className="contentSubTitle">퍼블리셔의 디자인</h5>
         </div>
         <div className="right">
           <p className="phrase">
@@ -205,38 +203,31 @@ export default function Project01() {
         </figure>
       </div>
       <div className="detailContent justify-center align-center flex-column text-center">
-        <div className="left">
-          <h4 className="contentTitle">Responsive</h4>
-        </div>
-        <div className="right">
-          <p className="phrase">
-            그룹웨어 Hi5의 반응형은 처음부터 사용하기로 협의했던 BootStrap 5버전과 CSS를 함께 사용했습니다. 반응형을 편하게 작업하려고 부트스트랩을 선택했는데 막상 작업해보니 그룹웨어의 모든 요소에 대응할 수는 없었고, HTML 코드도 너무 지저분해진다는 의견이 있어서 CSS의 media query로 더 섬세하게 breakpoint를 설정했습니다. 
-          </p>
-        </div>
+        <h4 className="contentTitle">Responsive</h4>
+        <p className="phrase">
+          그룹웨어 Hi5의 반응형은 처음부터 사용하기로 협의했던 BootStrap 5버전과 CSS를 함께 사용했습니다. 반응형을 편하게 작업하려고 부트스트랩을 선택했는데 막상 작업해보니 그룹웨어의 모든 요소에 대응할 수는 없었고, HTML 코드도 너무 지저분해진다는 의견이 있어서 CSS의 media query로 더 섬세하게 breakpoint를 설정했습니다. 
+        </p>
       </div>
       <div className={`${styles.bg4} bg`}>
         <figure className="previewMobile">
           <Image
             src='/images/hi5-1.jpg'
             alt='그룹웨어 Hi5 반응형 이미지들'
-            width='414'
-            height='680'
+            fill
           />
         </figure>
         <figure className="previewMobile">
           <Image
             src='/images/hi5-1.jpg'
             alt='그룹웨어 Hi5 반응형 이미지들'
-            width='414'
-            height='680'
+            fill
           />
         </figure>
         <figure className="previewMobile">
           <Image
             src='/images/hi5-1.jpg'
             alt='그룹웨어 Hi5 반응형 이미지들'
-            width='414'
-            height='680'
+            fill
           />
         </figure>
         {/* 반응형 gif나 mp4... */}

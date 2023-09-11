@@ -114,7 +114,7 @@ export default function Project04() {
             <li>
               <span className="title">고객사</span>
               <div className="desc">
-                ㈜테라에너지 (자사)
+                ㈜테라에너지 <small>(자사)</small>
               </div>
             </li>
             <li>
@@ -129,9 +129,7 @@ export default function Project04() {
             </li>
             <li>
               <span className="title">기여도</span>
-              <div className="desc">
-                <span className="progressTxt">100%</span>
-              </div>
+              <div className="desc">100%</div>
             </li>
             <li>
               <span className="title">기타사항</span>
@@ -149,7 +147,6 @@ export default function Project04() {
             </li>
           </ul>
           <div className="right">
-            <span className="title">요약</span>
             <div className="desc">
               <p className="phrase">
                 테라에너지는 혁신을 추구하는 컨셉에 맞춰 매년 홈페이지를 리뉴얼 해왔습니다. 그중 2021년, 2022년 버전을 작업했으며 2022년 버전에서 GSAP.js 라이브러리를 이용한 재미있는 시도를 했습니다. 원페이지 형식의 간단한 사이트로, GSAP 라이브러리를 이용한 인터랙션이 특징적입니다.<br/>
@@ -159,68 +156,72 @@ export default function Project04() {
           </div>
         </div>
       </div>
-      <figure className={`${styles.bg1} bg`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='테라에너지 pc 홈페이지 미리보기'
-          width='1024'
-          height='600'
-        />
-        {/* gif나 mp4파일로 보여주기.. */}
-      </figure>
+      <div className={`${styles.bg1} bg`}>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.png'
+            alt='테라에너지 pc 홈페이지 미리보기'
+            fill
+          />
+          {/* gif나 mp4파일로 보여주기.. */}
+        </figure>
+      </div>
       <div className="detailContent">
         <div className="left">
-          <h4>과제</h4>
+          <h5 className="contentSubTitle">GSAP.js</h5>
         </div>
         <div className="right">
-          <h5>GSAP.js를 사용한 인터랙션</h5>
           <p className="phrase">
             깔끔하고 세련된 리뉴얼 디자인이 HTML, CSS로만 작업하니까 너무 단조로운 느낌이 들어서 인터랙션을 추가하자는 아이디어를 담당 웹 디자이너에 제시했습니다. 그러자 떠오르는 대로 작업해도 된다며 수락했고, 평소 GSAP 라이브러리 사용을 연습하고 있던 저로서는 처음으로 실전에 적용해볼 기회를 얻게 되었습니다. 하지만 반응형이나 스크롤 인터랙션의 시작과 끝 지점을 설정하는 등 디테일한 부분에서 GSAP에 대한 깊은 이해가 요구되었습니다.
           </p>
-          <h5>해결</h5>
           <p className="phrase">
             GSAP은 공식 문서 외에도 사용자 커뮤니티가 활성화된 편이어서 조금만 검색해봐도 관련 예시나 에러 해결 방법들이 나왔습니다. 완전히 똑같지는 않아도 비슷한 에러 사례들을 참고해서 라이브러리 사용 도중에 막히는 부분들을 차근차근 해결할 수 있었습니다.
           </p>
         </div>
       </div>
-      <figure className={`${styles.bg2} bg`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='테라에너지 홈페이지 GSAP.js 적용 애니메이션'
-          width='1024'
-          height='600'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='GSAP.js 코드 이미지'
-          width='1024'
-          height='600'
-        />
-      </figure>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4>반응형</h4>
+      <div className={`${styles.bg2} bg`}>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.png'
+            alt='테라에너지 홈페이지 GSAP.js 적용 애니메이션'
+            fill
+          />
+        </figure>
+        <figure className="previewDesktop">
+          <Image
+            src='/images/hi5-1.png'
+            alt='GSAP.js 코드 이미지'
+            fill
+          />
+        </figure>
       </div>
-      <figure className={`${styles.bg4} bg responsiveImages`}>
-        <Image
-          src='/images/hi5-1.png'
-          alt='테라에너지 반응형 이미지들'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='테라에너지 반응형 이미지들'
-          width='414'
-          height='680'
-        />
-        <Image
-          src='/images/hi5-1.png'
-          alt='테라에너지 반응형 이미지들'
-          width='414'
-          height='680'
-        />
-        {/* 반응형 gif나 mp4 파일들... */}
-      </figure>
+      <div className="detailContent justify-center align-center flex-column text-center">
+        <h4 className="contentTitle">Responsive</h4>
+      </div>
+      <div className={`${styles.bg4} bg`}>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='테라에너지 반응형 이미지들'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='테라에너지 반응형 이미지들'
+            fill
+          />
+        </figure>
+        <figure className="previewMobile">
+          <Image
+            src='/images/hi5-1.jpg'
+            alt='테라에너지 반응형 이미지들'
+            fill
+          />
+        </figure>
+        {/* 반응형 gif나 mp4... */}
+      </div>
       <div className="pages">
         <Link
           className="prev"
