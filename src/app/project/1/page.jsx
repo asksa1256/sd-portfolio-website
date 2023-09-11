@@ -122,7 +122,7 @@ export default function Project01() {
               <span className="title">기간</span>
               <div className="desc">
                 <span className="chip">디자인 10일</span>
-                <span className="chip">퍼블리싱 30일</span>
+                <span className="chip">퍼블리싱 15일</span>
               </div>
             </li>
             <li>
@@ -147,14 +147,9 @@ export default function Project01() {
         </div>
       </div>
       <div className={`${styles.bg1} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 대시보드 미리보기'
-            fill
-          />
-          {/* gif나 mp4파일로 보여주기.. */}
-        </figure>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/HQ2FBwXsc2c?si=NGJyb6Lx0tnKniIo&autoplay=1&mute=1&controls=0&loop=1&playlist=HQ2FBwXsc2c&playsinline=1&modestbranding=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
+        </div>
       </div>
       <div className="detailContent">
         <div className="left">
@@ -165,15 +160,15 @@ export default function Project01() {
             프로젝트를 처음 시작했을 때, 디자이너가 따로 배정되지 않아서 프로젝트 팀의 퍼블리셔였던 제가 디자인도 함께 해야 했습니다. 혼자서 취미 삼아 디자인을 해본 적은 있지만 요청에 의해 시작한 디자인은 처음이라서 어디서부터 시작해야 될 지 막막했습니다.
           </p>
           <p className="phrase">
-            하지만 다른 팀의 웹 디자이너와 상의하여 피드백을 자주 받은 덕분에 디자인을 해낼 수 있었습니다. 잘 만들어진 그룹웨어 예시들을 레퍼런스 삼는 것도 많은 도움이 되었습니다. 또한 테마 변경 기능을 작업할 때 프론트엔드 개발자들도 가이드만 보고 스타일을 스스로 변경할 수 있도록 스타일 가이드를 작성해봤는데, 그 과정에서 스타일 체계가 잡혀서 스타일 가이드는 디자이너와 개발자 모두를 위해 필요하다는 걸 깨달을 수 있는 좋은 경험이었습니다.
+            하지만 타 직무의 웹 디자이너와 상의하여 피드백을 자주 받은 덕분에 그룹웨어 디자인을 해낼 수 있었습니다. 잘 만들어진 예시들을 레퍼런스 삼는 것도 많은 도움이 되었으며, 그룹웨어에 테마 변경 기능을 추가할 때 UI 컴포넌트 및 클래스를 재사용하기 수월하도록 스타일 가이드를 작성해본 것도 좋은 경험이었습니다. 
           </p>
         </div>
       </div>
       <div className={`${styles.bg2} bg`}>
         <figure className="previewDesktop">
           <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 스타일 가이드 작성 예시'
+            src='/images/hi5-2.png'
+            alt='그룹웨어 Hi5 디자인'
             fill
           />
           {/* hi5 스타일 가이드 예시 캡쳐본 */}
@@ -204,9 +199,6 @@ export default function Project01() {
       </div>
       <div className="detailContent justify-center align-center flex-column text-center">
         <h4 className="contentTitle">Responsive</h4>
-        <p className="phrase">
-          그룹웨어 Hi5의 반응형은 처음부터 사용하기로 협의했던 BootStrap 5버전과 CSS를 함께 사용했습니다. 반응형을 편하게 작업하려고 부트스트랩을 선택했는데 막상 작업해보니 그룹웨어의 모든 요소에 대응할 수는 없었고, HTML 코드도 너무 지저분해진다는 의견이 있어서 CSS의 media query로 더 섬세하게 breakpoint를 설정했습니다. 
-        </p>
       </div>
       <div className={`${styles.bg4} bg`}>
         <figure className="previewMobile">

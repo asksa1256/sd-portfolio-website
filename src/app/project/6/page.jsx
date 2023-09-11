@@ -109,6 +109,7 @@ export default function Project06() {
               <span className="title">툴</span>
               <div className="desc">
                 <span className="chip">Visual Studio Code</span>
+                <span className="chip">Figma</span>
               </div>
             </li>
             <li>

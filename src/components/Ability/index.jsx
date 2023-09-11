@@ -55,16 +55,22 @@ const abilityArr = [
     color: '#000',
   },
   {
-    name: 'XD',
+    name: 'Adobe XD',
     className: 'xd',
     iconUrl: '/images/logo_xd.png',
-    color: '#470136',
+    color: '#FF61F3',
+  },
+  {
+    name: 'Figma',
+    className: 'figma',
+    iconUrl: '/images/logo_figma.png',
+    color: '#A358FF',
   },
   {
     name: 'Photoshop',
     className: 'photoshop',
     iconUrl: '/images/logo_ps.png',
-    color: '#001E36',
+    color: '#2EA5FF',
   },
   {
     name: 'GitHub',
