@@ -5,6 +5,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import { EffectFade, Autoplay } from 'swiper/modules';
 
 export default function Project01() {
   const firstText = useRef(null);
@@ -12,6 +16,13 @@ export default function Project01() {
   const marquee = useRef(null);
   const layer = useRef(null);
   const currentProjectNum = 1;
+  const settings = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+  };
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
@@ -160,7 +171,7 @@ export default function Project01() {
             프로젝트를 처음 시작했을 때, 디자이너가 따로 배정되지 않아서 프로젝트 팀의 퍼블리셔였던 제가 디자인도 함께 해야 했습니다. 혼자서 취미 삼아 디자인을 해본 적은 있지만 요청에 의해 시작한 디자인은 처음이라서 어디서부터 시작해야 될 지 막막했습니다.
           </p>
           <p className="phrase">
-            하지만 타 직무의 웹 디자이너와 상의하여 피드백을 자주 받은 덕분에 그룹웨어 디자인을 해낼 수 있었습니다. 잘 만들어진 예시들을 레퍼런스 삼는 것도 많은 도움이 되었으며, 그룹웨어에 테마 변경 기능을 추가할 때 UI 컴포넌트 및 클래스를 재사용하기 수월하도록 스타일 가이드를 작성해본 것도 좋은 경험이었습니다. 
+            다행히도 타 직무의 웹 디자이너와 상의하여 피드백을 자주 받아서 그룹웨어 디자인을 마칠 수 있었고, 잘 만들어진 예시들을 레퍼런스 삼는 것도 도움이 되었습니다. 그룹웨어에 테마 변경 기능을 추가할 때 UI 컴포넌트 및 클래스를 재사용하기 수월하도록 스타일 가이드를 작성해본 것도 좋은 경험이었습니다.
           </p>
         </div>
       </div>
@@ -168,39 +179,89 @@ export default function Project01() {
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-2.png'
-            alt='그룹웨어 Hi5 디자인'
+            alt='그룹웨어 Hi5 XD 작업 화면'
             fill
           />
-          {/* hi5 스타일 가이드 예시 캡쳐본 */}
         </figure>
       </div>
       <div className="detailContent">
         <div className="left">
-          <h5 className="contentSubTitle">새로운 작동 원리</h5>
+          <h5 className="contentSubTitle">Vue.js + TypeScript</h5>
         </div>
         <div className="right">
           <p className="phrase">
-            익숙하게 작업해왔던 HTML5, CSS3, JavaScript, JQuery와 달리 Hi5는 Vue.js와 TypeScript로 개발 언어가 결정되었습니다. TypeScript는 JavaScript에서 약간 변형된 정도라고 생각되어 큰 어려움 없이 적응할 수 있었지만, Vue.js는 작업 환경 설정부터 문법까지 저의 기존 작업 방식과 많이 달랐으며 컴포넌트 위주의 화면 개발에 대한 사전 지식이 필요했습니다.
+            익숙하게 작업해왔던 HTML5, CSS3, JavaScript, JQuery와 달리 Hi5는 Vue.js와 TypeScript를 기반으로 한 프로젝트였습니다. TypeScript는 JavaScript에서 약간 변형된 정도라고 생각되어 큰 어려움 없이 적응할 수 있었지만, Vue.js는 작업 환경 설정부터 문법까지 저의 기존 작업 방식과 많이 달랐으며 컴포넌트 위주의 화면 개발에 대한 사전 지식이 필요했습니다.
           </p>
           <p className="phrase">
-            무작정 작업된 코드를 이용해서 작업하는 것보다는 Vue.js의 작동 원리를 알고 해야 더 복잡한 컴포넌트도 만들 수 있고, 컴포넌트 간 연동도 올바르게 할 수 있을 것 같아서 프로젝트 투입 전에 일주일 동안 Vue.js에 관해 조사했습니다. Vue.js에서의 컴포넌트 작동 원리를 이해하는 데에 시간이 조금 걸렸지만 한번 이해하고 나니 컴포넌트 간에 데이터를 주고 받을 때도 큰 어려움 없이 해낼 수 있었고, 드래그 앤 드랍 등 다른 팀원이 만들어놓은 컴포넌트의 기능을 내 컴포넌트에 옮겨 붙일 때도 수월하게 작업이 가능했습니다. 이때 저는 <b>컴포넌트 형태가 얼마나 프론트엔드 협업 개발에 유용한지,</b> 그리고 <b>주석의 중요성</b>에 대해 깨달을 수 있었습니다.
+            무작정 작업된 코드를 이용해서 작업하는 것보다는 Vue.js의 작동 원리를 알고 해야 더 복잡한 컴포넌트도 만들 수 있고, 컴포넌트 간 연동도 올바르게 할 수 있을 것 같아서 프로젝트 투입 전에 일주일 동안 Vue.js에 관해 조사했습니다. 
+          </p>
+          <p className="phrase">
+            Vue.js에서의 컴포넌트 작동 원리를 이해하는 데에 시간이 조금 걸렸지만 계속 작업을 해보면서 그 구조에 점점 익숙해졌고, 컴포넌트 안에 다른 컴포넌트를 넣어 기능을 추가하는 것도 그다지 어렵지 않았습니다. 이를 통해 컴포넌트 구조가 얼마나 협업에 유용한지 알 수 있었고, 협업을 하면서 간과하기 쉬운 주석의 중요성도 다시 떠오르는 등 여러모로 많이 배우게 된 프로젝트였습니다.
           </p>
         </div>
       </div>
       <div className={`${styles.bg3} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 컴포넌트 개발 코드 일부'
-            fill
-          />
-          {/* 컴포넌트 개발 코드 + 드래그 앤 드랍 컴포넌트 주석 캡쳐 */}
-        </figure>
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          effect={'fade'}
+          fadeEffect={{crossFade: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+          modules={[EffectFade, Autoplay]}
+          className="slider"
+        >
+          <SwiperSlide>
+            <figure className="imgWrap">
+              <Image
+                src='/images/hi5-3.jpg'
+                alt='대시보드 도넛 차트 코드 일부'
+                fill
+              />
+            </figure>
+          </SwiperSlide>
+          <SwiperSlide>
+            <figure className="imgWrap">
+              <Image
+                src='/images/hi5-4.jpg'
+                alt='v-for를 사용한 테이블 코드 일부'
+                fill
+              />
+            </figure>
+          </SwiperSlide>
+          <SwiperSlide>
+            <figure className="imgWrap">
+              <Image
+                src='/images/hi5-5.jpg'
+                alt='v-show를 사용한 알림 더보기 코드 일부'
+                fill
+              />
+            </figure>
+          </SwiperSlide>
+          <SwiperSlide>
+            <figure className="imgWrap">
+              <Image
+                src='/images/hi5-6.jpg'
+                alt='모달 컴포넌트 코드 일부'
+                fill
+              />
+            </figure>
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div className="detailContent justify-center align-center flex-column text-center">
         <h4 className="contentTitle">Responsive</h4>
       </div>
       <div className={`${styles.bg4} bg`}>
+        <div className="previewMobile">
+          <iframe 
+          className="videoIframe"
+          src="https://youtube.com/embed/hL4rCQ_fgNM?si=fUwtwnlpXPkkbqbQ&autoplay=1&mute=1&controls=0&loop=1&playlist=hL4rCQ_fgNM&vq=hd720"
+          title="Groupware Hi5 responsive preview video - dashboard"
+          frameBorder="0"></iframe>
+        </div>
         <figure className="previewMobile">
           <Image
             src='/images/hi5-1.jpg'
@@ -215,14 +276,6 @@ export default function Project01() {
             fill
           />
         </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 반응형 이미지들'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4... */}
       </div>
       <div className="pages">
         <Link
