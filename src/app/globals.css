@@ -253,8 +253,9 @@ h3 {
 
 .contentSubTitle {
   display: inline-block;
+  padding-bottom: 4px;
   font-family: 'Pretendard', sans-serif;
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -1px;
@@ -366,6 +367,16 @@ h3 {
   background-attachment: fixed;
 }
 
+.bg:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.75);
+  }
+
 .bg img {
   object-fit: cover;
 }
@@ -384,14 +395,20 @@ h3 {
   margin-top: 24px;
 }
 
+.responsiveWrap {
+  display: flex;
+}
+
+.responsiveWrap > div {
+  width: 50%;
+}
+
 .previewMobile {
   position: relative;
   flex-shrink: 0;
   width: 280px;
   height: 600px;
   border-radius: 24px;
-  aspect-ratio: 9/16;
-	pointer-events: none;
   overflow: hidden;
 }
 
@@ -408,8 +425,13 @@ h3 {
   margin-left: -100%;
 }
 
+.swiper-slide {
+  text-align: center;
+}
+
 .swiper-slide .imgWrap {
   position: relative;
+  display: inline-block;
   width: 600px;
   height: 600px;
   margin: 0 auto;
@@ -417,7 +439,26 @@ h3 {
 
 .swiper-slide .imgWrap img {
   object-fit: contain;
-} 
+}
+
+.swiper-slide .imgWrap.wide {
+  width: 1280px;
+}
+
+.swiper-slide .text {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 5%;
+  bottom: 0;
+  padding: 24px;
+  min-width: 200px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  opacity: .75;
+}
 
 .pages {
   display: flex;
@@ -425,23 +466,64 @@ h3 {
 
 .pages .prev,
 .pages .next {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
   height: 300px;
+  font-size: 24px;
   transition: all .3s;
+}
+
+.pages a:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .25;
+  transition: .3s;
+  z-index: -1;
 }
 
 .pages a:hover {
   flex: 1.5;
-  background: rgba(255,255,255,.5);
+}
+.pages a:hover:before {
+  opacity: .75;
 }
 
 .pages a.disabled {
   pointer-events: none;
   color: gray;
+}
+
+.pages a .text {
+  mix-blend-mode: difference;
+}
+
+.pages a .arrow {
+  transition: .3s;
+  mix-blend-mode: difference;
+}
+
+.pages a.prev:hover .arrow {
+  transform: translateX(-15px);
+}
+
+.pages a.next:hover .arrow {
+  transform: translateX(15px);
+}
+
+.prev .arrow {
+  margin-right: 16px;
+}
+
+.next .arrow {
+  margin-left: 16px;
 }
 
 /*************************** 

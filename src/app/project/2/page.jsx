@@ -148,15 +148,10 @@ export default function Project02() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='동일이엔티 pc 페이지들 미리보기'
-            fill
-          />
-          {/* gif나 mp4파일로 보여주기.. */}
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/mkrOtfUn4c4?autoplay=1&mute=1&controls=0&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0" title="Dong Il ent. preview video" frameBorder="0"></iframe>
+        </div>
       </div>
       <div className="detailContent">
         <div className="left">
@@ -164,62 +159,46 @@ export default function Project02() {
         </div>
         <div className="right">
           <p className="phrase">
-            동일이엔티 홈페이지는 그누보드로 제작되어 있었습니다. 그 상태에서 디자인 리뉴얼을 요청받았는데, 이전에 무료 CMS인 그누보드로 사이트 만드는 연습을 해보긴 했지만 실전에서는 처음이었습니다. 최대한 빨리 퍼블리싱 해달라는 요청에 CMS 솔루션 없이 HTML부터 만들 때와 비슷하게 반응형을 포함해서 10일로 작업 기간을 잡았지만, CMS의 파일 구조는 생각보다 훨씬 복잡했으며 전임자의 코드에서 수정을 해야 되는 부분도 있어서 기존 코드를 이해하는 것에도 시간이 필요했습니다.
+            동일이엔티 홈페이지는 그누보드로 제작되어 있었습니다. 그 상태에서 디자인 리뉴얼을 요청받았는데, 이전에 무료 CMS인 그누보드로 사이트 만드는 연습을 해보긴 했지만 실전에서는 처음이었습니다. 최대한 빨리 퍼블리싱 해달라는 요청에 CMS 솔루션 없이 HTML부터 만들 때와 비슷하게 반응형을 포함해서 10일로 작업 기간을 잡았지만, CMS의 파일 구조는 생각보다 더 복잡했으며 기존 코드에서 수정을 해야 되는 부분도 있어서 코드를 이해하는 것에도 시간이 필요했습니다.
           </p>
           <p className="phrase">
             항상 기한 내에 작업을 마쳐왔지만 이번에는 그누보드의 복잡한 구조상 시간이 더 필요하다 판단해서 작업 셋째 날에 컨펌 담당자한테 기한을 4~5일 늘려달라고 요청했습니다. 마감까지 시간이 꽤 남은 시점에서 미리 말씀드렸기 때문에 별 문제 없이 클라이언트와도 상의하여 작업 기간을 늘리고, 기한에 맞춰서 작업을 성공적으로 마쳤습니다.
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='그누보드 적용된 동일이엔티 페이지들 영상'
-            fill
-          />
-          {/* 컴포넌트 개발 코드 + 드래그 앤 드랍 컴포넌트 주석 캡쳐 */}
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/Zi9gcllzYvI?autoplay=1&mute=1&controls=0&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0" title="Dong Il ent. preview video 2" frameBorder="0"></iframe>
+        </div>
       </div>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4 className="contentTitle">Responsive</h4>
-      </div>
-      <div className={`${styles.bg3} bg`}>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='동일이엔티 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='동일이엔티 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='동일이엔티 반응형 이미지들'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4 파일들... */}
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/iewyAT26t50?&controls=0&loop=1&playlist=iewyAT26t50&vq=hd720&playsinline=1&rel=0"
+            title="Dong Il ent. mobile preview video"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link
-          className="prev"
+          className={`prev ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>

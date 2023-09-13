@@ -4,11 +4,13 @@
   background-image: url(/images/hi5-1.jpg);
 }
 
-.bg1,
-.bg2,
-.bg3,
-.bg4 {
-  background-image: url(/images/pj1-bg1.jpg);
+.bg {
+  background-image: url(/images/hi5-bg.jpg);
+}
+
+.next:before {
+  background: url(/images/btn-bg-dient.png) no-repeat center;
+  background-size: cover;
 }
 
 /*************************** 
@@ -21,6 +23,6 @@
 
 @include mobile {
   .detailTop {
-    background-image: url(/images/hi5-1-mb.png);
+    background-image: url(/images/hi5-1-mb.png) !important;
   }
 }
