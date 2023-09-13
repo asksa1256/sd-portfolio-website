@@ -5,10 +5,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import { EffectFade, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import { EffectFade, Autoplay } from 'swiper/modules'
 
 export default function Project01() {
   const firstText = useRef(null);
@@ -16,13 +16,6 @@ export default function Project01() {
   const marquee = useRef(null);
   const layer = useRef(null);
   const currentProjectNum = 1;
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-  };
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
@@ -157,9 +150,9 @@ export default function Project01() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
+      <div className={`${styles.bg} bg`}>
         <div className="previewDesktop">
-          <iframe className="videoIframe" src="https://www.youtube.com/embed/HQ2FBwXsc2c?si=NGJyb6Lx0tnKniIo&autoplay=1&mute=1&controls=0&loop=1&playlist=HQ2FBwXsc2c&playsinline=1&modestbranding=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&autoplay=1&mute=1&controls=0&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
         </div>
       </div>
       <div className="detailContent">
@@ -175,7 +168,7 @@ export default function Project01() {
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-2.png'
@@ -200,7 +193,7 @@ export default function Project01() {
           </p>
         </div>
       </div>
-      <div className={`${styles.bg3} bg`}>
+      <div className={`${styles.bg} bg`}>
         <Swiper
           slidesPerView={1}
           loop={true}
@@ -214,81 +207,75 @@ export default function Project01() {
           className="slider"
         >
           <SwiperSlide>
-            <figure className="imgWrap">
+            <div className="imgWrap">
               <Image
                 src='/images/hi5-3.jpg'
-                alt='대시보드 도넛 차트 코드 일부'
+                alt=''
                 fill
               />
-            </figure>
+              <p className="text">대시보드 도넛 차트 코드</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <figure className="imgWrap">
+            <div className="imgWrap">
               <Image
                 src='/images/hi5-4.jpg'
-                alt='v-for를 사용한 테이블 코드 일부'
+                alt=''
                 fill
               />
-            </figure>
+              <p className="text">v-for를 사용한 테이블 코드</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <figure className="imgWrap">
+            <div className="imgWrap">
               <Image
                 src='/images/hi5-5.jpg'
-                alt='v-show를 사용한 알림 더보기 코드 일부'
+                alt=''
                 fill
               />
-            </figure>
+              <p className="text">v-show를 사용한 알림 더보기</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <figure className="imgWrap">
+            <div className="imgWrap">
               <Image
                 src='/images/hi5-6.jpg'
-                alt='모달 컴포넌트 코드 일부'
+                alt=''
                 fill
               />
-            </figure>
+              <p className="text">모달 컴포넌트</p>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4 className="contentTitle">Responsive</h4>
-      </div>
-      <div className={`${styles.bg4} bg`}>
-        <div className="previewMobile">
-          <iframe 
-          className="videoIframe"
-          src="https://youtube.com/embed/hL4rCQ_fgNM?si=fUwtwnlpXPkkbqbQ&autoplay=1&mute=1&controls=0&loop=1&playlist=hL4rCQ_fgNM&vq=hd720"
-          title="Groupware Hi5 responsive preview video - dashboard"
-          frameBorder="0"></iframe>
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
         </div>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='그룹웨어 Hi5 반응형 이미지들'
-            fill
-          />
-        </figure>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/pD5YUcStZ30?si=QHu7lOgLW2QaXrWT&controls=0&loop=1&playlist=pD5YUcStZ30&vq=hd720&playsinline=1&rel=0"
+            title="Groupware Hi5 responsive preview video - dashboard"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link
-          className="prev disabled"
+          className={`prev disabled ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>

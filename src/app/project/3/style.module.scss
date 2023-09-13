@@ -1,3 +1,17 @@
 .detailTop {
   background-image: url(/images/bis-1.png);
 }
+
+.bg {
+  background-image: url(/images/bis-bg.jpg);
+}
+
+.prev:before {
+  background: url(/images/btn-bg-dient.png) no-repeat center;
+  background-size: cover;
+}
+
+.next:before {
+  background: url(/images/btn-bg-te.jpg) no-repeat center;
+  background-size: cover;
+}

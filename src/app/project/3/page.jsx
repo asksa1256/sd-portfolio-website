@@ -5,6 +5,13 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { EffectFade, Autoplay } from 'swiper/modules'
+import { Navigation, Pagination } from "swiper";
 
 export default function Project03() {
   const firstText = useRef(null);
@@ -137,21 +144,16 @@ export default function Project03() {
           <div className="right">
             <div className="desc">
               <p className="phrase">
-                그룹웨어 Hi5 개발 중에 클라이언트의 비즈니스 분석 솔루션 추가 요청이 있어서 비스무스를 개발하게 되었습니다. 비스무스는 비즈니스 니즈에 따라 시각화된 데이터를 보고 조건에 따라 검색할 수 있는 대시보드 솔루션이며, 데이터 시각화를 위해 사용된 차트는 Apache ECharts 라이브러리로 제작했습니다. 디자인은 따로 정해진 시안 없이 그룹웨어 Hi5와 동일한 디자인 컨셉으로 진행하기로 해서 디자인과 퍼블리싱을 모두 담당했습니다.
+                비스무스는 비즈니스 니즈에 따라 시각화된 데이터를 보고 조건에 따라 검색할 수 있는 대시보드 솔루션이며, 데이터 시각화를 위해 사용된 차트는 Apache ECharts 라이브러리로 제작했습니다. 디자인은 따로 정해진 시안 없이 그룹웨어 Hi5와 동일한 디자인 컨셉으로 진행하기로 해서 디자인과 퍼블리싱을 모두 담당했습니다.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='비스무스 pc 페이지들 미리보기'
-            fill
-          />
-          {/* gif나 mp4파일로 보여주기.. */}
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/VNKbcab5bp4?autoplay=1&mute=1&controls=0&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0" title="Bismuth preview video" frameBorder="0"></iframe>
+        </div>
       </div>
       <div className="detailContent">
         <div className="left">
@@ -166,21 +168,40 @@ export default function Project03() {
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='eChart.js 차트 이미지'
-            fill
-          />
-        </figure>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='eChart.js 코드 이미지'
-            fill
-          />
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          effect={'fade'}
+          fadeEffect={{crossFade: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+          modules={[EffectFade, Autoplay]}
+          className="slider"
+        >
+          <SwiperSlide>
+            <div className="imgWrap">
+              <Image
+                src='/images/bis-2.jpg'
+                alt=''
+                fill
+              />
+              <p className="text">물가 상승률 차트</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/bis-3.jpg'
+                alt=''
+                fill
+              />
+              <p className="text">물가 상승률 차트 코드</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div className="detailContent">
         <div className="left">
@@ -195,61 +216,68 @@ export default function Project03() {
           </p>
         </div>
       </div>
-      <div className={`${styles.bg3} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='숫자 카운트 애니메이션'
-            fill
-          />
-        </figure>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='숫자 카운트 CSS, JavaScript 코드'
-            fill
-          />
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <Swiper
+          breakpoints={{
+            576: {
+              slidesPerView: 1,
+            },
+            1280: {
+              slidesPerView: 2,
+            },
+          }}
+          className="slider"
+        >
+          <SwiperSlide>
+            <div className="imgWrap">
+              <Image
+                src='/images/bis-cnt-cd2.jpg'
+                alt=''
+                fill
+              />
+              <p className="text">숫자 카운트 HTML</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap">
+              <Image
+                src='/images/bis-cnt-cd.jpg'
+                alt=''
+                fill
+              />
+              <p className="text">숫자 카운트 JavaScript</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4 className="contentTitle">Responsive</h4>
-      </div>
-      <div className={`${styles.bg4} bg`}>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='비스무스 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='비스무스 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='비스무스 반응형 이미지들'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4 파일들... */}
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/vIZegSfQztU?&controls=0&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
+            title="Bismuth mobile preview video"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link
-          className="prev"
+          className={`prev ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>

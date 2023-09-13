@@ -156,15 +156,10 @@ export default function Project04() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 pc 홈페이지 미리보기'
-            fill
-          />
-          {/* gif나 mp4파일로 보여주기.. */}
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/dbZZJq-tayI?autoplay=1&mute=1&controls=0&loop=1&playlist=dbZZJq-tayI&playsinline=1&rel=0" title="Teraenergy website preview video" frameBorder="0"></iframe>
+        </div>
       </div>
       <div className="detailContent">
         <div className="left">
@@ -179,14 +174,7 @@ export default function Project04() {
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 홈페이지 GSAP.js 적용 애니메이션'
-            fill
-          />
-        </figure>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-1.png'
@@ -198,7 +186,7 @@ export default function Project04() {
       <div className="detailContent justify-center align-center flex-column text-center">
         <h4 className="contentTitle">Responsive</h4>
       </div>
-      <div className={`${styles.bg4} bg`}>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewMobile">
           <Image
             src='/images/hi5-1.jpg'
@@ -224,16 +212,18 @@ export default function Project04() {
       </div>
       <div className="pages">
         <Link
-          className="prev"
+          className={`prev ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>
