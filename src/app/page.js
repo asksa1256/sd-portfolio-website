@@ -7,6 +7,7 @@ import Projects from '@/components/Projects'
 import Ability from '@/components/Ability'
 import Character from '@/components/Character'
 import IntervalMarquee from '@/components/IntervalMarquee'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <Ability/>
       <IntervalMarquee/>
       <Projects/>
+      <Contact/>
       <Footer/>
     </main>
   )
