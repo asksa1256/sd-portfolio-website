@@ -5,10 +5,15 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import { EffectFade, Autoplay } from 'swiper/modules'
 
 export default function Project06() {
   const firstText = useRef(null);
   const secondText = useRef(null);
+  const thirdText = useRef(null);
   const marquee = useRef(null);
   const layer = useRef(null);
   const currentProjectNum = 6;
@@ -60,7 +65,7 @@ export default function Project06() {
     }
 
     if (!(firstText.current !== null && secondText.current !== null)) return;
-    gsap.set([firstText.current, secondText.current], {xPercent: xPercent})
+    gsap.set([firstText.current, secondText.current, thirdText.current], {xPercent: xPercent})
     xPercent += speed * direction;
     requestAnimationFrame(marqueeAnim);
   }
@@ -73,6 +78,7 @@ export default function Project06() {
           <div className="marquee" ref={marquee}>
             <p ref={firstText}>Cacaorder</p>
             <p ref={secondText}>Cacaorder</p>
+            <p ref={thirdText}>Cacaorder</p>
           </div>
         </div>
       </div>
@@ -101,7 +107,6 @@ export default function Project06() {
               <div className="desc">
                 <span className="chip">HTML</span>
                 <span className="chip">CSS</span>
-                <span className="chip">JavaScript</span>
                 <span className="chip">JQuery</span>
               </div>
             </li>
@@ -131,8 +136,7 @@ export default function Project06() {
             <li>
               <span className="title">기여도</span>
               <div className="desc">
-                <span className="chip">웹사이트 | 100%</span>
-                <span className="chip">관리자웹 | 40%</span>
+                <span className="chip">100%</span>
               </div>
             </li>
             <li>
@@ -151,77 +155,157 @@ export default function Project06() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/sZ81D-lEWQ4?autoplay=1&mute=1&controls=0&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0" title="Cacaorder website preview video" frameBorder="0"></iframe>
+        </div>
+      </div>
+      <div className="detailContent">
+        <div className="left">
+        <h5 className="contentSubTitle">큐빅 베지어(cubic-bezier) 애니메이션</h5>
+        </div>
+        <div className="right">
+          <p className="phrase">
+            카카오더 홈페이지는 큐빅 베지어 값으로 트랜지션을 적용하여 CSS에서 기본적으로 제공되는 linear 또는 ease-in-out easing보다 더 세련된 사용감을 느낄 수 있습니다.
+          </p>
+        </div>
+      </div>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-1.png'
-            alt='카카오더 pc 미리보기'
+            alt='큐빅 베지어 적용된 트랜지션 애니메이션'
             fill
           />
-          {/* gif나 mp4파일로 보여주기.. */}
         </figure>
       </div>
       <div className="detailContent">
         <div className="left">
-        <h5 className="contentSubTitle">서비스 이해하기</h5>
+        <h5 className="contentSubTitle">스크롤 인터랙션</h5>
         </div>
         <div className="right">
           <p className="phrase">
-            카카오더 서비스 제공 방식은 사용자앱과 관리자앱으로 나뉘어져 있는데 사용자앱은 네이티브 앱으로, 관리자앱은 하이브리드 웹앱 형식으로 개발되었습니다. 당시 네이티브 앱 개발 경험이 없었기 때문에 웹 어플리케이션에 반응형으로 모바일까지 호환되는 관리자앱을 퍼블리싱하게 되었는데, 데이터 유형에 따라 출력되는 모달창이나 화면이 다르게 나와야 되기 때문에 데이터가 유효한지에 대한 검증도 해야 했습니다. 그러기 위해서는 서비스에 대한 이해가 필수적이었습니다.
-          </p>
-          <p className="phrase">
-            퍼블리싱을 시작하기 전에 해당 프로젝트팀에 같이 배정된 디자이너, 퍼블리셔들과 서비스에 대해 본인이 이해하고 있는게 맞는지, 더 나은 의견이 있는지 제시하기 위해서 각자 화면 흐름도를 만들어 비교해보기도 했습니다. 이 과정에서 화면 흐름도를 직접 제작해보는 게 프로젝트의 이해에 큰 영향을 미친다는 걸 알게 되었습니다. 퍼블리싱을 시작하고부터는 데이터 유효성을 검증해야 하는 경우의 수를 생각해서 데이터를 직접적으로 다루고 있는 백엔드 개발자들한테 한번씩 확인을 받고 진행하여 실수를 최소한으로 줄일 수 있었습니다.
+            Scrolla.js 라이브러리를 이용하여 스크롤에 따라 큼지막한 구역들이 나타나고, 구역 안의 이미지들도 더 작은 단위로 쪼개어 각 요소들이 살아 움직이는 것처럼 보이도록 스크롤 인터랙션을 구현했습니다.
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='쿼카 화면흐름도 내 작업본 이미지'
-            fill
-          />
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          effect={'fade'}
+          fadeEffect={{crossFade: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+          modules={[EffectFade, Autoplay]}
+          className="slider"
+        >
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/card-html.png'
+                alt=''
+                fill
+              />
+              <p className="text">스크롤 인터랙션 HTML</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/card-css.png'
+                alt=''
+                fill
+              />
+              <p className="text">스크롤 인터랙션 CSS</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/card-js.png'
+                alt=''
+                fill
+              />
+              <p className="text">스크롤 인터랙션 JavaScript</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap">
+              <Image
+                src='/images/card-anim-result.gif'
+                alt=''
+                fill
+              />
+              <p className="text">결과</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4 className="contentTitle">Responsive</h4>
+      <div className="detailContent">
+        <div className="left">
+        <h5 className="contentSubTitle">슬라이더 중첩 적용</h5>
+        </div>
+        <div className="right">
+          <p className="phrase">
+            Swiper.js 라이브러리를 사용하여 두 가지 이상의 요소들이 연동되어 함께 움직이는 복잡한 Swiper 슬라이더를 구현했습니다.
+          </p>
+        </div>
       </div>
-      <div className={`${styles.bg4} bg`}>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='카카오더 홈페이지 반응형 이미지'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='카카오더 홈페이지 반응형 이미지'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='카카오더 홈페이지 반응형 이미지'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4 파일들... */}
+      <div className={`${styles.bg} bg`}>
+      <Swiper
+          slidesPerView={1}
+          loop={true}
+          modules={[EffectFade, Autoplay]}
+          className="slider"
+        >
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/swiper-js.png'
+                alt=''
+                fill
+              />
+              <p className="text">Swiper.js 적용 코드</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+          <div className="previewDesktop">
+            <iframe className="videoIframe" src="https://www.youtube.com/embed/rGHmjrm447s?autoplay=1&mute=1&controls=0&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0" title="Swiper.js example" frameBorder="0"></iframe>
+          </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
+            title="Cacaorder website mobile preview video"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link
-          className="prev"
+          className={`prev ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>

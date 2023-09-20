@@ -5,6 +5,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import { EffectFade, Autoplay } from 'swiper/modules'
 
 export default function Project04() {
   const firstText = useRef(null);
@@ -175,40 +179,53 @@ export default function Project04() {
         </div>
       </div>
       <div className={`${styles.bg} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='GSAP.js 코드 이미지'
-            fill
-          />
-        </figure>
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          effect={'fade'}
+          fadeEffect={{crossFade: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+          modules={[EffectFade, Autoplay]}
+          className="slider"
+        >
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/te-gsap-1.png'
+                alt=''
+                fill
+              />
+              <p className="text">스크롤 인터랙션 GSAP.js 코드</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="imgWrap wide">
+              <Image
+                src='/images/te-gsap-2.png'
+                alt=''
+                fill
+              />
+              <p className="text">텍스트 애니메이션 GSAP.js 코드</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
-      <div className="detailContent justify-center align-center flex-column text-center">
-        <h4 className="contentTitle">Responsive</h4>
-      </div>
-      <div className={`${styles.bg} bg`}>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='테라에너지 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='테라에너지 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.jpg'
-            alt='테라에너지 반응형 이미지들'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4... */}
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/vIZegSfQztU?&controls=0&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
+            title="Teraenergy website mobile preview video"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link

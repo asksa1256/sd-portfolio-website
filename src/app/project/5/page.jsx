@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -71,8 +70,8 @@ export default function Project05() {
         <div className="layer" ref={layer}></div>
         <div className="marqueeContainer">
           <div className="marquee" ref={marquee}>
-            <p ref={firstText}>teraenergy.co.kr/team</p>
-            <p ref={secondText}>teraenergy.co.kr/team</p>
+            <p ref={firstText}>TERAENERGY TEAM</p>
+            <p ref={secondText}>TERAENERGY TEAM</p>
           </div>
         </div>
       </div>
@@ -147,55 +146,42 @@ export default function Project05() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
-        <figure className="previewDesktop">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 채용 pc 미리보기'
-            fill
-          />
-          {/* gif나 mp4파일로 보여주기.. */}
-        </figure>
+      <div className={`${styles.bg} bg`}>
+        <div className="previewDesktop">
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/0kM0-IS-iPE?autoplay=1&mute=1&controls=0&loop=1&playlist=0kM0-IS-iPE&playsinline=1&rel=0" title="Teraenergy Team website preview video" frameBorder="0"></iframe>
+        </div>
       </div>
       <div className="detailContent justify-center align-center flex-column text-center">
         <h4 className="contentTitle">Responsive</h4>
       </div>
-      <div className={`${styles.bg4} bg`}>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 채용 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 채용 반응형 이미지들'
-            fill
-          />
-        </figure>
-        <figure className="previewMobile">
-          <Image
-            src='/images/hi5-1.png'
-            alt='테라에너지 채용 반응형 이미지들'
-            fill
-          />
-        </figure>
-        {/* 반응형 gif나 mp4 파일들... */}
+      <div className="responsiveWrap">
+        <div className="detailContent justify-center align-center flex-column text-center">
+          <h4 className="contentTitle">Responsive</h4>
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <div className="previewMobile">
+            <iframe 
+            className="videoIframe"
+            src="https://youtube.com/embed/h-jGjP41Ags?&controls=0&loop=1&playlist=h-jGjP41Ags&vq=hd720&playsinline=1&rel=0"
+            title="Teraenergy Team mobile preview video"
+            frameBorder="0"></iframe>
+          </div>
+        </div>
       </div>
       <div className="pages">
         <Link
-          className="prev"
+          className={`prev ${styles.prev}`}
           href={`/project/${currentProjectNum-1}`}
         >
-          Prev Project
+          <span className="arrow">←</span>
+          <span className="text">Prev Project</span>
         </Link>
         <Link
-          className="next"
+          className={`next ${styles.next}`}
           href={`/project/${currentProjectNum+1}`}
         >
-          Next Project
+          <span className="text">Next Project</span>
+          <span className="arrow">→</span>
         </Link>
       </div>
     </section>

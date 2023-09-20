@@ -159,7 +159,7 @@ export default function Project07() {
           </div>
         </div>
       </div>
-      <div className={`${styles.bg1} bg`}>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-1.png'
@@ -171,18 +171,18 @@ export default function Project07() {
       </div>
       <div className="detailContent">
         <div className="left">
-          <h5 className="contentSubTitle">첫 앱 퍼블리싱과 Flutter</h5>
+          <h5 className="contentSubTitle">Flutter</h5>
         </div>
         <div className="right">
           <p className="phrase">
-            Selene 소개 페이지는 기존에 HTML, CSS, JQuery 또는 JavaScript로 하던 방식과 똑같이 퍼블리싱 하면 되어서 어려움이 없었지만, Selene 어플리케이션은 iOS와 Android의 호환성을 고려하여 Flutter로 개발을 시작했기 때문에 네이티브 앱을 퍼블리싱하기 위해 Flutter와 Dart 관련 지식이 요구되었습니다. 
+            Selene 소개 페이지는 기존에 HTML, CSS, JQuery 또는 JavaScript로 하던 방식과 똑같이 퍼블리싱 하면 되어서 어려움이 없었지만, Selene 어플리케이션은 iOS와 Android의 호환성을 고려하여 Flutter로 개발하게 되었기 때문에 네이티브 앱을 퍼블리싱하기 위해 Flutter와 Dart 관련 지식이 요구되었습니다.
           </p>
           <p className="phrase">
-            단순히 문법만 익히기 보다는 Flutter로 어떤 앱을 만들 수 있는지, Flutter로 개발했을 때의 이점은 무엇인지 이해하며 배우기 위해 해당 프레임워크로 몇 가지 간단한 앱을 클론 코딩해서 실전에서 코딩할 수 있도록 선행 학습을 했습니다. Flutter와 Dart를 통해 앱을 개발하면 하나의 파일에서 material UI를 통해 간편하고 깔끔한 퍼블리싱을 할 수 있다는 점이 좋았고, 다만 JavaScript에 대한 이해도가 높지 않았을 때 작업했기 때문에 데이터 연동이 필요한 부분이나 복잡한 부분은 프론트엔드 개발자한테 상의 후 전달해서 작업 시간이 지연되지 않도록 했습니다. 
+            Flutter로 어떤 앱을 만들 수 있는지, Flutter로 개발했을 때의 이점은 무엇인지 이해하며 강의나 간단한 앱 클론 코딩으로 감을 익혔습니다. 다만 JavaScript에 대한 이해도가 높지 않을 때 작업했기 때문에 데이터 연동이 필요한 부분이나 복잡한 구현은 프론트엔드 개발자에 전달해서 작업 시간이 지연되지 않도록 했습니다. 
           </p>
         </div>
       </div>
-      <div className={`${styles.bg2} bg`}>
+      <div className={`${styles.bg} bg`}>
         <figure className="previewDesktop">
           <Image
             src='/images/hi5-1.png'
@@ -201,7 +201,7 @@ export default function Project07() {
       <div className="detailContent justify-center align-center flex-column text-center">
         <h4 className="contentTitle">Responsive</h4>
       </div>
-      <div className={`${styles.bg4} bg`}>
+      <div className={`${styles.bg} bg`}>
         <figure className="preivewMobile">
           <Image
             src='/images/hi5-1.png'

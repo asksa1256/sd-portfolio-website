@@ -8,10 +8,7 @@ import styles from './style.module.scss'
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import 'swiper/css/effect-fade'
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { EffectFade, Autoplay } from 'swiper/modules'
-import { Navigation, Pagination } from "swiper";
 
 export default function Project03() {
   const firstText = useRef(null);

@@ -445,6 +445,11 @@ h3 {
   width: 1280px;
 }
 
+.swiper-slide .previewDesktop {
+  pointer-events: initial;
+  width: 100%;
+}
+
 .swiper-slide .text {
   position: absolute;
   display: flex;
