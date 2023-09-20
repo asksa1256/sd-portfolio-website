@@ -65,7 +65,7 @@ export default function Hands() {
         // object rotation animate
         function animate(){
           requestAnimationFrame(animate)
-          pivot.rotation.y += 0.001;
+          pivot.rotation.y += 0.005;
           controls.update();
           renderer.render(scene, camera);
         }
