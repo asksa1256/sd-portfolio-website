@@ -73,7 +73,6 @@ export default function Projects() {
           y={y3}
         />
       </ul>
-      <div className={styles.spacer}></div>
     </section>
   )
 }

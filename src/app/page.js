@@ -7,6 +7,7 @@ import Projects from '@/components/Projects'
 import Ability from '@/components/Ability'
 import Character from '@/components/Character'
 import IntervalMarquee from '@/components/IntervalMarquee'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Home() {
       <Ability/>
       <IntervalMarquee/>
       <Projects/>
+      <Footer/>
     </main>
   )
 }

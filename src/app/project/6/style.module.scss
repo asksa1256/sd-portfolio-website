@@ -1,3 +1,13 @@
 .detailTop {
   background-image: url(/images/co-1.png);
 }
+
+.prev:before {
+  background: url(/images/btn-bg-team.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.next:before {
+  background: url(/images/btn-bg-led.jpg) no-repeat center;
+  background-size: cover;
+}
