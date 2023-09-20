@@ -1,5 +1,6 @@
 .contact {
   margin-bottom: 0 !important;
+  padding: 20px !important;
 }
 
 .textWrap {
@@ -8,4 +9,15 @@
   top: 50%;
   transform: translate(-50%,-50%);
   text-align: center;
+  mix-blend-mode: difference;
+}
+
+.copy {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 20%;
+  opacity: 0.25;
+  text-align: right;
+  font-size: 13px;
 }
