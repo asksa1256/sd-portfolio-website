@@ -1,5 +1,4 @@
 "use client";
-import styles from "./style.module.scss"
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
@@ -8,10 +7,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 export default function Hands() {
-  gsap.registerPlugin(ScrollTrigger);
   const canvasRef = useRef(null);
-
+  
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (canvasRef.current) {
       const scene = new THREE.Scene();
 
@@ -90,7 +89,6 @@ export default function Hands() {
           start: "top top",
           end: "bottom top",
           scrub: true,
-          // toggleActions: "restart pause resume pause",
         },
           y: "+=3"
         });
