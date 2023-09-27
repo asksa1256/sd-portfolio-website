@@ -3,8 +3,6 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import { useRef, useEffect } from 'react'
-import {motion} from 'framer-motion'
-import useDimension from '@/useDimension'
 
 export default function Intro() {
   const backgroundImage = useRef(null);
@@ -107,14 +105,14 @@ export default function Intro() {
         className={styles.backgroundImage}
       >
         <div className={styles.img}></div>
-        <motion.div
+        <div
           ref={layer}
           className={styles.layer}>
-        </motion.div>
+        </div>
       </div>
 
       <div className={styles.introContainer}>
-        <motion.div 
+        <div 
           ref={introImage} 
           data-scroll 
           data-scroll-speed="0.1" 
@@ -126,8 +124,8 @@ export default function Intro() {
             alt="image"
             fill
           />
-        </motion.div>
-        <motion.div
+        </div>
+        <div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -145,7 +143,7 @@ export default function Intro() {
               return <SplittingText key={index}>{heading}</SplittingText>
             })
           }
-        </motion.div>
+        </div>
       </div>
     </section>
   )

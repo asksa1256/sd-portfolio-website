@@ -115,10 +115,10 @@ export default function Character() {
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
-                <h4>도전</h4>
+                <h4>호기심</h4>
                 <p className={styles.desc}>
-                  <span className={styles.en}>:Challenge</span>
-                  언제나 새로운 기술에 열린 마음으로, 다양한 시도와 실험을 좋아합니다.
+                  <span className={styles.en}>:Curiosity</span>
+                  정적인 요소들이 동적으로 바뀌는 상상을 하고, 이에 따른 다양한 시도와 실험을 해보는 것을 좋아합니다.
                 </p>
               </div>
             </Tilt>
