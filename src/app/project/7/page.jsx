@@ -5,6 +5,10 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import { EffectFade, Autoplay } from 'swiper/modules'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
@@ -227,20 +231,39 @@ export default function Project07() {
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.png'
-              alt='Selene 앱 화면 캡처'
-              fill
-            />
-          </figure>
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.png'
-              alt='Flutter 코드 작업 부분 캡처'
-              fill
-            />
-          </figure>
+          <Swiper
+            slidesPerView={1}
+            loop={true}
+            effect={'fade'}
+            fadeEffect={{crossFade: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: true,
+            }}
+            modules={[EffectFade, Autoplay]}
+            className="slider"
+          >
+            <SwiperSlide>
+              <div className="imgWrap">
+                <Image
+                  src='/images/teled-app-code.png'
+                  alt=''
+                  fill
+                />
+                <p className="text">Selene(구 TELED) 대시보드 코드</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="imgWrap">
+                <Image
+                  src='/images/teled-app-dashboard.jpg'
+                  alt=''
+                  fill
+                />
+                <p className="text">Selene(구 TELED) 대시보드 개발 화면</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </m.div>
         <m.div 
           className="responsiveWrap"
@@ -256,7 +279,7 @@ export default function Project07() {
               <iframe 
               className="videoIframe"
               src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
-              title="Cacaorder website mobile preview video"
+              title="Selene website mobile preview video"
               frameBorder="0"></iframe>
             </div>
           </m.div>
