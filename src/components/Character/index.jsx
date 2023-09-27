@@ -141,7 +141,7 @@ export default function Character() {
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
-                <h4>인내</h4>
+                <h4>끈기</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Patience</span>
                   구현하기로 한 것은 될 때까지 시도하고, 에러는 해결할 때까지 포기하지 않습니다.

@@ -233,7 +233,12 @@ export default function Project02() {
             </div>
           </m.div>
         </m.div>
-        <m.div className="pages">
+        <m.div 
+          className="pages"
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
           <Link
             className={`prev ${styles.prev}`}
             href={`/project/${currentProjectNum-1}`}
