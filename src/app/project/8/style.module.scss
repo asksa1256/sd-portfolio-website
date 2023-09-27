@@ -1,3 +1,17 @@
 .detailTop {
   background-image: url(/images/wapt-1.png);
 }
+
+.prev:before {
+  background: url(/images/btn-bg-co.png) no-repeat center;
+  background-size: cover;
+}
+
+.next:before {
+  background: url(/images/btn-bg-sd.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.bg {
+  background-image: url(/images/wapt-bg.jpg);
+}

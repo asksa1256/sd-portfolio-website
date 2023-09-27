@@ -181,14 +181,12 @@ export default function Project08() {
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.jpg'
-              alt='우듬지석란 pc 미리보기'
-              fill
-            />
-            {/* gif나 mp4파일로 보여주기.. */}
-          </figure>
+          <div 
+            className="previewDesktop"
+            variants={Item}
+          >
+            <iframe className="videoIframe" src="https://www.youtube.com/embed/XvL8FwJgexs?autoplay=1&mute=1&controls=0&loop=1&playlist=XvL8FwJgexs&playsinline=1&rel=0" title="우듬지석란 website preview video" frameBorder="0"></iframe>
+          </div>
         </m.div>
         <m.div 
           className="detailContent"
@@ -221,8 +219,8 @@ export default function Project08() {
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
-              src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
-              title="Cacaorder website mobile preview video"
+              src="https://youtube.com/embed/PskDD53gjZI?&controls=0&loop=1&playlist=PskDD53gjZI&vq=hd720&playsinline=1&rel=0"
+              title="우듬지석란 website mobile preview video"
               frameBorder="0"></iframe>
             </div>
           </m.div>

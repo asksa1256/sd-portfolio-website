@@ -198,14 +198,12 @@ export default function Project07() {
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.png'
-              alt='셀린 pc 미리보기'
-              fill
-            />
-            {/* gif나 mp4파일로 보여주기.. */}
-          </figure>
+          <div 
+            className="previewDesktop"
+            variants={Item}
+          >
+            <iframe className="videoIframe" src="https://www.youtube.com/embed/dO6C2ubBYQE?autoplay=1&mute=1&controls=0&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0" title="Selene website preview video" frameBorder="0"></iframe>
+          </div>
         </m.div>
         <m.div 
           className="detailContent"
@@ -278,7 +276,7 @@ export default function Project07() {
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
-              src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
+              src="https://youtube.com/embed/VjcpCgH5ntI?&controls=0&loop=1&playlist=VjcpCgH5ntI&vq=hd720&playsinline=1&rel=0"
               title="Selene website mobile preview video"
               frameBorder="0"></iframe>
             </div>

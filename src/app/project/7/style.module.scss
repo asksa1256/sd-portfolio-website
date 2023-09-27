@@ -2,6 +2,16 @@
   background-image: url(/images/led-1.png);
 }
 
+.prev:before {
+  background: url(/images/btn-bg-led.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.next:before {
+  background: url(/images/btn-bg-wapt.jpg) no-repeat center;
+  background-size: cover;
+}
+
 .bg {
   background-image: url(/images/led-bg.jpg);
 }
