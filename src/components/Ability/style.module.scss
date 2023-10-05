@@ -1,11 +1,8 @@
 @import "../../app/styles/mixin";
 
-section.ability {
-  margin-top: -250px;
-  padding: 0;
-}
-
 .ability {
+  margin-top: -250px !important;
+  padding: 0;
   .headingWrap {
     height: 90px;
     margin-bottom: 8px;
@@ -91,9 +88,14 @@ section.ability {
 
 @include mobile {
   .ability {
+    margin-top: 0 !important;
+    padding: 0 !important;
     .headingWrap {
       height: 50px;
       text-align: center;
+    }
+    .sectionTitle {
+      padding: 0;
     }
   }
 

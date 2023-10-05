@@ -83,15 +83,15 @@ export default function Hands() {
         });
 
         // object rotate on scroll
-        gsap.to(pivot.rotation, {
-          scrollTrigger: {
-          trigger: canvasRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-          y: "+=3"
-        });
+        // gsap.to(pivot.rotation, {
+        //   scrollTrigger: {
+        //   trigger: canvasRef.current,
+        //   start: "top top",
+        //   end: "bottom top",
+        //   scrub: true,
+        // },
+        //   y: "+=3"
+        // });
       });
     }
   }, [canvasRef])
