@@ -48,7 +48,6 @@ export default function Character() {
     })
 
     /* cards animation */
-    // if (width > 420) return;
     gsap.to(cardArr.current, {
       scrollTrigger: {
         trigger: cardArr.current,
@@ -62,40 +61,77 @@ export default function Character() {
 
     gsap.set(line.current, {left: "50%", top: "50%"})
 
-    const cardsTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: cardsWrap.current,
-        start: "top 250px",
-        end: () => innerWidth > 420 ? "+=200%" : "+=500%",
-        scrub: true,
-        pin: true,
-      }
-    });
-    cardsTl.to(cardArr.current[0], {
-      left: () => innerWidth > 420 ? "18%" : "12%"
-    })
-    cardsTl.to(cardArr.current[1], {
-      left: () => innerWidth > 420 ? "0%" : "-70%"
-    })
-    cardsTl.to(cardArr.current[2], {
-      left: () => innerWidth > 420 ? "-18%" : "-152%"
-    })
-    cardsTl.to(cards.current, {
-      rotateY: "90deg",
-    })
-    cardsTl.to(line.current, {
-      opacity: 1,
-    })
-    cardsTl.to(line.current, {
-      height: "2px",
-    })
-    cardsTl.to(line.current, {
-      borderWidth: "1px",
-    })
-    cardsTl.to(line.current, {
-      width: "100vw",
-    })
-    
+    if (innerWidth > 650) {
+      const cardsTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: cardsWrap.current,
+          start: "top 250px",
+          end: "+=200%",
+          scrub: true,
+          pin: true,
+        }
+      });
+      cardsTl.to(cardArr.current[0], {
+        left: "18%"
+      })
+      cardsTl.to(cardArr.current[1], {
+        left: "0%"
+      })
+      cardsTl.to(cardArr.current[2], {
+        left: "-18%"
+      })
+      cardsTl.to(cards.current, {
+        rotateY: "90deg",
+      })
+      cardsTl.to(line.current, {
+        opacity: 1,
+      })
+      cardsTl.to(line.current, {
+        height: "2px",
+      })
+      cardsTl.to(line.current, {
+        borderWidth: "1px",
+      })
+      cardsTl.to(line.current, {
+        width: "100vw",
+      })
+    }
+
+    // const cardsTl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: cardsWrap.current,
+    //     start: () => innerWidth > 650 ? "top 250px" : "top 1800px",
+    //     end: () => innerWidth > 650 ? "+=200%" : "+=300%",
+    //     scrub: true,
+    //     pin: true,
+    //   }
+    // });
+    // cardsTl.to(cardArr.current[0], {
+    //   left: () => innerWidth > 650 ? "18%" : "50%",
+    //   top: () => innerWidth > 650 ? "0%" : "848px",
+    // })
+    // cardsTl.to(cardArr.current[1], {
+    //   left: () => innerWidth > 650 ? "0%" : "50%",
+    //   top: () => innerWidth > 650 ? "0%" : "848px",
+    // })
+    // cardsTl.to(cardArr.current[2], {
+    //   left: () => innerWidth > 650 ? "-18%" : "50%"
+    // })
+    // cardsTl.to(cards.current, {
+    //   rotateY: "90deg",
+    // })
+    // cardsTl.to(line.current, {
+    //   opacity: 1,
+    // })
+    // cardsTl.to(line.current, {
+    //   height: "2px",
+    // })
+    // cardsTl.to(line.current, {
+    //   borderWidth: "1px",
+    // })
+    // cardsTl.to(line.current, {
+    //   width: "100vw",
+    // })
   }, [])
   
 
@@ -111,7 +147,10 @@ export default function Character() {
       <div className={styles.cardsWrap} ref={cardsWrap}>
         <ul className={styles.cards} ref={cards}>
           <li className={`${styles.card} ${styles.card1}`} ref={el => cardArr.current[0] = el}>
-            <Tilt className={styles.tiltWrap}>
+            <Tilt 
+              className={styles.tiltWrap}
+              tiltEnable={width > 650 ? true : false}
+            >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
@@ -124,7 +163,10 @@ export default function Character() {
             </Tilt>
           </li>
           <li className={`${styles.card} ${styles.card2}`} ref={el => cardArr.current[1] = el}>
-            <Tilt className={styles.tiltWrap}>
+            <Tilt 
+              className={styles.tiltWrap}
+              tiltEnable={width > 650 ? true : false}
+            >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>
@@ -137,7 +179,10 @@ export default function Character() {
             </Tilt>
           </li>
           <li className={`${styles.card} ${styles.card3}`} ref={el => cardArr.current[2] = el}>
-            <Tilt className={styles.tiltWrap}>
+            <Tilt 
+              className={styles.tiltWrap}
+              tiltEnable={width > 650 ? true : false}
+            >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
                 <span className={styles.deco}></span>

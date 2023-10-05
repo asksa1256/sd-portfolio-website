@@ -1,5 +1,4 @@
 import styles from './style.module.scss'
-import { useEffect, useRef } from 'react'
 import Hands from '../Hands';
 
 export default function Contact() {

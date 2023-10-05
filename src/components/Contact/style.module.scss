@@ -1,6 +1,9 @@
+@import "../../app/styles/mixin";
+
 .contact {
   margin-bottom: 0 !important;
   padding: 20px !important;
+  overflow: hidden;
 }
 
 .textWrap {
@@ -20,4 +23,22 @@
   opacity: 0.25;
   text-align: right;
   font-size: 13px;
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .contact {
+    padding: 0 !important;
+  }
+
+  .copy {
+    width: 85%;
+  }
 }
