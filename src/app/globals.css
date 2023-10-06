@@ -651,7 +651,7 @@ h3 {
   }
 
   .detailTop {
-    background-size: contain;
+    background-size: cover;
     background-attachment: initial;
   }
 
@@ -664,8 +664,9 @@ h3 {
   }
 
   .bg {
-    background-size: contain;
+    background-size: cover;
     background-attachment: initial;
+    background-position: center;
   }
 
   .detailList .right {
