@@ -1,3 +1,5 @@
+@import "../../styles/mixin";
+
 .detailTop {
   background-image: url(/images/co-1.png);
 }
@@ -14,4 +16,21 @@
 
 .bg {
   background-image: url(/images/co-bg.jpg);
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .detailTop {
+    background-image: url(/images/co-mb-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }

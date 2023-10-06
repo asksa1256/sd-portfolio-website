@@ -1,3 +1,5 @@
+@import "../../styles/mixin";
+
 .detailTop {
   background-image: url(/images/team-1.png);
 }
@@ -14,4 +16,21 @@
 .next:before {
   background: url(/images/btn-bg-co.png) no-repeat center;
   background-size: cover;
+}
+
+/*************************** 
+  반응형 
+****************************/
+
+@include tablet {
+  
+}
+
+@include mobile {
+  .detailTop {
+    background-image: url(/images/team-mb-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }

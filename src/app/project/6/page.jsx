@@ -5,10 +5,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
-import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import { EffectFade, Autoplay } from 'swiper/modules'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
@@ -239,64 +235,64 @@ export default function Project06() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            effect={'fade'}
-            fadeEffect={{crossFade: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: true,
-            }}
-            modules={[EffectFade, Autoplay]}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap wide">
-                <Image
-                  src='/images/card-html.png'
-                  alt=''
-                  fill
-                />
-                <p className="text">스크롤 인터랙션 HTML</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap wide">
-                <Image
-                  src='/images/card-css.png'
-                  alt=''
-                  fill
-                />
-                <p className="text">스크롤 인터랙션 CSS</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap wide">
-                <Image
-                  src='/images/card-js.png'
-                  alt=''
-                  fill
-                />
-                <p className="text">스크롤 인터랙션 JavaScript</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/card-anim-result.gif'
-                  alt=''
-                  fill
-                />
-                <p className="text">결과</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <figure className="imgWrap">
+            <Image
+              src='/images/card-html.png'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">스크롤 인터랙션 HTML</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/card-css.png'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">스크롤 인터랙션 CSS</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/card-js.png'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">스크롤 인터랙션 JavaScript</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/card-anim-result.gif'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">스크롤 인터랙션 구현 화면</p>
         </m.div>
         <m.div 
           className="detailContent"
@@ -314,33 +310,32 @@ export default function Project06() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            modules={[EffectFade, Autoplay]}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap wide">
-                <Image
-                  src='/images/swiper-js.png'
-                  alt=''
-                  fill
-                />
-                <p className="text">Swiper.js 적용 코드</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
+          <figure className="imgWrap">
+            <Image
+              src='/images/swiper-js.png'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">Swiper.js 적용 코드</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
             <div className="previewDesktop">
               <iframe className="videoIframe" src="https://www.youtube.com/embed/rGHmjrm447s?autoplay=1&mute=1&controls=0&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0" title="Swiper.js example" frameBorder="0"></iframe>
             </div>
-            </SwiperSlide>
-          </Swiper>
+          </figure>
+          <p className="text">Swiper.js 적용 화면</p>
         </m.div>
         <m.div 
           className="responsiveWrap"

@@ -5,10 +5,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
-import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import { EffectFade, Autoplay } from 'swiper/modules'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
@@ -224,44 +220,34 @@ export default function Project07() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            effect={'fade'}
-            fadeEffect={{crossFade: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: true,
-            }}
-            modules={[EffectFade, Autoplay]}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/teled-app-code.png'
-                  alt=''
-                  fill
-                />
-                <p className="text">Selene(구 TELED) 대시보드 코드</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/teled-app-dashboard.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">Selene(구 TELED) 대시보드 개발 화면</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <figure className="imgWrap">
+            <Image
+              src='/images/teled-app-code.png'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">Selene 대시보드 코드</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/teled-app-dashboard.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">Selene 대시보드 개발 화면</p>
         </m.div>
         <m.div 
           className="responsiveWrap"
