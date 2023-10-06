@@ -181,6 +181,9 @@ h3 {
 .detailTop {
   position: relative;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .detailTop .layer {
@@ -647,12 +650,23 @@ h3 {
     padding: 0 16px;
   }
 
+  .detailTop {
+    background-size: cover;
+    background-attachment: initial;
+  }
+
   .marquee p {
     margin-left: 16px;
   }
   
   .marquee p:before {
     margin-right: 16px;
+  }
+
+  .bg {
+    background-size: cover;
+    background-attachment: initial;
+    background-position: center;
   }
 
   .detailList .right {
