@@ -5,10 +5,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
-import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import { EffectFade, Autoplay } from 'swiper/modules'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
@@ -244,64 +240,64 @@ export default function Project01() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            effect={'fade'}
-            fadeEffect={{crossFade: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: true,
-            }}
-            modules={[EffectFade, Autoplay]}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/hi5-3.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">대시보드 도넛 차트 코드</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/hi5-4.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">v-for를 사용한 테이블 코드</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/hi5-5.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">v-show를 사용한 알림 더보기</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/hi5-6.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">모달 컴포넌트</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <figure className="imgWrap">
+            <Image
+              src='/images/hi5-3.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">대시보드 도넛 차트 코드</p>
+        </m.div>
+        <m.div
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/hi5-4.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">v-for를 사용한 테이블 코드</p>
+        </m.div>
+        <m.div
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/hi5-5.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">v-show를 사용한 알림 더보기</p>
+        </m.div>
+        <m.div
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/hi5-6.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">모달 컴포넌트</p>
         </m.div>
         <m.div 
           className="responsiveWrap"

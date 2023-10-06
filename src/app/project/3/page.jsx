@@ -5,10 +5,6 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import styles from './style.module.scss'
-import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import { EffectFade, Autoplay } from 'swiper/modules'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
@@ -205,44 +201,34 @@ export default function Project03() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <Swiper
-            slidesPerView={1}
-            loop={true}
-            effect={'fade'}
-            fadeEffect={{crossFade: true }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: true,
-            }}
-            modules={[EffectFade, Autoplay]}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/bis-2.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">물가 상승률 차트</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap wide">
-                <Image
-                  src='/images/bis-3.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">물가 상승률 차트 코드</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <figure className="imgWrap">
+            <Image
+              src='/images/bis-2.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">물가 상승률 차트</p>
+        </m.div>
+        <m.div
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/hi5-4.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">물가 상승률 차트 코드</p>
         </m.div>
         <m.div 
           className="detailContent"
@@ -263,43 +249,34 @@ export default function Project03() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
-          whileInView="show" 
+          whileInView="show"
         >
-          <Swiper
-            breakpoints={{
-              576: {
-                slidesPerView: 1,
-              },
-              1280: {
-                slidesPerView: 2,
-              },
-            }}
-            className="slider"
-          >
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/bis-cnt-cd2.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">숫자 카운트 HTML</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="imgWrap">
-                <Image
-                  src='/images/bis-cnt-cd.jpg'
-                  alt=''
-                  fill
-                />
-                <p className="text">숫자 카운트 JavaScript</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <figure className="imgWrap">
+            <Image
+              src='/images/bis-cnt-cd2.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">숫자 카운트 HTML</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
+            <Image
+              src='/images/bis-cnt-cd.jpg'
+              alt=''
+              fill
+            />
+          </figure>
+          <p className="text">숫자 카운트 JavaScript</p>
         </m.div>
         <m.div 
           className="responsiveWrap"
