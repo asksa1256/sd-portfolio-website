@@ -99,7 +99,7 @@ export default function Ability() {
     gsap.to(`.letter.${sectionName}`, {
       scrollTrigger: {
         trigger: ability.current,
-        start: "700px bottom",
+        start: () => innerWidth > 650 ? "700px bottom" : "0px bottom",
         toggleActions: "play none none reverse",
       },
         y: "0%",
@@ -110,7 +110,7 @@ export default function Ability() {
     const objectTl = gsap.timeline({
       scrollTrigger: {
         trigger: ability.current,
-        start: "700px bottom",
+        start: () => innerWidth > 650 ? "700px bottom" : "0px bottom",
         toggleActions: "play none none reverse",
       },
     });
@@ -119,19 +119,7 @@ export default function Ability() {
       opacity: 1,
     })
 
-    /* list animation */
-    gsap.to(".itemInner", {
-      scrollTrigger: {
-        trigger: ability.current,
-        start: "top-=200px",
-        end: "bottom",
-        toggleActions: "play none none reverse",
-      },
-      y: "0%",
-      delay: 0.75,
-      stagger: 0.05,
-    })
-
+    /* prevent mouseover event before  */
     gsap.to(preventMouseEvent.current, {
       scrollTrigger: {
         trigger: ability.current,
@@ -143,18 +131,32 @@ export default function Ability() {
       delay: 1.5,
     })
 
+    /* list animation */
+    // list items show
     gsap.to(".itemInner", {
       scrollTrigger: {
         trigger: ability.current,
-        start: "bottom-=400px",
+        start: () => innerWidth > 650 ? "top-=200px" : "0px bottom",
         end: "bottom",
         toggleActions: "play none none reverse",
       },
+      y: "0%",
+      delay: 0.75,
       stagger: 0.05,
+    })
+
+    // list items hide
+    gsap.to(".itemInner", {
+      scrollTrigger: {
+        trigger: ability.current,
+        start: () => innerWidth > 650 ? "bottom-=400px" : "bottom-=200px",
+        end: "bottom",
+        toggleActions: "play none none reverse",
+      },
       y: "100%",
       opacity: 0,
+      stagger: 0.05,
     })
-    
   }, [])
 
   return (

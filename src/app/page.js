@@ -1,5 +1,5 @@
 "use client"
-import {Suspense, useEffect} from 'react'
+import {useEffect} from 'react'
 import styles from './page.module.scss'
 import Intro from '@/components/Intro'
 import Description from '@/components/Description'
@@ -10,7 +10,6 @@ import IntervalMarquee from '@/components/IntervalMarquee'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import PageWrapper from '@/components/pageWrapper'
-import Loading from './loading'
 
 export default function Home() {
   useEffect(() => {
@@ -25,20 +24,17 @@ export default function Home() {
   }, [])
   
   return (
-    <Suspense fallback={<Loading />}>
-    {/* <PreLoading/> */}
-      <PageWrapper>
-        <main className={styles.main}>
-          <Intro/>
-          <Description/>
-          <Character/>
-          <Ability/>
-          <IntervalMarquee/>
-          <Projects/>
-          <Contact/>
-          <Footer/>
-        </main>
-      </PageWrapper>
-    </Suspense>
+    <PageWrapper>
+      <main className={styles.main}>
+        <Intro/>
+        <Description/>
+        <Character/>
+        <Ability/>
+        <IntervalMarquee/>
+        <Projects/>
+        <Contact/>
+        <Footer/>
+      </main>
+    </PageWrapper>
   )
 }

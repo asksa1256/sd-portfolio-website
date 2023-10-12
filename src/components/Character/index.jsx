@@ -96,42 +96,6 @@ export default function Character() {
         width: "100vw",
       })
     }
-
-    // const cardsTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: cardsWrap.current,
-    //     start: () => innerWidth > 650 ? "top 250px" : "top 1800px",
-    //     end: () => innerWidth > 650 ? "+=200%" : "+=300%",
-    //     scrub: true,
-    //     pin: true,
-    //   }
-    // });
-    // cardsTl.to(cardArr.current[0], {
-    //   left: () => innerWidth > 650 ? "18%" : "50%",
-    //   top: () => innerWidth > 650 ? "0%" : "848px",
-    // })
-    // cardsTl.to(cardArr.current[1], {
-    //   left: () => innerWidth > 650 ? "0%" : "50%",
-    //   top: () => innerWidth > 650 ? "0%" : "848px",
-    // })
-    // cardsTl.to(cardArr.current[2], {
-    //   left: () => innerWidth > 650 ? "-18%" : "50%"
-    // })
-    // cardsTl.to(cards.current, {
-    //   rotateY: "90deg",
-    // })
-    // cardsTl.to(line.current, {
-    //   opacity: 1,
-    // })
-    // cardsTl.to(line.current, {
-    //   height: "2px",
-    // })
-    // cardsTl.to(line.current, {
-    //   borderWidth: "1px",
-    // })
-    // cardsTl.to(line.current, {
-    //   width: "100vw",
-    // })
   }, [])
   
 

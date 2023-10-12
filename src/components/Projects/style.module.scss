@@ -88,11 +88,16 @@
   .gallery {
     flex-wrap: wrap;
     height: auto;
+    margin-top: 0;
     .column {
       height: auto;
       .imageContainer {
         height: calc(100vw - 54px);
         max-height: initial;
+        .inner {
+          position: relative;
+          height: 100%;
+        }
       }
       &:nth-of-type(1), 
       &:nth-of-type(2),

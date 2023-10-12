@@ -1,6 +1,7 @@
 import styles from './style.module.scss'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image';
+import gsap from 'gsap'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import useDimension from '@/useDimension'
 import Link from 'next/link';
@@ -57,8 +58,36 @@ export default function Projects() {
   const y2 = useTransform(scrollProgress.scrollYProgress, [0, 1], [0, height * 1]) 
   const y3 = useTransform(scrollProgress.scrollYProgress, [0, 1], [0, height * 1.25])
 
+  useEffect(() => {
+    /* mobile list animation */
+    // list items show
+    if (innerWidth < 650) {
+      const boxes = gsap.utils.toArray(".projects .inner");
+
+      Array.prototype.forEach.call(boxes, function (box) {
+        gsap.fromTo(
+          box,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 0.5,
+            scrollTrigger: {
+              trigger: box,
+              start: "0px bottom",
+              end: "bottom",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    }
+  }, [])
+  
+
   return (
-    <section className={styles.projects}>
+    <section className={`${styles.projects} projects`}>
       <ul className={styles.gallery} ref={container}>
         <Column 
           images={[images[0], images[1], images[2]]} 
@@ -81,7 +110,7 @@ const Column = ({images,  y=0}) => {
   const {width} = useDimension();
 
   return (
-    <motion.li style={width > 767 ? {y} : 0} className={styles.column}>
+    <motion.li style={width > 650 ? {y} : 0} className={styles.column}>
       {
         images.map((props, idx) => {
           return (
@@ -89,12 +118,14 @@ const Column = ({images,  y=0}) => {
               key={idx}
               className={styles.imageContainer}
             >
-              <Link className={styles.link} href={`/project/${props.id}`}></Link>
-              <Image
-                src={`/images/${props.src}`}
-                alt="image"
-                fill
-              />
+              <div className={`${styles.inner} inner`}>
+                <Link className={styles.link} href={`/project/${props.id}`}></Link>
+                <Image
+                  src={`/images/${props.src}`}
+                  alt="image"
+                  fill
+                />
+              </div>
             </div>
           )
         })
