@@ -96,8 +96,8 @@ export default function Project09() {
           initial="hidden"
           whileInView="show"
         >
-          <m.h2 variants={Item} className="detailTitle">이상달 포트폴리오 사이트</m.h2>
-          <m.h4 variants={Item} className="detailSubTitle">포트폴리오 및 자기 소개</m.h4>
+          <m.h2 variants={Item} className="detailTitle">Lee Sangdal Portfolio Website</m.h2>
+          <m.h4 variants={Item} className="detailSubTitle">포트폴리오 웹사이트</m.h4>
           <m.div variants={Item} className="detailCtg">
             <span className="chip">웹 디자인</span>
             <span className="chip">웹 퍼블리싱</span>
@@ -182,14 +182,12 @@ export default function Project09() {
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.jpg'
-              alt='lsd pc 미리보기'
-              fill
-            />
-            {/* gif나 mp4파일.. */}
-          </figure>
+          <div 
+            className="previewDesktop"
+            variants={Item}
+          >
+            <iframe className="videoIframe" src="https://www.youtube.com/embed/lxbcBCpACPQ?si=uXAY9PZmFERNq9Xb&autoplay=1&mute=1&controls=0&loop=1&playlist=lxbcBCpACPQ&playsinline=1&rel=0" title="Lee Sangdal portfolio website preview video" frameBorder="0"></iframe>
+          </div>
         </m.div>
         <m.div 
           className="detailContent"
@@ -202,34 +200,42 @@ export default function Project09() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              개인 포트폴리오 사이트 작업은 스스로를 브랜딩할 수 있는 좋은 기회라고 생각합니다. 제 이름의 뜻인 ´함께 이룬다´라는 메시지를 담고 싶었는데, 어떻게 전달해야 할 지에 대한 고민이 쉽게 풀리지 않아서 두 가지 디자인 컨셉을 놓고 몇 번의 시행착오를 겪었습니다.
+              개인 포트폴리오 사이트 작업은 스스로를 브랜딩할 수 있는 좋은 기회라고 생각합니다. 제 이름의 뜻인 ´함께 이룬다´라는 메시지를 담고 싶었습니다. 이를 잘 전달해줄 수 있는 메타포로 미켈란젤로의 ´천지창조´ 작품을 인용하였고 작품 이외의 영역은 블랙 앤 화이트로 심플하게 애니메이션을 따라 각 섹션들이 이어지도록 메인 페이지를 작업했습니다.
             </p>
             <p className="phrase">
-              첫번째는 개인적으로 좋아하는 ´브루탈리즘´과 같은 핵심 내용만 담긴 심플한 컨셉, 두번째는 저의 메시지를 잘 전달해줄 수 있는 미켈란젤로의 ´천지창조´ 작품을 인용하는 컨셉에 착안하여 두 개의 사이트를 작업해보았습니다. 작업이 진행될수록 두번째 컨셉으로 풀어나가는 게 더 수월했고 지금의 웹사이트 디자인이 완성되었습니다.
+              서브 페이지에서도 메인 페이지에서의 컨셉을 유지하기 위해 화면 최상단에 큰 이미지를 먼저 배치하고, 하단에 상세 설명과 기타 상세 이미지들이 스크롤에 따라 나타나게 했습니다. 
             </p>
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
+          <figure className="imgWrap">
             <Image
-              src='/images/hi5-1.jpg'
-              alt='디자인 컨셉 후보1 (화이트버전)'
+              src='/images/teled-app-code.png'
+              alt=''
               fill
             />
           </figure>
-          <figure className="previewDesktop">
+          <p className="text">메인 페이지 전체 캡쳐</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
             <Image
-              src='/images/hi5-1.jpg'
-              alt='디자인 컨셉 후보2 (채택안)'
+              src='/images/teled-app-code.png'
+              alt=''
               fill
             />
-            {/* gif나 mp4파일.. */}
           </figure>
+          <p className="text">상세 페이지 전체 캡쳐</p>
         </m.div>
         <m.div 
           className="detailContent"
@@ -242,37 +248,45 @@ export default function Project09() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              회사에서 Vue.js 프레임워크를 사용하여 팀 프로젝트로 SPA(Single Page Application) 형식의 그룹웨어를 만들어본 후, 개인 프로젝트에도 같은 형식을 적용해보고 싶었습니다. 
+              회사에서 Vue.js 프레임워크를 사용하여 SPA(Single Page Application) 형식의 그룹웨어를 만들어보고 나서 그 형식에 매력을 느껴 개인 프로젝트에도 적용해보고 싶었고, Vue.js보다 많이 쓰이는 React.js로 제작하려다가 React사에서 지원하는 Next.js에 관심이 생겼습니다.
             </p>
             <p className="phrase">
-              하지만 Next.js는 라우터 구조상 리액트의 SPA처럼 사용하려면 Next.js에서 기본적으로 제공되는 방식과는 다르게 코딩해야 했고, 리액트나 Next.js에 Vue.js 만큼 익숙하진 않았기 때문에 라우팅이 더 쉽고 간편한 Next.js를 선택했습니다. 
+              Next.js는 라우터 구조상 SPA처럼 사용하려면 Next.js에서 기본적으로 제공되는 방식과 다르게 코딩해야 했지만, 페이지 전환 시 깜빡임이 거의 없다는 점이 SPA와 매우 유사해보이고 라우팅은 리액트보다 훨씬 간편해서 새로운 환경임에도 적응을 빨리 할 수 있었습니다.
             </p>
             <p className="phrase">
-              SPA 형식이 아닐 경우 페이지 전환 시에 깜빡임이 발생하지만, Next.js는 처음부터 모든 페이지 정보를 불러온 뒤 렌더링을 하기 때문에 다행히도 SPA 형식 사이트처럼 깜빡임이 발생하지 않았습니다. 여기에 페이지 전환 애니메이션을 적용해 페이지 간의 흐름이 더 자연스럽고 하나의 유기체로 보이도록 작업했습니다.
+              여기에 페이지 전환 애니메이션, 로딩 애니메이션을 적용해 페이지 이동을 더 자연스럽게 만들고자 노력했습니다.
             </p>
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <figure className="previewDesktop">
+          <figure className="imgWrap">
             <Image
-              src='/images/hi5-1.jpg'
-              alt='next.js 코드 미리보기'
+              src='/images/teled-app-code.png'
+              alt=''
               fill
             />
           </figure>
-          <figure className="previewDesktop">
+          <p className="text">페이지 전환 애니메이션 코드 미리보기</p>
+        </m.div>
+        <m.div 
+          className={`${styles.bg} bg imgTxtContainer`}
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <figure className="imgWrap">
             <Image
-              src='/images/hi5-1.jpg'
-              alt='scss 코드 미리보기'
+              src='/images/teled-app-code.png'
+              alt=''
               fill
             />
-            {/* gif나 mp4파일.. */}
           </figure>
+          <p className="text">로딩 애니메이션 코드 미리보기</p>
         </m.div>
         <m.div 
           className="responsiveWrap"
@@ -287,8 +301,8 @@ export default function Project09() {
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
-              src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
-              title="Cacaorder website mobile preview video"
+              src="https://youtube.com/embed/gHAHVtJQsyk?&controls=0&loop=1&playlist=gHAHVtJQsyk&vq=hd720&playsinline=1&rel=0"
+              title="Lee Sangdal portfolio website mobile preview video"
               frameBorder="0"></iframe>
             </div>
           </m.div>
