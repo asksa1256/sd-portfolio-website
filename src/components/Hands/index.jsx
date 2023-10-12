@@ -27,7 +27,7 @@ export default function Hands() {
         0.1,
         1000
       )
-      camera.position.set(0, 0, 7);
+      camera.position.set(5, 0, 5);
     
       const controls = new OrbitControls( camera, renderer.domElement );
       controls.enableZoom = false;
@@ -49,11 +49,10 @@ export default function Hands() {
             o.material.map = texture;
           }
         })
-        model.rotation.y = -1.6;
 
         // setting pivot
         const box = new THREE.Box3().setFromObject(model);
-        box.getCenter(model.position); // this re-sets the mesh position
+        box.getCenter(model.position); // this resets the mesh position
         model.position.multiplyScalar(-1);
 
         const pivot = new THREE.Group();
@@ -81,17 +80,6 @@ export default function Hands() {
         },
           intensity: 2,
         });
-
-        // object rotate on scroll
-        // gsap.to(pivot.rotation, {
-        //   scrollTrigger: {
-        //   trigger: canvasRef.current,
-        //   start: "top top",
-        //   end: "bottom top",
-        //   scrub: true,
-        // },
-        //   y: "+=3"
-        // });
       });
     }
   }, [canvasRef])
