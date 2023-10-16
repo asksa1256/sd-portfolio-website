@@ -8,6 +8,7 @@ import styles from './style.module.scss'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
+import { useRouter } from "next/navigation"
 
 export default function Project01() {
   const firstText = useRef(null);
@@ -18,6 +19,7 @@ export default function Project01() {
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
+  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -71,6 +73,14 @@ export default function Project01() {
   return (
     <PageWrapper>
       <section className='projectDetail'>
+        <button
+            className="back"
+            type="button"
+            onClick={() => router.push('/')}
+          >
+            <span className="arrow">←</span>
+            <span className="text">Back</span>
+        </button>
         <m.div className={`${styles.detailTop} detailTop`}
           variants={Container}
           initial="hidden"
@@ -89,17 +99,31 @@ export default function Project01() {
             </m.div>
           </m.div>
         </m.div>
-        <m.div
-          className="detailContent detailSummary"
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <m.h2 variants={Item} className="detailTitle">Groupware Hi5</m.h2>
-          <m.h3 variants={Item} className="detailSubTitle">자사 그룹웨어 솔루션</m.h3>
-          <m.div variants={Item} className="detailCtg">
-            <span className="chip">웹 디자인</span>
-            <span className="chip">웹 퍼블리싱</span>
+        <div className="detailContent detailSummary">
+          <m.h2 
+            variants={Container}
+            initial="hidden"
+            whileInView="show" 
+            className="detailTitle"
+          >
+            Groupware Hi5
+          </m.h2>
+          <m.h3 
+            variants={Container}
+            initial="hidden"
+            whileInView="show" 
+            className="detailSubTitle"
+          >
+            자사 그룹웨어 솔루션
+          </m.h3>
+          <m.div 
+            variants={Container}
+            initial="hidden"
+            whileInView="show" 
+            className="detailCtg"
+          >
+            <m.span variants={Item} className="chip">웹 디자인</m.span>
+            <m.span variants={Item} className="chip">웹 퍼블리싱</m.span>
           </m.div>
           <m.div variants={Item} className="detailList">
             <m.ul 
@@ -172,20 +196,17 @@ export default function Project01() {
               </m.div>
             </m.div>
           </m.div>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <div 
+        </div>
+        <div className={`${styles.bg} bg`}>
+          <m.div 
             className="previewDesktop"
-            variants={Item}
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
           >
             <iframe className="videoIframe" src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&autoplay=1&mute=1&controls=0&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
-          </div>
-        </m.div>
+          </m.div>
+        </div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -204,20 +225,20 @@ export default function Project01() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="previewDesktop">
+        <div className={`${styles.bg} bg`}>
+          <m.div 
+            className="previewDesktop"
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
+          >
             <Image
               src='/images/hi5-2.png'
               alt='그룹웨어 Hi5 XD 작업 화면'
               fill
             />
-          </figure>
-        </m.div>
+          </m.div>
+        </div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -229,31 +250,35 @@ export default function Project01() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              익숙하게 작업해왔던 HTML5, CSS3, JavaScript, JQuery와 달리 Hi5는 Vue.js와 TypeScript를 기반으로 한 프로젝트였습니다. TypeScript는 JavaScript에서 약간 변형된 정도라고 생각되어 큰 어려움 없이 적응할 수 있었지만, Vue.js는 작업 환경 설정부터 문법까지 저의 기존 작업 방식과 많이 달랐으며 컴포넌트 위주의 화면 개발에 대한 사전 지식이 필요했습니다.
+              Vue.js는 작업 환경 설정부터 문법까지 저의 기존 작업 방식(HTML5, CSS3, JavaScript 또는 JQuery를 이용한 방식)과 많이 달랐으며 컴포넌트 위주의 화면 개발에 대한 사전 지식이 필요했습니다.
             </p>
             <p className="phrase">
-              무작정 작업된 코드를 이용해서 작업하는 것보다는 Vue.js의 작동 원리를 알고 해야 더 복잡한 컴포넌트도 만들 수 있고, 컴포넌트 간 연동도 올바르게 할 수 있을 것 같아서 프로젝트 투입 전에 일주일 동안 Vue.js에 관해 조사했습니다. 
-            </p>
-            <p className="phrase">
-              Vue.js에서의 컴포넌트 작동 원리를 이해하는 데에 시간이 조금 걸렸지만 계속 작업을 해보면서 그 구조에 점점 익숙해졌고, 컴포넌트 안에 다른 컴포넌트를 넣어 기능을 추가하는 것도 그다지 어렵지 않았습니다. 이를 통해 컴포넌트 구조가 얼마나 협업에 유용한지 알 수 있었고, 협업을 하면서 간과하기 쉬운 주석의 중요성도 다시 떠오르는 등 여러모로 많이 배우게 된 프로젝트였습니다.
+              Vue.js에서의 컴포넌트 작동 원리를 이해하는 데에 시간이 조금 걸렸지만 동료들과 협업 해보면서 혼자 퍼블리싱 해도 크게 무리가 없을 정도로 적응할 수 있었고, 컴포넌트 안에 다른 컴포넌트를 넣어 기능을 추가하는 등 컴포넌트 구조의 이점들을 파악할 수 있었던 좋은 경험이었습니다.
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
+        <div className={`${styles.bg} bg imgTxtContainer`}>
+          <m.div 
+            className="imgWrap"
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
+          >
             <Image
               src='/images/hi5-3.jpg'
               alt=''
               fill
+              className="codeImg"
             />
-          </figure>
-          <p className="text">대시보드 도넛 차트 코드</p>
-        </m.div>
+            <Image
+              src='/images/hi5-7.png'
+              alt=''
+              fill
+              className="dpImg"
+            />
+            <p className="altText">대시보드 도넛 차트 코드 및 구현 화면</p>
+          </m.div>
+        </div>
         <m.div
           className={`${styles.bg} bg imgTxtContainer`}
           variants={Container}

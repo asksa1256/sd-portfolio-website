@@ -8,6 +8,7 @@ import styles from './style.module.scss'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
+import { useRouter } from "next/navigation"
 
 export default function Project09() {
   const firstText = useRef(null);
@@ -18,6 +19,7 @@ export default function Project09() {
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
+  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -71,6 +73,14 @@ export default function Project09() {
   return (
     <PageWrapper>
       <section className='projectDetail'>
+        <button
+            className="back"
+            type="button"
+            onClick={() => router.push('/')}
+          >
+            <span className="arrow">←</span>
+            <span className="text">Back</span>
+        </button>
         <m.div 
           className={`${styles.detailTop} detailTop`}
           variants={Container}
@@ -200,10 +210,10 @@ export default function Project09() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              개인 포트폴리오 사이트 작업은 스스로를 브랜딩할 수 있는 좋은 기회라고 생각합니다. 제 이름의 뜻인 ´함께 이룬다´라는 메시지를 담고 싶었습니다. 이를 잘 전달해줄 수 있는 메타포로 미켈란젤로의 ´천지창조´ 작품을 인용하였고 작품 이외의 영역은 블랙 앤 화이트로 심플하게 애니메이션을 따라 각 섹션들이 이어지도록 메인 페이지를 작업했습니다.
+              제 이름의 뜻인 ´함께 이룬다´라는 메시지를 담고자 미켈란젤로의 ´천지창조´를 인용했습니다. 작품 이외의 영역은 검정색과 흰색 위주로 사용하여 전체적으로 너무 복잡해보이지 않도록 했고, 메인 페이지의 경우에는 스크롤 인터랙션에 따라 각 섹션들이 부드럽게 이어지는 애니메이션에 비중을 두었습니다.
             </p>
             <p className="phrase">
-              서브 페이지에서도 메인 페이지에서의 컨셉을 유지하기 위해 화면 최상단에 큰 이미지를 먼저 배치하고, 하단에 상세 설명과 기타 상세 이미지들이 스크롤에 따라 나타나게 했습니다. 
+              서브 페이지에서도 컨셉을 유지하기 위해 화면 최상단에 큰 이미지를 먼저 배치하고, 하단에 상세 설명과 이미지들이 나타나는 보편적인 방식을 적용했으며 화려한 애니메이션 보다는 내용에 더 집중할 수 있도록 단순하고 깔끔하게 표현했습니다.
             </p>
           </m.div>
         </m.div>
@@ -215,12 +225,12 @@ export default function Project09() {
         >
           <figure className="imgWrap">
             <Image
-              src='/images/teled-app-code.png'
+              src='/images/pc-main-full.png'
               alt=''
               fill
             />
           </figure>
-          <p className="text">메인 페이지 전체 캡쳐</p>
+          <p className="text">메인 디자인</p>
         </m.div>
         <m.div 
           className={`${styles.bg} bg imgTxtContainer`}
@@ -230,12 +240,12 @@ export default function Project09() {
         >
           <figure className="imgWrap">
             <Image
-              src='/images/teled-app-code.png'
+              src='/images/pc-detail-full.png'
               alt=''
               fill
             />
           </figure>
-          <p className="text">상세 페이지 전체 캡쳐</p>
+          <p className="text">상세 디자인</p>
         </m.div>
         <m.div 
           className="detailContent"
@@ -257,36 +267,6 @@ export default function Project09() {
               여기에 페이지 전환 애니메이션, 로딩 애니메이션을 적용해 페이지 이동을 더 자연스럽게 만들고자 노력했습니다.
             </p>
           </m.div>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/teled-app-code.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">페이지 전환 애니메이션 코드 미리보기</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/teled-app-code.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">로딩 애니메이션 코드 미리보기</p>
         </m.div>
         <m.div 
           className="responsiveWrap"
