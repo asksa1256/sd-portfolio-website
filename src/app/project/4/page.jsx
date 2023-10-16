@@ -8,7 +8,6 @@ import styles from './style.module.scss'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
-import { useRouter } from "next/navigation"
 
 export default function Project04() {
   const firstText = useRef(null);
@@ -20,7 +19,6 @@ export default function Project04() {
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
-  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -74,14 +72,14 @@ export default function Project04() {
   return (
     <PageWrapper>
       <section className='projectDetail'>
-        <button
+        <Link
             className="back"
-            type="button"
-            onClick={() => router.push('/')}
+            href="/"
+            scroll={false}
           >
             <span className="arrow">←</span>
             <span className="text">Back</span>
-        </button>
+        </Link>
         <m.div 
           className={`${styles.detailTop} detailTop`}
           variants={Container}
