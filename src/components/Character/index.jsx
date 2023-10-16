@@ -121,7 +121,7 @@ export default function Character() {
                 <h4>호기심</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Curiosity</span>
-                  정적인 요소들이 동적으로 바뀌는 상상을 하고, 이에 따른 다양한 시도와 실험을 해보는 것을 좋아합니다.
+                  정적인 요소들이 동적으로 바뀌는 방법들을 고안하고, 이에 따른 다양한 시도와 실험하기를 즐깁니다.
                 </p>
               </div>
             </Tilt>
@@ -137,7 +137,7 @@ export default function Character() {
                 <h4>소통</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Communication</span>
-                  혼자 달려가지 않고, 원활한 소통으로 모두를 위한 화면을 개발하는 것을 중요하게 생각하고 실천합니다.
+                  혼자 달려가지 않고, 원활하게 소통하는 것의 중요성을 알고 있습니다.
                 </p>
               </div>
             </Tilt>

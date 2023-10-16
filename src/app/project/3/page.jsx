@@ -8,6 +8,7 @@ import styles from './style.module.scss'
 import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
+import { useRouter } from "next/navigation"
 
 export default function Project03() {
   const firstText = useRef(null);
@@ -19,6 +20,7 @@ export default function Project03() {
   let xPercent = 0;
   let speed = 0.05;
   let direction = -1;
+  const router = useRouter();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -72,6 +74,14 @@ export default function Project03() {
   return (
     <PageWrapper>
       <section className='projectDetail'>
+        <button
+            className="back"
+            type="button"
+            onClick={() => router.push('/')}
+          >
+            <span className="arrow">←</span>
+            <span className="text">Back</span>
+        </button>
         <m.div 
           className={`${styles.detailTop} detailTop`}
           variants={Container}
@@ -92,17 +102,31 @@ export default function Project03() {
             </m.div>
           </m.div>
         </m.div>
-        <m.div 
-          className="detailContent detailSummary"
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <m.h2 variants={Item} className="detailTitle">Bismuth(비스무스)</m.h2>
-          <m.h4 variants={Item} className="detailSubTitle">비즈니스 분석 솔루션</m.h4>
-          <m.div variants={Item} className="detailCtg">
-            <span className="chip">웹 디자인</span>
-            <span className="chip">웹 퍼블리싱</span>
+        <div className="detailContent detailSummary">
+          <m.h2 
+            className="detailTitle"
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
+          >
+            Bismuth(비스무스)
+          </m.h2>
+          <m.h4 
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
+            className="detailSubTitle"
+          >
+            비즈니스 분석 솔루션
+          </m.h4>
+          <m.div 
+            className="detailCtg"
+            variants={Container}
+            initial="hidden"
+            whileInView="show"
+          >
+            <m.span variants={Item} className="chip">웹 디자인</m.span>
+            <m.span variants={Item} className="chip">웹 퍼블리싱</m.span>
           </m.div>
           <m.div variants={Item} className="detailList">
             <m.ul 
@@ -171,7 +195,7 @@ export default function Project03() {
               </m.div>
             </m.div>
           </m.div>
-        </m.div>
+        </div>
         <m.div 
           className={`${styles.bg} bg`}
           variants={Container}

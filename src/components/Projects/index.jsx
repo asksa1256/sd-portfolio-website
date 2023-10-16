@@ -119,7 +119,11 @@ const Column = ({images,  y=0}) => {
               className={styles.imageContainer}
             >
               <div className={`${styles.inner} inner`}>
-                <Link className={styles.link} href={`/project/${props.id}`}></Link>
+                <Link 
+                  className={styles.link} 
+                  href={`/project/${props.id}`}
+                  scroll={false}
+                ></Link>
                 <Image
                   src={`/images/${props.src}`}
                   alt="image"
