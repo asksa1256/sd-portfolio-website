@@ -122,7 +122,7 @@ const Column = ({images,  y=0}) => {
                 <Link 
                   className={styles.link} 
                   href={`/project/${props.id}`}
-                  scroll={false}
+                  scroll={true}
                 ></Link>
                 <Image
                   src={`/images/${props.src}`}
