@@ -9,6 +9,39 @@ import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
 
+const images = [
+  {
+    "src": "hi5-3.png",
+    "width": "606",
+    "height": "684",
+    "text": "대시보드 도넛 차트 코드",
+  },
+  {
+    "src": "hi5-7.png",
+    "width": "506",
+    "height": "360",
+    "text": "대시보드 도넛 차트 구현 화면",
+  },
+  {
+    "src": "hi5-4.jpg",
+    "width": "612",
+    "height": "496",
+    "text": "v-for를 사용한 테이블 코드",
+  },
+  {
+    "src": "hi5-5.jpg",
+    "width": "480",
+    "height": "248",
+    "text": "v-show를 사용한 알림 더보기",
+  },
+  {
+    "src": "hi5-6.jpg",
+    "width": "582",
+    "height": "362",
+    "text": "모달 컴포넌트",
+  },
+]
+
 export default function Project01() {
   const firstText = useRef(null);
   const secondText = useRef(null);
@@ -195,16 +228,14 @@ export default function Project01() {
             </m.div>
           </m.div>
         </div>
-        <div className={`${styles.bg} bg`}>
-          <m.div 
-            className="previewDesktop"
-            variants={Container}
-            initial="hidden"
-            whileInView="show"
-          >
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&autoplay=1&mute=1&controls=0&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
-          </m.div>
-        </div>
+        <m.div 
+          className="previewDesktop"
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&autoplay=1&mute=1&controls=0&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0" title="Groupware Hi5 preview video" frameBorder="0"></iframe>
+        </m.div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -223,20 +254,18 @@ export default function Project01() {
             </p>
           </m.div>
         </m.div>
-        <div className={`${styles.bg} bg`}>
-          <m.div 
-            className="previewDesktop"
-            variants={Container}
-            initial="hidden"
-            whileInView="show"
-          >
-            <Image
-              src='/images/hi5-2.png'
-              alt='그룹웨어 Hi5 XD 작업 화면'
-              fill
-            />
-          </m.div>
-        </div>
+        <m.div 
+          className="previewDesktop"
+          variants={Container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <Image
+            src='/images/hi5-2.png'
+            alt='그룹웨어 Hi5 XD 작업 화면'
+            fill
+          />
+        </m.div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -255,73 +284,7 @@ export default function Project01() {
             </p>
           </m.div>
         </m.div>
-        <div className={`${styles.bg} bg imgTxtContainer`}>
-          <m.div 
-            className="imgWrap"
-            variants={Container}
-            initial="hidden"
-            whileInView="show"
-          >
-            <Image
-              src='/images/hi5-3.jpg'
-              alt=''
-              fill
-              className="codeImg"
-            />
-            <Image
-              src='/images/hi5-7.png'
-              alt=''
-              fill
-              className="dpImg"
-            />
-            <p className="altText">대시보드 도넛 차트 코드 및 구현 화면</p>
-          </m.div>
-        </div>
-        <m.div
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/hi5-4.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">v-for를 사용한 테이블 코드</p>
-        </m.div>
-        <m.div
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/hi5-5.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">v-show를 사용한 알림 더보기</p>
-        </m.div>
-        <m.div
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/hi5-6.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">모달 컴포넌트</p>
-        </m.div>
+        <ImageContainer/>
         <m.div 
           className="responsiveWrap"
           variants={Container}
@@ -331,7 +294,7 @@ export default function Project01() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
@@ -364,5 +327,44 @@ export default function Project01() {
         </m.div>
       </section>
     </PageWrapper>
+  )
+}
+
+const ImageContainer = () => {
+  return (
+    <div>
+      {
+        images.map((props, idx) => {
+          return (
+            <div key={idx} className="imgContainer">
+              <div className="imgWrap">
+                <m.figure
+                  variants={Container}
+                  initial=""
+                  whileInView="zoomOut"
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    src={`/images/${props.src}`}
+                    alt=''
+                    width={props.width}
+                    height={props.height}
+                  />
+                </m.figure>
+                <p className="altText">{props.text}</p>
+                <m.div 
+                  className="imgLayer"
+                  variants={Container}
+                  initial=""
+                  whileInView={idx % 2 !== 0 ? "slideLeft" : "slideRight"}
+                  viewport={{ once: true }}
+                >
+                </m.div>
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
   )
 }
