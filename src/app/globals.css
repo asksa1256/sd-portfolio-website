@@ -382,23 +382,25 @@ h3 {
   object-fit: cover;
 }
 
+.imgContainer {
+  display: flex;
+  margin: 200px 0;
+}
+
+.imgContainer:nth-of-type(odd) {
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+.imgContainer:nth-of-type(even) {
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
 .imgWrap {
   position: relative;
-  display: flex;
-  flex-shrink: 0;
-  width: 100%;
-  height: 80%;
-}
-
-.imgWrap figure {
-  width: 70% !important;
-  object-fit: contain;
-  border-radius: 20px;
+  display: inline-block;
   overflow: hidden;
-}
-
-.imgWrap figure img {
-  object-fit: contain;
 }
 
 .imgWrap .altText {
@@ -421,11 +423,22 @@ h3 {
   opacity: 1;
 }
 
+.imgLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .previewDesktop {
   position: relative;
   width: 1440px;
   height: 700px;
-  margin: 0 auto;
+  margin: 120px auto;
   border-radius: 8px;
   aspect-ratio: 16/9;
 	pointer-events: none;
@@ -438,11 +451,14 @@ h3 {
 
 .responsiveWrap {
   display: flex;
+  height: 100vh;
   margin-top: 100px;
 }
 
 .responsiveWrap > div {
+  display: flex;
   width: 50%;
+  height: 100%;
 }
 
 .responsiveWrap .contentTitle {
@@ -601,6 +617,13 @@ h3 {
 /*************************** 
   반응형 
 ****************************/
+@media (max-width: 1500px) {
+  .previewDesktop {
+    width: 90%;
+    height: 44vw;
+  }
+}
+
 @media (max-width: 1440px) {
   h2 {
     font-size: 64px;
@@ -610,6 +633,63 @@ h3 {
 @media (max-width: 1366px) {
   h2 {
     font-size: 56px;
+  }
+
+  .detailTitle {
+    font-size: 60px;
+  }
+
+  .detailSubTitle {
+    margin-bottom: 16px;
+    font-size: 40px;
+  }
+
+  .detailContent {
+    padding: 80px;
+  }
+
+  .detailList .left {
+    padding-right: 60px;
+  }
+
+  .chip {
+    margin: 0 8px 8px 0;
+  }
+
+  .chip + .chip {
+    margin-left: 0;
+  }
+
+  .detailContent .detailList .phrase {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .contentTitle {
+    font-size: 42px;
+  }
+
+  .contentSubTitle {
+    width: 70%;
+    font-size: 40px;
+    line-height: 1.4;
+  }
+
+  .responsiveWrap {
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
+
+  .responsiveWrap > div {
+    width: 100%;
+  }
+
+  .responsiveWrap .detailContent {
+    padding: 80px 16px;
+  }
+
+  .previewMobile {
+    margin: 160px auto;
   }
 }
 
@@ -633,6 +713,10 @@ h3 {
 
   .marquee p {
     font-size: 50px;
+  }
+
+  .detailContent.detailSummary {
+    margin-top: 80px;
   }
 
   .detailTitle {
@@ -674,7 +758,16 @@ h3 {
 
   .detailContent {
     flex-wrap: wrap;
-    padding: 80px 16px;
+    padding: 0 16px;
+  }
+
+  .detailContent .detailList .phrase {
+    font-size: 20px;
+  }
+
+  .detailContent .detailList .left,
+  .detailContent .detailList .right {
+    margin-bottom: 100px;
   }
 
   .contentTitle {
@@ -692,19 +785,44 @@ h3 {
     font-size: 16px;
   }
 
-  .bg {
-    justify-content: flex-start;
-    padding: 0 16px;
-    overflow-x: auto;
-  }
-
   .previewMobile + .previewMobile {
     margin-left: 16px;
   }
 
   .previewDesktop {
-    width: 88%;
-    height: 20%;
+    width: 95%;
+    height: 40%;
+  }
+
+  .imgContainer:nth-of-type(odd) {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .imgContainer:nth-of-type(even) {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .imgWrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .imgWrap img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .pages {
+    flex-direction: column;
+  }
+
+  .pages .prev,
+  .pages .next {
+    width: 100%;
+    padding: 48px 0;
+    font-size: 20px;
   }
 }
 
@@ -726,14 +844,13 @@ h3 {
     margin-right: 16px;
   }
 
-  .bg {
-    background-size: cover;
-    background-attachment: initial;
-    background-position: center;
-  }
-
   .detailList .right {
     margin-top: 100px;
+  }
+
+  .detailContent {
+    flex-wrap: wrap;
+    padding: 80px 16px;
   }
 
   .detailContent .detailList .phrase {
@@ -745,22 +862,16 @@ h3 {
     font-size: 16px;
   }
 
-  .responsiveWrap {
-    flex-direction: column;
+  .previewDesktop {
+    width: 92%;
+    height: 22%;
   }
 
-  .responsiveWrap > div {
-    width: 100%;
+  .imgContainer {
+    margin: 0;
   }
 
-  .pages {
-    flex-direction: column;
-  }
-
-  .pages .prev,
-  .pages .next {
-    width: 100%;
-    padding: 48px 0;
-    font-size: 20px;
+  .imgWrap {
+    width: 92%;
   }
 }

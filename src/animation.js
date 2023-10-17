@@ -14,6 +14,27 @@ export const Container = {
       staggerChildren: 0.2,
       duration: 1,
     }
+  },
+  slideLeft: {
+    x: "100%",
+    transition: {
+      duration: 1,
+      ease: [ 0.56, 0.49, 0.17, 0.81 ]
+    }
+  },
+  slideRight: {
+    x: "-100%",
+    transition: {
+      duration: 1,
+      ease: [ 0.56, 0.49, 0.17, 0.81 ]
+    }
+  },
+  zoomOut: {
+    scale: [1.5, 1],
+    transition: {
+      duration: 1,
+      ease: [ 0.18, 0.25, 0.17, 1.00 ],
+    }
   }
 }
 
