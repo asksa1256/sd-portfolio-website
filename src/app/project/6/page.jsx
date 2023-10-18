@@ -9,6 +9,33 @@ import PageWrapper from "@/components/pageWrapper"
 import { motion as m } from "framer-motion"
 import { Container, Item } from "@/animation"
 
+const scrollImages = [
+  {
+    "src": "card-html.png",
+    "width": "510",
+    "height": "666",
+    "text": "스크롤 인터랙션 HTML",
+  },
+  {
+    "src": "card-css.png",
+    "width": "640",
+    "height": "420",
+    "text": "스크롤 인터랙션 CSS",
+  },
+  {
+    "src": "card-js.png",
+    "width": "364",
+    "height": "120",
+    "text": "스크롤 인터랙션 JavaScript",
+  },
+  {
+    "src": "card-anim-result.gif",
+    "width": "700",
+    "height": "394",
+    "text": "스크롤 인터랙션 구현 화면",
+  },
+]
+
 export default function Project06() {
   const firstText = useRef(null);
   const secondText = useRef(null);
@@ -189,43 +216,12 @@ export default function Project06() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div className="previewDesktop">
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/sZ81D-lEWQ4?autoplay=1&mute=1&controls=0&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0" title="Cacaorder website preview video" frameBorder="0"></iframe>
-          </div>
-        </m.div>
-        <m.div 
-          className="detailContent"
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <m.div variants={Item} className="left">
-          <h5 className="contentSubTitle">큐빅 베지어(cubic-bezier) 애니메이션</h5>
-          </m.div>
-          <m.div variants={Item} className="right">
-            <p className="phrase">
-              카카오더 홈페이지는 큐빅 베지어 값으로 트랜지션을 적용하여 CSS에서 기본적으로 제공되는 linear 또는 ease-in-out easing보다 더 세련된 사용감을 느낄 수 있습니다.
-            </p>
-          </m.div>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="previewDesktop">
-            <Image
-              src='/images/hi5-1.png'
-              alt='큐빅 베지어 적용된 트랜지션 애니메이션'
-              fill
-            />
-          </figure>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/sZ81D-lEWQ4?autoplay=1&mute=1&controls=0&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0" title="Cacaorder website preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -238,70 +234,11 @@ export default function Project06() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              Scrolla.js 라이브러리를 이용하여 스크롤에 따라 큼지막한 구역들이 나타나고, 구역 안의 이미지들도 더 작은 단위로 쪼개어 각 요소들이 살아 움직이는 것처럼 보이도록 스크롤 인터랙션을 구현했습니다.
+              Scrolla.js 라이브러리를 이용하여 스크롤에 따라 각 요소들이 살아 움직이는 것처럼 스크롤 인터랙션을 구현했습니다.
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/card-html.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">스크롤 인터랙션 HTML</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/card-css.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">스크롤 인터랙션 CSS</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/card-js.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">스크롤 인터랙션 JavaScript</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/card-anim-result.gif'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">스크롤 인터랙션 구현 화면</p>
-        </m.div>
+        <ImageContainer/>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -313,38 +250,58 @@ export default function Project06() {
           </m.div>
           <m.div variants={Item} className="right">
             <p className="phrase">
-              Swiper.js 라이브러리를 사용하여 두 가지 이상의 요소들이 연동되어 함께 움직이는 복잡한 Swiper 슬라이더를 구현했습니다.
+              Swiper.js 라이브러리를 사용하여 두 가지 이상의 요소들이 연동되어 함께 움직이는 슬라이더를 구현했습니다.
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/swiper-js.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">Swiper.js 적용 코드</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <div className="previewDesktop">
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/swiper-js.png'
+                alt=''
+                width='510'
+                height='694'
+              />
+            </m.figure>
+            <p className="altText">슬라이더 코드</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.div 
+              className="previewDesktop"
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
               <iframe className="videoIframe" src="https://www.youtube.com/embed/rGHmjrm447s?autoplay=1&mute=1&controls=0&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0" title="Swiper.js example" frameBorder="0"></iframe>
-            </div>
-          </figure>
-          <p className="text">Swiper.js 적용 화면</p>
-        </m.div>
+            </m.div>
+            <p className="altText">슬라이더 구현 화면</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="responsiveWrap"
           variants={Container}
@@ -354,7 +311,7 @@ export default function Project06() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
@@ -387,5 +344,44 @@ export default function Project06() {
         </m.div>
       </section>
     </PageWrapper>
+  )
+}
+
+const ImageContainer = () => {
+  return (
+    <div>
+      {
+        scrollImages.map((props, idx) => {
+          return (
+            <div key={idx} className="imgContainer">
+              <div className="imgWrap">
+                <m.figure
+                  variants={Container}
+                  initial=""
+                  whileInView="zoomOut"
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    src={`/images/${props.src}`}
+                    alt=''
+                    width={props.width}
+                    height={props.height}
+                  />
+                </m.figure>
+                <p className="altText">{props.text}</p>
+                <m.div 
+                  className="imgLayer"
+                  variants={Container}
+                  initial=""
+                  whileInView={idx % 2 !== 0 ? "slideLeft" : "slideRight"}
+                  viewport={{ once: true }}
+                >
+                </m.div>
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
   )
 }

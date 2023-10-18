@@ -197,17 +197,12 @@ export default function Project07() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div 
-            className="previewDesktop"
-            variants={Item}
-          >
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/dO6C2ubBYQE?autoplay=1&mute=1&controls=0&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0" title="Selene website preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/dO6C2ubBYQE?autoplay=1&mute=1&controls=0&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0" title="Selene website preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -227,36 +222,58 @@ export default function Project07() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/teled-app-code.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">Selene 대시보드 코드</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/teled-app-dashboard.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">Selene 대시보드 개발 화면</p>
-        </m.div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/teled-app-code.png'
+                alt=''
+                width='784'
+                height='830'
+              />
+            </m.figure>
+            <p className="altText">Selene 대시보드 코드</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/teled-app-dashboard.jpg'
+                alt=''
+                width='700'
+                height='438'
+              />
+            </m.figure>
+            <p className="altText">Selene 대시보드 구현 화면</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="responsiveWrap"
           variants={Container}
@@ -266,7 +283,7 @@ export default function Project07() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"

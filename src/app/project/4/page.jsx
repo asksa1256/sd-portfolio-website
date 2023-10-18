@@ -196,14 +196,12 @@ export default function Project04() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div className="previewDesktop">
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/dbZZJq-tayI?autoplay=1&mute=1&controls=0&loop=1&playlist=dbZZJq-tayI&playsinline=1&rel=0" title="Teraenergy website preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/dbZZJq-tayI?autoplay=1&mute=1&controls=0&loop=1&playlist=dbZZJq-tayI&playsinline=1&rel=0" title="Teraenergy website preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -223,36 +221,58 @@ export default function Project04() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/te-gsap-1.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">스크롤 인터랙션 GSAP.js 코드</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/te-gsap-2.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">텍스트 애니메이션 GSAP.js 코드</p>
-        </m.div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/te-gsap-1.png'
+                alt=''
+                width='616'
+                height='836'
+              />
+            </m.figure>
+            <p className="altText">스크롤 인터랙션 코드</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/te-gsap-2.png'
+                alt=''
+                width='614'
+                height='676'
+              />
+            </m.figure>
+            <p className="altText">텍스트 애니메이션 코드</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="responsiveWrap"
           variants={Container}
@@ -262,7 +282,7 @@ export default function Project04() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"

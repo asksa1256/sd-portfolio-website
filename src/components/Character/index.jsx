@@ -137,7 +137,7 @@ export default function Character() {
                 <h4>소통</h4>
                 <p className={styles.desc}>
                   <span className={styles.en}>:Communication</span>
-                  혼자 달려가지 않고, 원활하게 소통하는 것의 중요성을 알고 있습니다.
+                  혼자 달려가지 않고, 원활하게 소통하는 것을 중요하게 생각합니다.
                 </p>
               </div>
             </Tilt>
