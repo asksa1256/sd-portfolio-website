@@ -195,14 +195,12 @@ export default function Project03() {
           </m.div>
         </div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div className="previewDesktop">
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/VNKbcab5bp4?autoplay=1&mute=1&controls=0&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0" title="Bismuth preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/VNKbcab5bp4?autoplay=1&mute=1&controls=0&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0" title="Bismuth preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -222,36 +220,58 @@ export default function Project03() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/bis-2.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">물가 상승률 차트</p>
-        </m.div>
-        <m.div
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/hi5-4.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">물가 상승률 차트 코드</p>
-        </m.div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/bis-2.jpg'
+                alt=''
+                width='776'
+                height='434'
+              />
+            </m.figure>
+            <p className="altText">물가 상승률 차트 구현 화면</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/bis-3.jpg'
+                alt=''
+                width='1232'
+                height='846'
+              />
+            </m.figure>
+            <p className="altText">물가 상승률 차트 코드</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -270,36 +290,58 @@ export default function Project03() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/bis-cnt-cd2.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">숫자 카운트 HTML</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/bis-cnt-cd.jpg'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">숫자 카운트 JavaScript</p>
-        </m.div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/bis-cnt-cd2.jpg'
+                alt=''
+                width='472'
+                height='578'
+              />
+            </m.figure>
+            <p className="altText">숫자 카운트 HTML</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/bis-cnt-cd.jpg'
+                alt=''
+                width='556'
+                height='742'
+              />
+            </m.figure>
+            <p className="altText">숫자 카운트 JavaScript</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="responsiveWrap"
           variants={Container}
@@ -309,7 +351,7 @@ export default function Project03() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"

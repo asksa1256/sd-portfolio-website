@@ -185,14 +185,12 @@ export default function Project02() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div className="previewDesktop">
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/mkrOtfUn4c4?autoplay=1&mute=1&controls=0&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0" title="Dong Il ent. preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/mkrOtfUn4c4?autoplay=1&mute=1&controls=0&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0" title="Dong Il ent. preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -213,14 +211,12 @@ export default function Project02() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div className="previewDesktop">
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/Zi9gcllzYvI?autoplay=1&mute=1&controls=0&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0" title="Dong Il ent. preview video 2" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/Zi9gcllzYvI?autoplay=1&mute=1&controls=0&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0" title="Dong Il ent. preview video 2" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="responsiveWrap"
@@ -231,7 +227,7 @@ export default function Project02() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"

@@ -185,17 +185,12 @@ export default function Project09() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div 
-            className="previewDesktop"
-            variants={Item}
-          >
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/lxbcBCpACPQ?si=uXAY9PZmFERNq9Xb&autoplay=1&mute=1&controls=0&loop=1&playlist=lxbcBCpACPQ&playsinline=1&rel=0" title="Lee Sangdal portfolio website preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/lxbcBCpACPQ?si=uXAY9PZmFERNq9Xb&autoplay=1&mute=1&controls=0&loop=1&playlist=lxbcBCpACPQ&playsinline=1&rel=0" title="Lee Sangdal portfolio website preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -215,36 +210,58 @@ export default function Project09() {
             </p>
           </m.div>
         </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/pc-main-full.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">메인 디자인</p>
-        </m.div>
-        <m.div 
-          className={`${styles.bg} bg imgTxtContainer`}
-          variants={Container}
-          initial="hidden"
-          whileInView="show"
-        >
-          <figure className="imgWrap">
-            <Image
-              src='/images/pc-detail-full.png'
-              alt=''
-              fill
-            />
-          </figure>
-          <p className="text">상세 디자인</p>
-        </m.div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/pc-main-full.png'
+                alt=''
+                width='200'
+                height='888'
+              />
+            </m.figure>
+            <p className="altText">메인 디자인</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideLeft"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
+        <div className="imgContainer">
+          <div className="imgWrap">
+            <m.figure
+              variants={Container}
+              initial=""
+              whileInView="zoomOut"
+              viewport={{ once: true }}
+            >
+              <Image
+                src='/images/pc-detail-full.png'
+                alt=''
+                width='200'
+                height='464'
+              />
+            </m.figure>
+            <p className="altText">상세 디자인</p>
+            <m.div 
+              className="imgLayer"
+              variants={Container}
+              initial=""
+              whileInView="slideRight"
+              viewport={{ once: true }}
+            >
+            </m.div>
+          </div>
+        </div>
         <m.div 
           className="detailContent"
           variants={Container}
@@ -275,7 +292,7 @@ export default function Project09() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"
@@ -299,11 +316,11 @@ export default function Project09() {
             <span className="text">Prev Project</span>
           </Link>
           <Link
-            className={`next disabled ${styles.next}`}
-            href={`/project/${currentProjectNum+1}`}
+            className={`next ${styles.next}`}
+            href="/"
+            scroll={false}
           >
-            <span className="text">Next Project</span>
-            <span className="arrow">→</span>
+            <span className="text">Back to main</span>
           </Link>
         </m.div>
       </section>

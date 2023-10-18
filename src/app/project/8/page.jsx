@@ -184,17 +184,12 @@ export default function Project08() {
           </m.div>
         </m.div>
         <m.div 
-          className={`${styles.bg} bg`}
+          className="previewDesktop"
           variants={Container}
           initial="hidden"
           whileInView="show"
         >
-          <div 
-            className="previewDesktop"
-            variants={Item}
-          >
-            <iframe className="videoIframe" src="https://www.youtube.com/embed/XvL8FwJgexs?autoplay=1&mute=1&controls=0&loop=1&playlist=XvL8FwJgexs&playsinline=1&rel=0" title="우듬지석란 website preview video" frameBorder="0"></iframe>
-          </div>
+          <iframe className="videoIframe" src="https://www.youtube.com/embed/XvL8FwJgexs?autoplay=1&mute=1&controls=0&loop=1&playlist=XvL8FwJgexs&playsinline=1&rel=0" title="우듬지석란 website preview video" frameBorder="0"></iframe>
         </m.div>
         <m.div 
           className="detailContent"
@@ -223,7 +218,7 @@ export default function Project08() {
           <m.div variants={Item} className="detailContent justify-center align-center flex-column text-center">
             <h4 className="contentTitle">Responsive</h4>
           </m.div>
-          <m.div variants={Item} className={`${styles.bg} bg`}>
+          <m.div variants={Item} className="align-center">
             <div className="previewMobile">
               <iframe 
               className="videoIframe"

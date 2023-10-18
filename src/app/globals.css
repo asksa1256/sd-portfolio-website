@@ -401,6 +401,12 @@ h3 {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  max-width: 90%;
+}
+
+.imgWrap img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .imgWrap .altText {
@@ -807,11 +813,6 @@ h3 {
   .imgWrap {
     width: 80%;
     margin: 0 auto;
-  }
-
-  .imgWrap img {
-    width: 100%;
-    object-fit: contain;
   }
 
   .pages {
