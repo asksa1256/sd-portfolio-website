@@ -129,6 +129,13 @@ const Column = ({images,  y=0}) => {
                   alt="image"
                   fill
                 />
+                <figure className={styles.star}>
+                  <Image
+                    src='/images/star_wt.png'
+                    alt=""
+                    fill
+                  />
+                </figure>
               </div>
             </div>
           )
