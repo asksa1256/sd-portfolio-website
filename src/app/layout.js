@@ -1,4 +1,6 @@
+"use client"
 import './globals.css'
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 export const metadata = {
   title: 'Leesangdal Portfolio Website',
@@ -8,7 +10,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ProgressBar
+          height="4px"
+          color="#fff"
+          options={{ showSpinner: true }}
+          shallowRouting
+        />
+      </body>
     </html>
   )
 }
