@@ -586,38 +586,10 @@ h3 {
   margin-right: 16px;
 }
 
-/* preLoader */
-.spinnerWrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  z-index: 99;
-}
-
-.spinner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  border: 6px solid rgba(0,174,239,.75);
-  border-radius: 50%;
-  -webkit-animation: rotation .5 infinite linear;
-  -moz-animation: rotation .5 infinite linear;
-  -o-animation: rotation .5 infinite linear;
-  animation: rotation .5 infinite linear;
-}
-
-@keyframes rotation {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(359deg);}
+/* progress bar and spinner */
+#nprogress .bar,
+#nprogress .spinner {
+  mix-blend-mode: difference;
 }
 
 /*************************** 
