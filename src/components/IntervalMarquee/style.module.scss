@@ -65,16 +65,16 @@
       border-top: 2px solid #fff;
       border-bottom: 2px solid #fff;
       p {
-        font-size: 60px;
+        font-size: 32px;
         &:before {
           content: '●';
-          font-size: 18px;
-          margin: 0 20px;
+          font-size: 14px;
+          margin: 0 16px;
         }
       }
       .arrow {
         margin: 0 24px;
-        font-size: 60px;
+        font-size: 32px;
       }
     }
   }
