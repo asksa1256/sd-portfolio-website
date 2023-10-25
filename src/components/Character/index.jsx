@@ -43,7 +43,7 @@ export default function Character() {
         trigger: object.current,
       },
       delay: 1,
-      opacity: 1,
+      opacity: 0.75,
       rotate: "15deg",
     })
 
@@ -61,7 +61,7 @@ export default function Character() {
 
     gsap.set(line.current, {left: "50%", top: "50%"})
 
-    if (innerWidth > 650) {
+    if (innerWidth > 768) {
       const cardsTl = gsap.timeline({
         scrollTrigger: {
           trigger: cardsWrap.current,
@@ -101,19 +101,19 @@ export default function Character() {
 
   return (
     <section className={styles.character} ref={character}>
-      <div className='sectionTitle'>
-        <div className='headingWrap'>
-          <SplittingText>Characteristic</SplittingText>
+      <div className={`${styles.sectionTitle} sectionTitle`}>
+        <div className={`${styles.headingWrap} headingWrap`}>
+          <SplittingText>Character</SplittingText>
           <span className={styles.object} ref={object}></span>
         </div>
-        <p className='tip'>{width > 420 ? ": 카드에 마우스를 올려보세요." : ": 카드를 클릭해보세요."}</p>
+        <p className='tip'>{width > 768 ? ": 카드에 마우스를 올려보세요." : ": 카드를 클릭해보세요."}</p>
       </div>
       <div className={styles.cardsWrap} ref={cardsWrap}>
         <ul className={styles.cards} ref={cards}>
           <li className={`${styles.card} ${styles.card1}`} ref={el => cardArr.current[0] = el}>
             <Tilt 
               className={styles.tiltWrap}
-              tiltEnable={width > 650 ? true : false}
+              tiltEnable={width > 768 ? true : false}
             >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
@@ -129,7 +129,7 @@ export default function Character() {
           <li className={`${styles.card} ${styles.card2}`} ref={el => cardArr.current[1] = el}>
             <Tilt 
               className={styles.tiltWrap}
-              tiltEnable={width > 650 ? true : false}
+              tiltEnable={width > 768 ? true : false}
             >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
@@ -145,7 +145,7 @@ export default function Character() {
           <li className={`${styles.card} ${styles.card3}`} ref={el => cardArr.current[2] = el}>
             <Tilt 
               className={styles.tiltWrap}
-              tiltEnable={width > 650 ? true : false}
+              tiltEnable={width > 768 ? true : false}
             >
               <div className={styles.tiltInner}>
                 <span className={styles.deco}></span>
