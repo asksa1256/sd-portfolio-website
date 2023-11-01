@@ -299,6 +299,7 @@ h3 {
 .detailList .desc .link {
   position: relative;
   display: inline-block;
+  text-decoration: underline;
 }
 
 .detailContent .detailList .phrase {
@@ -584,6 +585,16 @@ h3 {
 .back:hover .arrow {
   margin-left: -4px;
   margin-right: 16px;
+}
+
+.external-link-icon {
+  display: inline-block;
+  background: url(/images/external-link-line.png) no-repeat center;
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: -2px;
 }
 
 /* progress bar and spinner */
