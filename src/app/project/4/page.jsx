@@ -175,7 +175,7 @@ export default function Project04() {
                     href="https://www.gdweb.co.kr/sub/view.asp?displayrow=60&Txt_key=all&Txt_word=&Txt_agnumber=&Txt_fgbn=5&Txt_bcode1=&Txt_gbflag=&Txt_bcode2=&Txt_bcode3=&Txt_bcode4=&Txt_bcode5=&Page=1&str_no=20024"
                     target="_blank"
                   >
-                    바로가기
+                    바로가기<i className="external-link-icon"></i>
                   </Link>
                 </div>
               </m.li>
