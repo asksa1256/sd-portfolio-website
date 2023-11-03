@@ -168,7 +168,7 @@ export default function Project04() {
               <m.li variants={Item}>
                 <span className="title">기타사항</span>
                 <div className="desc">
-                  GDWEB 디자인 어워드 수상 (2023)
+                  GDWEB 디자인 어워드 선정 (2023)
                   <br/>
                   <Link
                     className="link"
