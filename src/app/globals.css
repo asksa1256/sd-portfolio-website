@@ -638,8 +638,18 @@ h3 {
   border-radius: 50%;
   z-index: 100;
   mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.cursorText {
+  font-size: 4px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  color: #000;
+  display: none;
+}
 
 
 /*************************** 

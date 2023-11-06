@@ -39,7 +39,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         width: 80px;
-        height: 120px;
+        height: 80px;
         z-index: 3;
         overflow: hidden;
         pointer-events: none;
@@ -50,15 +50,6 @@
           transform: translateY(120px);
           transition: .5s;
           transform-origin: center;
-        }
-        &:before {
-          content: "더보기";
-          position: absolute;
-          left: 50%;
-          bottom: 0;
-          transform: translateX(-50%);
-          color: #fff;
-          font-weight: 700;
         }
       }
     }
@@ -135,14 +126,10 @@
           height: 100%;
           .star {
             width: 60px;
-            height: 100px;
+            height: 60px;
             img { 
               width: 60px !important;
               height: 60px !important;
-            }
-            &:before {
-              font-size: 14px;
-              font-weight: 500;
             }
           }
         }
