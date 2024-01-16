@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./style.module.scss";
 import { motion as m, useMotionValueEvent, useScroll } from "framer-motion";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 
 export default function TopButton() {
   const { scrollY, scrollYProgress } = useScroll();
@@ -16,12 +16,13 @@ export default function TopButton() {
   });
 
   const backToTop = () => {
-    const locomotiveScroll = new LocomotiveScroll();
-    locomotiveScroll.scrollTo(".pageWrapper", {
-      offset: 0,
-      duration: 1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+    // const locomotiveScroll = new LocomotiveScroll();
+    // locomotiveScroll.scrollTo(".pageWrapper", {
+    //   offset: 0,
+    //   duration: 1,
+    //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    // });
+    console.log("test");
   };
 
   return (
