@@ -55,36 +55,34 @@ export default function Project01() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (typeof window !== "undefined") {
-      if (window.innerWidth > 768) {
-        (async () => {
-          const LocomotiveScroll = (await import("locomotive-scroll")).default;
-          const locomotiveScroll = new LocomotiveScroll();
-        })();
-      }
-
-      requestAnimationFrame(marqueeAnim);
-      gsap.to(marquee.current, {
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: 0,
-          end: window.innerHeight,
-          scrub: true,
-          onUpdate: (e) => (direction = e.direction * -1),
-        },
-        x: "-=300px",
-      });
-
-      gsap.to(layer.current, {
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: 0,
-          end: window.innerHeight,
-          scrub: true,
-        },
-        opacity: 1,
-      });
+    if (window.innerWidth > 768) {
+      (async () => {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        const locomotiveScroll = new LocomotiveScroll();
+      })();
     }
+
+    requestAnimationFrame(marqueeAnim);
+    gsap.to(marquee.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: 0,
+        end: window.innerHeight,
+        scrub: true,
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+      x: "-=300px",
+    });
+
+    gsap.to(layer.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: 0,
+        end: window.innerHeight,
+        scrub: true,
+      },
+      opacity: 1,
+    });
   }, []);
 
   const marqueeAnim = () => {
