@@ -6,6 +6,7 @@ import LocomotiveScroll from "locomotive-scroll";
 export default function TopButton() {
   const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(true);
+  const [toTop, setToTop] = useState(false);
 
   useMotionValueEvent(scrollY, "change", () => {
     if (scrollYProgress.current > 0.15) {
@@ -15,15 +16,20 @@ export default function TopButton() {
     }
   });
 
-  const backToTop = () => {
+  function backToTop() {
+    setToTop(true);
+  }
+
+  useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll();
     locomotiveScroll.scrollTo(".pageWrapper", {
       offset: 0,
       duration: 1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
-    // console.log("test");
-  };
+
+    setToTop(false);
+  }, [toTop]);
 
   return (
     <div className={styles.btnWrap}>

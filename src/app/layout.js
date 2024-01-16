@@ -3,7 +3,6 @@ import "./globals.css";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import TopButton from "@/components/TopButton";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -44,6 +43,10 @@ export default function RootLayout({ children }) {
     }
   });
 
+  const toTopHandler = () => {
+    console.log("test");
+  };
+
   return (
     <html lang="ko">
       <head>
@@ -61,7 +64,6 @@ export default function RootLayout({ children }) {
           shallowRouting
         />
         {children}
-        <TopButton />
       </body>
     </html>
   );
