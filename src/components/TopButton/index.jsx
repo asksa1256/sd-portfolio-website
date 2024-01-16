@@ -25,8 +25,8 @@ export default function TopButton(props) {
         className={styles.topButton}
         type="button"
         variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { y: "-100%" },
+          visible: { opacity: 1 },
+          hidden: { opacity: 0 },
         }}
         animate={hidden ? "hidden" : "visible"}
       >

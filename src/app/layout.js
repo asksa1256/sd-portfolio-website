@@ -43,10 +43,6 @@ export default function RootLayout({ children }) {
     }
   });
 
-  const toTopHandler = () => {
-    console.log("test");
-  };
-
   return (
     <html lang="ko">
       <head>
