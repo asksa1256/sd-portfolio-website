@@ -7,22 +7,22 @@ export default function PageWrapper({ children }) {
   const [toTop, setToTop] = useState(false);
 
   useEffect(() => {
-    const isTouchDevice =
-      navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
+    // const isTouchDevice =
+    //   navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
 
-    if (!isTouchDevice) {
-      (async () => {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        const locomotiveScroll = new LocomotiveScroll();
+    // if (!isTouchDevice) {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
 
-        locomotiveScroll.scrollTo(".pageWrapper", {
-          offset: 0,
-          duration: 1,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          onComplete: () => setToTop(false),
-        });
-      })();
-    }
+      locomotiveScroll.scrollTo(".pageWrapper", {
+        offset: 0,
+        duration: 1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        onComplete: () => setToTop(false),
+      });
+    })();
+    // }
   }, [toTop]);
 
   function toTopHandler() {
