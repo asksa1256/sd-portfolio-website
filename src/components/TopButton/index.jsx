@@ -20,16 +20,16 @@ export default function TopButton() {
     setToTop(true);
   }
 
-  useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll();
-    locomotiveScroll.scrollTo(".pageWrapper", {
-      offset: 0,
-      duration: 1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+  // useEffect(() => {
+  //   const locomotiveScroll = new LocomotiveScroll();
+  //   locomotiveScroll.scrollTo(".pageWrapper", {
+  //     offset: 0,
+  //     duration: 1,
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  //   });
 
-    setToTop(false);
-  }, [toTop]);
+  //   setToTop(false);
+  // }, [toTop]);
 
   return (
     <div className={styles.btnWrap}>
