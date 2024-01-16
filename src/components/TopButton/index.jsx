@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "./style.module.scss";
 import { motion as m, useMotionValueEvent, useScroll } from "framer-motion";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 
 export default function TopButton() {
   const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(true);
-  const [toTop, setToTop] = useState(false);
+  // const [toTop, setToTop] = useState(false);
 
   useMotionValueEvent(scrollY, "change", () => {
     if (scrollYProgress.current > 0.15) {
@@ -16,9 +16,9 @@ export default function TopButton() {
     }
   });
 
-  function backToTop() {
-    setToTop(true);
-  }
+  // function backToTop() {
+  //   setToTop(true);
+  // }
 
   // useEffect(() => {
   //   const locomotiveScroll = new LocomotiveScroll();
