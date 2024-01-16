@@ -1,9 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TopButton from "./TopButton";
 
 export default function PageWrapper({ children }) {
+  const [toTop, setToTop] = useState(false);
+
   useEffect(() => {
     const isTouchDevice =
       navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
@@ -12,9 +14,20 @@ export default function PageWrapper({ children }) {
       (async () => {
         const LocomotiveScroll = (await import("locomotive-scroll")).default;
         const locomotiveScroll = new LocomotiveScroll();
+
+        locomotiveScroll.scrollTo(".pageWrapper", {
+          offset: 0,
+          duration: 1,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          onComplete: () => setToTop(false),
+        });
       })();
     }
-  }, []);
+  }, [toTop]);
+
+  function toTopHandler() {
+    setToTop(true);
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -26,7 +39,7 @@ export default function PageWrapper({ children }) {
         className="pageWrapper"
       >
         {children}
-        <TopButton />
+        <TopButton toTop={toTopHandler} />
       </motion.div>
     </AnimatePresence>
   );
