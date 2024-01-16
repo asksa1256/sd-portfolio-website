@@ -28,11 +28,11 @@
     p {
       position: relative;
       display: inline-block;
-      font-family: 'Unbounded', sans-serif;
+      font-family: "Unbounded", sans-serif;
       font-size: 100px;
       font-weight: 700;
       &:before {
-        content: '●';
+        content: "●";
         font-size: 36px;
         vertical-align: middle;
         margin: 0 40px;
@@ -40,7 +40,6 @@
     }
     .arrow {
       margin: 0 48px;
-      font-family: 'BricolageGrotesque', cursive;
       font-size: 100px;
       font-weight: 400;
       letter-spacing: 4px;
@@ -53,7 +52,6 @@
 ****************************/
 
 @include tablet {
-  
 }
 
 @include mobile {
@@ -67,7 +65,7 @@
       p {
         font-size: 32px;
         &:before {
-          content: '●';
+          content: "●";
           font-size: 14px;
           margin: 0 16px;
         }
