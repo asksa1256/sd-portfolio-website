@@ -122,7 +122,13 @@ export default function Intro() {
           className={styles.introImage}
           initial={{ opacity: 0 }}
         >
-          <Image src="/images/main_img1-crop.jpg" alt="image" fill />
+          <Image
+            src="/images/main_img1-crop.jpg"
+            alt="image"
+            fill
+            priority
+            sizes="580px"
+          />
         </div>
         <div
           initial={{ opacity: 0 }}

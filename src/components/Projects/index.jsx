@@ -122,7 +122,12 @@ const Column = ({ images, y = 0 }) => {
                 href={`/project/${props.id}`}
                 scroll={true}
               ></Link>
-              <Image src={`/images/${props.src}`} alt="image" fill />
+              <Image
+                src={`/images/${props.src}`}
+                alt="image"
+                fill
+                sizes="612px"
+              />
               <figure className={styles.star}>
                 <Image src="/images/star_wt.png" alt="" fill />
               </figure>

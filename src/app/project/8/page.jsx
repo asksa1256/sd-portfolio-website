@@ -22,12 +22,10 @@ export default function Project08() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (window.innerWidth > 768) {
-      (async () => {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        const locomotiveScroll = new LocomotiveScroll();
-      })();
-    }
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
 
     requestAnimationFrame(marqueeAnim);
     gsap.to(marquee.current, {
