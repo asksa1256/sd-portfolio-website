@@ -129,7 +129,7 @@ const Column = ({ images, y = 0 }) => {
                 sizes="612px"
               />
               <figure className={styles.star}>
-                <Image src="/images/star_wt.png" alt="" fill />
+                <Image src="/images/star_wt.png" alt="" fill sizes="80px" />
               </figure>
             </div>
           </div>
