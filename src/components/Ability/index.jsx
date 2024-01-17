@@ -232,6 +232,7 @@ function AbilityItem() {
             src={item.iconUrl}
             alt=""
             fill
+            sizes="66px"
             className={styles.icon}
             data-classname={classNm}
           />
