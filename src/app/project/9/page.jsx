@@ -154,7 +154,7 @@ export default function Project09() {
                 <m.li variants={Item}>
                   <span className="title">기간</span>
                   <div className="desc">
-                    <span className="chip">디자인 5일</span>
+                    <span className="chip">디자인 10일</span>
                     <span className="chip">퍼블리싱 14일</span>
                   </div>
                 </m.li>

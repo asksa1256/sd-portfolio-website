@@ -10,7 +10,7 @@ export default function Intro() {
   const textWrap = useRef(null);
   const layer = useRef(null);
 
-  const headings = ["Web Publisher", "Frontend Developer", "Leesangdal"];
+  const headings = ["Web Publisher", "UI Developer", "Leesangdal"];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -108,7 +108,7 @@ export default function Intro() {
   });
 
   return (
-    <section className={styles.intro}>
+    <section id="main" className={styles.intro}>
       <div ref={backgroundImage} className={styles.backgroundImage}>
         <div className={styles.img}></div>
         <div ref={layer} className={styles.layer}></div>

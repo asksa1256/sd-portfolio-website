@@ -160,7 +160,7 @@ export default function Ability() {
   }, []);
 
   return (
-    <section className={`${styles.ability} ability`} ref={ability}>
+    <section id="ability" className={`${styles.ability} ability`} ref={ability}>
       <div className={`${styles.sectionTitle} sectionTitle`}>
         <div className={styles.headingWrap}>
           <span className={styles.object} ref={object}></span>

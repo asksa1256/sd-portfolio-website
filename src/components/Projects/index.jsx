@@ -116,7 +116,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className={`${styles.projects} projects`}>
+    <section id="projects" className={`${styles.projects} projects`}>
       <ul className={styles.gallery} ref={container}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
