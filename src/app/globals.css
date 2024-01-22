@@ -530,11 +530,26 @@ h3 {
   text-decoration: underline;
 }
 
+.detailContent .detailList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.detailContent .detailList li {
+  width: 50%;
+}
+
 .detailContent .detailList .phrase {
   width: 80%;
   margin-bottom: 24px;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.6;
+}
+
+.detailContent.align-center {
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chip {
@@ -931,7 +946,6 @@ h3 {
 
   .detailContent .detailList .phrase {
     width: 100%;
-    font-size: 20px;
   }
 
   .contentTitle {
@@ -1028,10 +1042,6 @@ h3 {
   .detailContent {
     flex-wrap: wrap;
     padding: 0 16px;
-  }
-
-  .detailContent .detailList .phrase {
-    font-size: 20px;
   }
 
   .detailContent .detailList .left,
