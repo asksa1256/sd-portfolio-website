@@ -25,13 +25,14 @@ export default function PageWrapper({ children }) {
   }, [toTop]);
 
   function toTopHandler() {
-    setHrefOffsetTop(0);
+    // setHrefOffsetTop(0);
+    setToTop(true);
   }
 
   function hrefChangeHandler(href) {
     // const targetHrefOffsetTop = document.querySelector(`${href}`).offsetTop;
     // setHrefOffsetTop(targetHrefOffsetTop);
-    console.log(href);
+    // console.log(href);
   }
 
   return (
