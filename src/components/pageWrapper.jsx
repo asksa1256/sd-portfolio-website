@@ -5,7 +5,7 @@ import Header from "./Header";
 
 export default function PageWrapper({ children }) {
   const [toTop, setToTop] = useState(false);
-  const [hrefOffsetTop, setHrefOffsetTop] = useState(0);
+  // const [hrefOffsetTop, setHrefOffsetTop] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -13,31 +13,30 @@ export default function PageWrapper({ children }) {
       const locomotiveScroll = new LocomotiveScroll();
 
       locomotiveScroll.scrollTo(".pageWrapper", {
-        // offset: 0,
-        offset: hrefOffsetTop,
+        offset: 0,
+        // offset: hrefOffsetTop,
         duration: 1,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         onComplete: () => {
-          if (scrollY === 0) {
-            setToTop(false);
-          }
+          setToTop(false);
         },
       });
     })();
-  }, [toTop, hrefOffsetTop]);
+  }, [toTop]);
 
   function toTopHandler() {
-    setToTop(true);
+    setHrefOffsetTop(0);
   }
 
   function hrefChangeHandler(href) {
-    const targetHrefOffsetTop = document.querySelector(`${href}`).offsetTop;
-    setHrefOffsetTop(targetHrefOffsetTop);
+    // const targetHrefOffsetTop = document.querySelector(`${href}`).offsetTop;
+    // setHrefOffsetTop(targetHrefOffsetTop);
+    console.log(href);
   }
 
   return (
     <div className="pageWrapper">
-      <Header onHrefHandler={hrefChangeHandler} />
+      {/* <Header onHrefHandler={hrefChangeHandler} /> */}
       {children}
       <TopButton toTop={toTopHandler} />
     </div>
