@@ -11,59 +11,63 @@ const images = [
     id: 1,
     src: "pj-1.jpg",
     title: "클릭하면 그룹웨어 솔루션 Hi5 소개 페이지로 이동합니다.",
-    alt: "그룹웨어 솔루션 Hi5 미리보기 이미지",
+    alt: "그룹웨어 솔루션 Hi5 썸네일",
   },
   {
     id: 2,
     src: "pj-2.jpg",
     title: "클릭하면 동일이엔티 웹사이트 소개 페이지로 이동합니다.",
-    alt: "동일이엔티 웹사이트 미리보기 이미지",
+    alt: "동일이엔티 웹사이트 썸네일",
   },
   {
     id: 3,
     src: "pj-3.jpg",
     title: "클릭하면 솔루션 비스무스 소개 페이지로 이동합니다.",
-    alt: "비즈니스 분석 솔루션 비스무스 미리보기 이미지",
+    alt: "비즈니스 분석 솔루션 비스무스 썸네일",
   },
   {
     id: 4,
     src: "pj-4.jpg",
     title: "클릭하면 웹사이트 테라에너지 소개 페이지로 이동합니다.",
-    alt: "테라에너지 웹사이트 미리보기 이미지",
+    alt: "테라에너지 웹사이트 썸네일",
   },
   {
     id: 5,
     src: "pj-5.jpg",
     title: "클릭하면 테라에너지 채용 소개 페이지로 이동합니다.",
-    alt: "테라에너지 채용 홈페이지 미리보기 이미지",
+    alt: "테라에너지 채용 홈페이지 썸네일",
   },
   {
     id: 6,
     src: "pj-6.jpg",
     title: "클릭하면 솔루션 카카오더 소개 페이지로 이동합니다.",
-    alt: "스마트 오더 솔루션 카카오더 홈페이지 미리보기 이미지",
+    alt: "스마트 오더 솔루션 카카오더 홈페이지 썸네일",
   },
   {
     id: 7,
     src: "pj-7.jpg",
     title: "클릭하면 솔루션 셀린 소개 페이지로 이동합니다.",
-    alt: "스마트 조명 솔루션 셀린 홈페이지 미리보기 이미지",
+    alt: "스마트 조명 솔루션 셀린 홈페이지 썸네일",
   },
   {
     id: 8,
     src: "pj-8.jpg",
     title: "클릭하면 우듬지석란 소개 페이지로 이동합니다.",
-    alt: "우듬지석란 웹사이트 미리보기 이미지",
+    alt: "우듬지석란 웹사이트 썸네일",
   },
   {
     id: 9,
     src: "pj-9.jpg",
-    title: "클릭하면 제 포트폴리오 사이트 소개 페이지로 이동합니다.",
-    alt: "웹퍼블리셔 이상달 포트폴리오 사이트 미리보기 이미지",
+    title: "클릭하면 저의 포트폴리오 사이트 소개 페이지로 이동합니다.",
+    alt: "포트폴리오 사이트 썸네일",
   },
 ];
 
-export default function Projects() {
+const setScrollY = () => {
+  sessionStorage.setItem("scrollY", JSON.stringify(window.scrollY));
+};
+
+export default function Projects(props) {
   const container = useRef(null);
   const { height } = useDimension();
 
@@ -140,6 +144,7 @@ const Column = ({ images, y = 0 }) => {
                 href={`/project/${props.id}`}
                 scroll={true}
                 title={props.title}
+                onClick={setScrollY}
               ></Link>
               <Image
                 src={`/images/${props.src}`}
