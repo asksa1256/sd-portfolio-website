@@ -70,8 +70,6 @@ export default function Project01() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    scrollRestore();
-
     // marquee
     requestAnimationFrame(marqueeAnim);
     gsap.to(marquee.current, {
