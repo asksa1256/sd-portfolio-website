@@ -18,8 +18,10 @@ export default function Project05() {
   let speed = 0.05;
   let direction = -1;
 
-  // 뒤로가기 -> 스크롤 위치 복원
-  function scrollRestore() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 뒤로가기 -> 스크롤 위치 복원
     const scrollY = sessionStorage.getItem("scrollY");
 
     (async () => {
@@ -31,11 +33,8 @@ export default function Project05() {
         disableLerp: true, // 부드러운 스크롤 비활성화
       });
     })();
-  }
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+    // marquee
     requestAnimationFrame(marqueeAnim);
     gsap.to(marquee.current, {
       scrollTrigger: {
