@@ -23,20 +23,11 @@ export default function Project07() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 뒤로가기 -> 스크롤 위치 복원
-    const scrollY = sessionStorage.getItem("scrollY");
-
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
-
-      locomotiveScroll.scrollTo(parseFloat(scrollY), {
-        duration: 0, // 즉시 스크롤 이동
-        disableLerp: true, // 부드러운 스크롤 비활성화
-      });
     })();
 
-    // marquee
     requestAnimationFrame(marqueeAnim);
     gsap.to(marquee.current, {
       scrollTrigger: {
@@ -86,7 +77,7 @@ export default function Project07() {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 1 }}
         >
-          <Link className="back" href="/" onClick={scrollRestore}>
+          <Link className="back" href="/" scroll={false}>
             <span className="arrow">←</span>
             <span className="text">Back</span>
           </Link>

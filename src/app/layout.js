@@ -3,8 +3,6 @@ import "./globals.css";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import LocomotiveScroll from "locomotive-scroll";
-import { usePathname } from "next/navigation";
 import TopButton from "@/components/TopButton";
 
 function cursorInteraction() {
@@ -47,7 +45,6 @@ function cursorInteraction() {
 
 export default function RootLayout({ children }) {
   const [toTop, setToTop] = useState(false);
-  const pathname = usePathname();
   const scrollRef = useRef(null);
 
   function toTopHandler() {
@@ -57,15 +54,19 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     cursorInteraction();
 
-    const locomotiveScroll = new LocomotiveScroll();
-    locomotiveScroll.scrollTo(".pageWrapper", {
-      offset: 0,
-      duration: 1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      onComplete: () => {
-        setToTop(false);
-      },
-    });
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+
+      locomotiveScroll.scrollTo(".pageWrapper", {
+        offset: 0,
+        duration: 1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        onComplete: () => {
+          setToTop(false);
+        },
+      });
+    })();
   }, [toTop]);
 
   return (
