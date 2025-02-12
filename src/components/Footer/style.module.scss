@@ -7,6 +7,9 @@
   height: auto;
   mix-blend-mode: difference;
   overflow: hidden;
+  &.hide {
+    display: none;
+  }
 
   .txt-lg {
     font-family: "Unbounded", cursive;

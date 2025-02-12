@@ -10,7 +10,7 @@ export default function Intro() {
   const textWrap = useRef(null);
   const layer = useRef(null);
 
-  const headings = ["Web Publisher", "UI Developer", "Leesangdal"];
+  const headings = ["Web Publisher", "FE Developer", "LEESANGDAL"];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -32,6 +32,7 @@ export default function Intro() {
         y: "0%",
         duration: 0.15,
         stagger: 0.03,
+        delay: 0.5,
       }
     );
     tl.to(".text1", {

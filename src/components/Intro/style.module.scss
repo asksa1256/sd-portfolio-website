@@ -93,7 +93,8 @@ section.intro {
 @include mobile {
   .backgroundImage {
     .img {
-      background: url(../../../public/images/main_img1-crop2.jpg) no-repeat center;
+      background: url(../../../public/images/main_img1-crop2.jpg) no-repeat
+        center;
       background-size: cover;
     }
   }
