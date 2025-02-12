@@ -28,7 +28,7 @@ export default function Footer() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <span className={styles["txt-lg"]}>SD&copy;</span>
-        <span className={styles["txt-sm"]}>2023 Leesangdal.</span>
+        <span className={styles["txt-sm"]}>2025 Leesangdal.</span>
       </m.div>
     </footer>
   );
