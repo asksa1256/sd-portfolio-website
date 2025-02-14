@@ -20,13 +20,13 @@ export default function Project05() {
 
   // 뒤로가기 -> 스크롤 위치 복원
   function scrollRestore() {
-    const scrollY = sessionStorage.getItem("scrollY");
+    const scrollY = +sessionStorage.getItem("scrollY");
 
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
 
-      locomotiveScroll.scrollTo(parseFloat(scrollY), {
+      locomotiveScroll.scrollTo(scrollY, {
         duration: 0, // 즉시 스크롤 이동
         disableLerp: true, // 부드러운 스크롤 비활성화
       });

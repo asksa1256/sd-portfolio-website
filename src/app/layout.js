@@ -4,44 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import TopButton from "@/components/TopButton";
-
-function cursorInteraction() {
-  const isTouchDevice =
-    navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
-  let cursor = document.querySelector(".cursorBall");
-  let cursorText = document.querySelector(".cursorText");
-  const links = document.querySelectorAll("a");
-
-  if (isTouchDevice === false) {
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.top = e.clientY + "px";
-      cursor.style.left = e.clientX + "px";
-    });
-
-    const onMouseEnterLink = () => {
-      gsap.to(cursor, { scale: 4 });
-      cursorText.style.display = "block";
-    };
-
-    const onMouseLeaveLink = () => {
-      gsap.to(cursor, { scale: 1 });
-      cursorText.style.display = "none";
-    };
-
-    const onMouseClickLink = () => {
-      gsap.to(cursor, { scale: 1 });
-      cursorText.style.display = "none";
-    };
-
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", onMouseEnterLink);
-      link.addEventListener("mouseleave", onMouseLeaveLink);
-      link.addEventListener("click", onMouseClickLink);
-    });
-  } else {
-    cursor.style.display = "none";
-  }
-}
+import LocomotiveScroll from "locomotive-scroll";
 
 export default function RootLayout({ children }) {
   const [toTop, setToTop] = useState(false);
@@ -52,8 +15,44 @@ export default function RootLayout({ children }) {
   }
 
   useEffect(() => {
-    cursorInteraction();
+    // 커서 인터랙션
+    const isTouchDevice =
+      navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
+    let cursor = document.querySelector(".cursorBall");
+    let cursorText = document.querySelector(".cursorText");
+    const links = document.querySelectorAll("a");
 
+    if (isTouchDevice === false) {
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+      });
+
+      const onMouseEnterLink = () => {
+        gsap.to(cursor, { scale: 4 });
+        cursorText.style.display = "block";
+      };
+
+      const onMouseLeaveLink = () => {
+        gsap.to(cursor, { scale: 1 });
+        cursorText.style.display = "none";
+      };
+
+      const onMouseClickLink = () => {
+        gsap.to(cursor, { scale: 1 });
+        cursorText.style.display = "none";
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", onMouseEnterLink);
+        link.addEventListener("mouseleave", onMouseLeaveLink);
+        link.addEventListener("click", onMouseClickLink);
+      });
+    } else {
+      cursor.style.display = "none";
+    }
+
+    // smooth scroll init
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
@@ -67,6 +66,17 @@ export default function RootLayout({ children }) {
         },
       });
     })();
+
+    // 서브페이지에서 뒤로가기 => 스크롤 복원
+    window.addEventListener("popstate", () => {
+      const locomotiveScroll = new LocomotiveScroll();
+      const scrollY = +sessionStorage.getItem("scrollY");
+
+      locomotiveScroll.scrollTo(scrollY, {
+        duration: 0, // 즉시 스크롤 이동
+        disableLerp: true, // 부드러운 스크롤 비활성화
+      });
+    });
   }, [toTop]);
 
   return (
