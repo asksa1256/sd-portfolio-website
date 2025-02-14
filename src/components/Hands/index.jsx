@@ -34,9 +34,9 @@ export default function Hands() {
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableZoom = false;
-      if (isTouchDevice) {
-        controls.enabled = false;
-      }
+      // if (isTouchDevice) {
+      //   controls.enabled = false;
+      // }
 
       const light = new THREE.DirectionalLight(0xffffff, 0);
       scene.add(light);
