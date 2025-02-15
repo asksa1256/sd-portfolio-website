@@ -99,7 +99,12 @@ export default function Ability() {
     gsap.to(`.letter.${sectionName}`, {
       scrollTrigger: {
         trigger: ability.current,
-        start: () => (innerWidth > 650 ? "700px bottom" : "0px bottom"),
+        start: () =>
+          innerWidth > 1280
+            ? "700px bottom"
+            : innerWidth > 650
+            ? "100px bottom"
+            : "0px bottom",
         toggleActions: "play none none reverse",
       },
       y: "0%",
@@ -110,7 +115,12 @@ export default function Ability() {
     const objectTl = gsap.timeline({
       scrollTrigger: {
         trigger: ability.current,
-        start: () => (innerWidth > 650 ? "700px bottom" : "0px bottom"),
+        start: () =>
+          innerWidth > 1280
+            ? "700px bottom"
+            : innerWidth > 650
+            ? "100px bottom"
+            : "0px bottom",
         toggleActions: "play none none reverse",
       },
     });
