@@ -15,7 +15,8 @@
         right: 0;
         width: 100px;
         height: 140px;
-        background: url(../../../public/images/holding_card.png) no-repeat center;
+        background: url(../../../public/images/holding_card.png) no-repeat
+          center;
         background-size: cover;
         opacity: 0;
       }
@@ -46,7 +47,7 @@
     .desc {
       opacity: 0;
       visibility: hidden;
-      transition: .3s;
+      transition: 0.3s;
     }
     &:hover .desc {
       opacity: 1;
@@ -65,7 +66,7 @@
       background-size: cover;
       &:before {
         position: absolute;
-        font-family: 'Unbounded', cursive;
+        font-family: "Unbounded", cursive;
         font-size: 24px;
       }
       &:first-of-type {
@@ -78,36 +79,36 @@
       }
     }
     &.card1 .deco:first-of-type:before {
-      content: 'C';
+      content: "C";
       top: -30px;
     }
     &.card1 .deco:last-of-type:before {
-      content: 'C';
+      content: "C";
       top: 28px;
       transform: rotate(180deg);
     }
     &.card2 .deco:first-of-type:before {
-      content: 'C';
+      content: "C";
       top: -30px;
     }
     &.card2 .deco:last-of-type:before {
-      content: 'C';
+      content: "C";
       top: 28px;
       transform: rotate(180deg);
     }
     &.card3 .deco:first-of-type:before {
-      content: 'P';
+      content: "P";
       top: -30px;
     }
     &.card3 .deco:last-of-type:before {
-      content: 'P';
+      content: "P";
       top: 28px;
       transform: rotate(180deg);
     }
     .en {
       display: block;
       margin-bottom: 8px;
-      font-family: 'Pretendard', sans-serif;
+      font-family: "Pretendard", sans-serif;
     }
     .tiltWrap {
       display: flex;
@@ -158,8 +159,82 @@
   반응형 
 ****************************/
 
+@include laptop-sm {
+  .cardsWrap {
+    .cards {
+      .card {
+        width: 250px;
+        height: 350px;
+        h4 {
+          font-size: 22px;
+        }
+        .deco {
+          width: 16px;
+          height: 16px;
+          &:before {
+            margin-left: -1px;
+            font-size: 20px;
+          }
+          &:last-of-type {
+            bottom: 28px;
+          }
+        }
+        &.card .deco:first-of-type:before {
+          top: -28px;
+        }
+        &.card .deco:last-of-type:before {
+          top: -28px;
+        }
+        .tiltWrap {
+          .tiltInner {
+            p {
+              left: 20px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @include tablet {
-  
+  .cardsWrap {
+    .cards {
+      .card {
+        width: 200px;
+        height: 300px;
+        h4 {
+          font-size: 18px;
+        }
+        .deco {
+          width: 16px;
+          height: 16px;
+          &:before {
+            margin-left: -1px;
+            font-size: 20px;
+          }
+          &:last-of-type {
+            bottom: 28px;
+          }
+        }
+        &.card .deco:first-of-type:before {
+          top: -28px;
+        }
+        &.card .deco:last-of-type:before {
+          top: -28px;
+        }
+        .tiltWrap {
+          .tiltInner {
+            p {
+              left: 20px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @include mobile {

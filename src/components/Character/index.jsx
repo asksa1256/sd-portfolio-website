@@ -13,7 +13,7 @@ export default function Character() {
   const cards = useRef(null);
   const cardArr = useRef([]);
   const line = useRef(null);
-  const { width } = useDimension();
+  const { width, height } = useDimension();
 
   useEffect(() => {
     /* section title rolling animation */
@@ -61,41 +61,47 @@ export default function Character() {
 
     gsap.set(line.current, { left: "50%", top: "50%" });
 
-    if (innerWidth > 768) {
-      const cardsTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: cardsWrap.current,
-          start: "top 250px",
-          end: "+=200%",
-          scrub: true,
-          pin: true,
-        },
-      });
-      cardsTl.to(cardArr.current[0], {
-        left: "18%",
-      });
-      cardsTl.to(cardArr.current[1], {
-        left: "0%",
-      });
-      cardsTl.to(cardArr.current[2], {
-        left: "-18%",
-      });
-      cardsTl.to(cards.current, {
-        rotateY: "90deg",
-      });
-      cardsTl.to(line.current, {
-        opacity: 1,
-      });
-      cardsTl.to(line.current, {
-        height: "2px",
-      });
-      cardsTl.to(line.current, {
-        borderWidth: "1px",
-      });
-      cardsTl.to(line.current, {
-        width: "100vw",
-      });
-    }
+    if (innerWidth <= 768) return;
+    const cardsTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: cardsWrap.current,
+        start: () =>
+          innerWidth > 1280
+            ? "-150px top"
+            : innerWidth > 1024
+            ? "-60px top"
+            : "-30px top",
+        end: "+=200%",
+        scrub: true,
+        pin: true,
+      },
+    });
+    cardsTl.to(cardArr.current[0], {
+      left: () =>
+        innerWidth > 1280 ? "18%" : innerWidth > 1024 ? "25%" : "30%",
+    });
+    cardsTl.to(cardArr.current[1], {
+      left: "0%",
+    });
+    cardsTl.to(cardArr.current[2], {
+      left: () =>
+        innerWidth > 1280 ? "-18%" : innerWidth > 1024 ? "-25%" : "-30%",
+    });
+    cardsTl.to(cards.current, {
+      rotateY: "90deg",
+    });
+    cardsTl.to(line.current, {
+      opacity: 1,
+    });
+    cardsTl.to(line.current, {
+      height: "2px",
+    });
+    cardsTl.to(line.current, {
+      borderWidth: "1px",
+    });
+    cardsTl.to(line.current, {
+      width: "100vw",
+    });
   }, []);
 
   return (
