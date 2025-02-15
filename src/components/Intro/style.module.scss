@@ -82,6 +82,14 @@ section.intro {
   }
 }
 
+@include laptop-sm {
+  .introContainer {
+    .introHeadingWrap {
+      height: 64px;
+    }
+  }
+}
+
 @include tablet {
   .introContainer {
     .introHeadingWrap {

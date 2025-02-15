@@ -87,7 +87,7 @@ export default function Intro() {
         height: 0,
       },
       {
-        height: () => (innerWidth > 768 ? 580 : 240),
+        height: () => (innerWidth > 1280 ? 580 : innerWidth > 1024 ? 480 : 240),
         opacity: 1,
         duration: 1.5,
         delay: -1,

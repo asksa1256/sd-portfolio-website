@@ -46,10 +46,10 @@
 }
 
 .ellipse {
-  stroke-dasharray: 1510;  
+  stroke-dasharray: 1510;
   stroke-dashoffset: 1510;
   &.big {
-    stroke-dasharray: 1510;  
+    stroke-dasharray: 1510;
     stroke-dashoffset: 1510;
   }
 }
@@ -57,6 +57,13 @@
 /*************************** 
   반응형 
 ****************************/
+@include laptop-sm {
+  .phrases {
+    p {
+      font-size: 36px;
+    }
+  }
+}
 
 @include tablet {
   .phrases {
