@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import TopButton from "@/components/TopButton";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({ children }) {
   const [toTop, setToTop] = useState(false);
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
         />
         {children}
         <TopButton toTop={toTopHandler} />
+        <Analytics></Analytics>
       </body>
     </html>
   );
