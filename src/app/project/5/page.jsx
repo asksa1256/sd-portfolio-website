@@ -206,7 +206,7 @@ export default function Project05() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/0kM0-IS-iPE?autoplay=1&mute=1&controls=0&loop=1&playlist=0kM0-IS-iPE&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/0kM0-IS-iPE?&mute=1&controls=1&loop=1&playlist=0kM0-IS-iPE&playsinline=1&rel=0"
               title="Teraenergy Team website preview video"
               frameBorder="0"
             ></iframe>
@@ -227,7 +227,7 @@ export default function Project05() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/h-jGjP41Ags?&controls=0&loop=1&playlist=h-jGjP41Ags&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/h-jGjP41Ags?&mute=1&controls=1&loop=1&playlist=h-jGjP41Ags&vq=hd720&playsinline=1&rel=0"
                   title="Teraenergy Team mobile preview video"
                   frameBorder="0"
                 ></iframe>

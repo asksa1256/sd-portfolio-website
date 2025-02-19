@@ -240,7 +240,7 @@ export default function Project06() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/sZ81D-lEWQ4?autoplay=1&mute=1&controls=0&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/sZ81D-lEWQ4?&mute=1&controls=1&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0"
               title="Cacaorder website preview video"
               frameBorder="0"
             ></iframe>
@@ -314,7 +314,7 @@ export default function Project06() {
               >
                 <iframe
                   className="videoIframe"
-                  src="https://www.youtube.com/embed/rGHmjrm447s?autoplay=1&mute=1&controls=0&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0"
+                  src="https://www.youtube.com/embed/rGHmjrm447s?&mute=1&controls=1&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0"
                   title="Swiper.js example"
                   frameBorder="0"
                 ></iframe>
@@ -345,7 +345,7 @@ export default function Project06() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/l3kqomBwL2M?&controls=0&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/l3kqomBwL2M?&mute=1&controls=1&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
                   title="Cacaorder website mobile preview video"
                   frameBorder="0"
                 ></iframe>

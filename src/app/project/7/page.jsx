@@ -219,7 +219,7 @@ export default function Project07() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/dO6C2ubBYQE?autoplay=1&mute=1&controls=0&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/dO6C2ubBYQE?&mute=1&controls=1&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0"
               title="Selene website preview video"
               frameBorder="0"
             ></iframe>
@@ -317,7 +317,7 @@ export default function Project07() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/VjcpCgH5ntI?&controls=0&loop=1&playlist=VjcpCgH5ntI&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/VjcpCgH5ntI?&controls=1&loop=1&playlist=VjcpCgH5ntI&vq=hd720&playsinline=1&rel=0"
                   title="Selene website mobile preview video"
                   frameBorder="0"
                 ></iframe>

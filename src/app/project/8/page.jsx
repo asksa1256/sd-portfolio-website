@@ -206,7 +206,7 @@ export default function Project08() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/XvL8FwJgexs?autoplay=1&mute=1&controls=0&loop=1&playlist=XvL8FwJgexs&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/XvL8FwJgexs?&mute=1&controls=1&loop=1&playlist=XvL8FwJgexs&playsinline=1&rel=0"
               title="우듬지석란 website preview video"
               frameBorder="0"
             ></iframe>
@@ -250,7 +250,7 @@ export default function Project08() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/PskDD53gjZI?&controls=0&loop=1&playlist=PskDD53gjZI&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/PskDD53gjZI?&controls=1&loop=1&playlist=PskDD53gjZI&vq=hd720&playsinline=1&rel=0"
                   title="우듬지석란 website mobile preview video"
                   frameBorder="0"
                 ></iframe>

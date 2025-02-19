@@ -203,7 +203,7 @@ export default function Project09() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/lxbcBCpACPQ?si=uXAY9PZmFERNq9Xb&autoplay=1&mute=1&controls=0&loop=1&playlist=lxbcBCpACPQ&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/lxbcBCpACPQ?si=uXAY9PZmFERNq9Xb&mute=1&controls=1&loop=1&playlist=lxbcBCpACPQ&playsinline=1&rel=0"
               title="Lee Sangdal portfolio website preview video"
               frameBorder="0"
             ></iframe>
@@ -329,7 +329,7 @@ export default function Project09() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/gHAHVtJQsyk?&controls=0&loop=1&playlist=gHAHVtJQsyk&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/gHAHVtJQsyk?&controls=1&loop=1&playlist=gHAHVtJQsyk&vq=hd720&playsinline=1&rel=0"
                   title="Lee Sangdal portfolio website mobile preview video"
                   frameBorder="0"
                 ></iframe>

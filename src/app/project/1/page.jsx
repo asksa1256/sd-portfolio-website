@@ -261,7 +261,7 @@ export default function Project01() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&autoplay=1&mute=1&controls=0&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&mute=1&controls=1&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0"
               title="Groupware Hi5 preview video"
               frameBorder="0"
             ></iframe>
@@ -344,7 +344,7 @@ export default function Project01() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/pD5YUcStZ30?si=QHu7lOgLW2QaXrWT&controls=0&loop=1&playlist=pD5YUcStZ30&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/pD5YUcStZ30?si=QHu7lOgLW2QaXrWT&mute=1&controls=1&loop=1&playlist=pD5YUcStZ30&vq=hd720&playsinline=1&rel=0"
                   title="Groupware Hi5 responsive preview video - dashboard"
                   frameBorder="0"
                 ></iframe>

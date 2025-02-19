@@ -211,7 +211,7 @@ export default function Project02() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/mkrOtfUn4c4?autoplay=1&mute=1&controls=0&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/mkrOtfUn4c4?&mute=1&controls=1&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0"
               title="Dong Il ent. preview video"
               frameBorder="0"
             ></iframe>
@@ -256,7 +256,7 @@ export default function Project02() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/Zi9gcllzYvI?autoplay=1&mute=1&controls=0&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/Zi9gcllzYvI?&mute=1&controls=1&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0"
               title="Dong Il ent. preview video 2"
               frameBorder="0"
             ></iframe>
@@ -277,7 +277,7 @@ export default function Project02() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/iewyAT26t50?&controls=0&loop=1&playlist=iewyAT26t50&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/iewyAT26t50?&mute=1&controls=1&loop=1&playlist=iewyAT26t50&vq=hd720&playsinline=1&rel=0"
                   title="Dong Il ent. mobile preview video"
                   frameBorder="0"
                 ></iframe>

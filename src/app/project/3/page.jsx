@@ -222,7 +222,7 @@ export default function Project03() {
           >
             <iframe
               className="videoIframe"
-              src="https://www.youtube.com/embed/VNKbcab5bp4?autoplay=1&mute=1&controls=0&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/VNKbcab5bp4?&mute=1&controls=1&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0"
               title="Bismuth preview video"
               frameBorder="0"
             ></iframe>
@@ -397,7 +397,7 @@ export default function Project03() {
               <div className="previewMobile">
                 <iframe
                   className="videoIframe"
-                  src="https://youtube.com/embed/vIZegSfQztU?&controls=0&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
+                  src="https://youtube.com/embed/vIZegSfQztU?&mute=1&controls=1&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
                   title="Bismuth mobile preview video"
                   frameBorder="0"
                 ></iframe>
