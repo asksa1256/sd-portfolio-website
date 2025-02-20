@@ -9,7 +9,7 @@ import useDimension from "@/useDimension";
 export default function Header(props) {
   const [isActive, setIsActive] = useState(false);
   const header = useRef();
-  const { width, height } = useDimension();
+  const { width } = useDimension();
 
   const menu = {
     open: {
@@ -38,6 +38,11 @@ export default function Header(props) {
     },
   };
 
+  const onLinkClicked = (target) => {
+    props.onLinkClicked(target);
+    setIsActive(!isActive);
+  };
+
   useEffect(() => {
     gsap.to(header.current, {
       opacity: 1,
@@ -54,7 +59,7 @@ export default function Header(props) {
         initial="closed"
       >
         <AnimatePresence>
-          {isActive && <Nav onLinkClicked={props.onLinkClicked} />}
+          {isActive && <Nav onLinkClicked={onLinkClicked} />}
         </AnimatePresence>
       </motion.div>
       <ToggleButton
