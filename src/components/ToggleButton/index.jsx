@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./style.module.scss";
 
-export default function Button({ isActive, toggleMenu }) {
+export default function ToggleButton({ isActive, toggleMenu }) {
   return (
     <div className={styles.button}>
       <motion.div

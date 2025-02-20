@@ -3,8 +3,8 @@ import "./globals.css";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import TopButton from "@/components/TopButton";
 import { Analytics } from "@vercel/analytics/react";
+import TopButton from "@/components/TopButton";
 
 export default function RootLayout({ children }) {
   const [toTop, setToTop] = useState(false);
@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
     // 커서 인터랙션
     const isTouchDevice =
       navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
-    let cursor = document.querySelector(".cursorBall");
-    let cursorText = document.querySelector(".cursorText");
+    const cursor = document.querySelector(".cursorBall");
+    const cursorText = document.querySelector(".cursorText");
     const links = document.querySelectorAll("a");
 
     if (isTouchDevice === false) {

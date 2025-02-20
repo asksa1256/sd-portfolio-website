@@ -1,17 +1,14 @@
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
-import { links, footerLinks } from "./data";
-import { perspective } from "./anim";
+import { links } from "./data";
 import Link from "next/link";
 
-// footer animation
+// animation
 const slideIn = {
   initial: {
-    opacity: 0,
-    y: 20,
+    y: "100%",
   },
   enter: (i) => ({
-    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
@@ -20,7 +17,7 @@ const slideIn = {
     },
   }),
   exit: {
-    opacity: 0,
+    y: "100%",
     transition: {
       duration: 0.5,
       ease: [0.76, 0, 0.24, 1],
@@ -36,16 +33,16 @@ export default function Nav(props) {
   };
 
   return (
-    <div className={styles.nav}>
-      <div className={styles.body}>
+    <nav className={styles.nav}>
+      <ul className={styles.body}>
         {links.map((link, i) => {
           const { title, href } = link;
           return (
-            <div className={styles.linkContainer} key={`b_${i}`}>
+            <li className={styles.linkContainer} key={`b_${i}`}>
               <motion.div
                 href={href}
                 custom={i}
-                variants={perspective}
+                variants={slideIn}
                 initial="initial"
                 animate="enter"
                 exit="exit"
@@ -54,10 +51,10 @@ export default function Nav(props) {
                   {title}
                 </Link>
               </motion.div>
-            </div>
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 }

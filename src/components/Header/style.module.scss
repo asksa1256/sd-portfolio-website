@@ -1,8 +1,17 @@
+@import "../../app/styles/mixin";
+
 .header {
   position: fixed;
   right: 50px;
   top: 50px;
   z-index: 99;
+  opacity: 0;
+
+  .headerLogo {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+  }
 
   .menu {
     position: relative;
@@ -10,5 +19,38 @@
     height: 650px;
     background-color: #c9fd74;
     border-radius: 25px;
+  }
+}
+
+/*************************** 
+  반응형 
+****************************/
+// @include laptop-sm {
+//   .header {
+//     width: 100%;
+//     top: 0;
+//     right: 0;
+//   }
+// }
+
+@include tablet {
+  .header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    .menu {
+      position: absolute;
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    .menu {
+      position: absolute;
+    }
   }
 }

@@ -1,6 +1,6 @@
 export const links = [
   {
-    title: "Main",
+    title: "Intro",
     href: "#main",
   },
   {
