@@ -105,7 +105,8 @@ export default function Ability() {
             : innerWidth > 650
             ? "100px bottom"
             : "0px bottom",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
+        once: true,
       },
       y: "0%",
       stagger: 0.025,
@@ -121,7 +122,8 @@ export default function Ability() {
             : innerWidth > 650
             ? "100px bottom"
             : "0px bottom",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
+        once: true,
       },
     });
     objectTl.to(object.current, {
@@ -135,7 +137,7 @@ export default function Ability() {
         trigger: ability.current,
         start: "top-=200px",
         end: "bottom",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
       visibility: "hidden",
       delay: 1.5,
@@ -148,7 +150,7 @@ export default function Ability() {
         trigger: ability.current,
         start: () => (innerWidth > 650 ? "top-=200px" : "0px bottom"),
         end: "bottom",
-        toggleActions: "play none none reverse",
+        once: true,
       },
       y: "0%",
       delay: 0.75,
@@ -156,17 +158,18 @@ export default function Ability() {
     });
 
     // list items hide
-    gsap.to(".itemInner", {
-      scrollTrigger: {
-        trigger: ability.current,
-        start: () => (innerWidth > 650 ? "bottom-=400px" : "bottom-=200px"),
-        end: "bottom",
-        toggleActions: "play none none reverse",
-      },
-      y: "100%",
-      opacity: 0,
-      stagger: 0.05,
-    });
+    // gsap.to(".itemInner", {
+    //   scrollTrigger: {
+    //     trigger: ability.current,
+    //     start: () => (innerWidth > 650 ? "bottom-=400px" : "bottom-=200px"),
+    //     end: "bottom",
+    //     // toggleActions: "play none none none",
+    //     once: true,
+    //   },
+    //   y: "100%",
+    //   opacity: 0,
+    //   stagger: 0.05,
+    // });
   }, []);
 
   return (
