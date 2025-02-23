@@ -238,12 +238,10 @@ export default function Project06() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/sZ81D-lEWQ4?&mute=1&controls=1&loop=1&playlist=sZ81D-lEWQ4&playsinline=1&rel=0"
-              title="Cacaorder website preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/caca-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -312,12 +310,10 @@ export default function Project06() {
                 whileInView="zoomOut"
                 viewport={{ once: true }}
               >
-                <iframe
-                  className="videoIframe"
-                  src="https://www.youtube.com/embed/rGHmjrm447s?&mute=1&controls=1&loop=1&playlist=rGHmjrm447s&playsinline=1&rel=0"
-                  title="Swiper.js example"
-                  frameBorder="0"
-                ></iframe>
+                <video controls>
+                  <source src="/images/caca-2.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </m.div>
               <p className="altText">슬라이더 구현 화면</p>
               <m.div
@@ -341,15 +337,11 @@ export default function Project06() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/l3kqomBwL2M?&mute=1&controls=1&loop=1&playlist=l3kqomBwL2M&vq=hd720&playsinline=1&rel=0"
-                  title="Cacaorder website mobile preview video"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/caca-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div

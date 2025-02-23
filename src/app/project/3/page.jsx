@@ -220,12 +220,10 @@ export default function Project03() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/VNKbcab5bp4?&mute=1&controls=1&loop=1&playlist=VNKbcab5bp4&playsinline=1&rel=0"
-              title="Bismuth preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/bis-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -393,15 +391,11 @@ export default function Project03() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/vIZegSfQztU?&mute=1&controls=1&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
-                  title="Bismuth mobile preview video"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/bis-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div

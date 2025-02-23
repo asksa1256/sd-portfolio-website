@@ -217,12 +217,10 @@ export default function Project07() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/dO6C2ubBYQE?&mute=1&controls=1&loop=1&playlist=dO6C2ubBYQE&playsinline=1&rel=0"
-              title="Selene website preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/teled-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -313,15 +311,11 @@ export default function Project07() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/VjcpCgH5ntI?&controls=1&loop=1&playlist=VjcpCgH5ntI&vq=hd720&playsinline=1&rel=0"
-                  title="Selene website mobile preview video"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/teled-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div

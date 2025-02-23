@@ -224,12 +224,10 @@ export default function Project04() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/dbZZJq-tayI?&mute=1&controls=1&loop=1&playlist=dbZZJq-tayI&playsinline=1&rel=0"
-              title="Teraenergy website preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/tera-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -320,15 +318,11 @@ export default function Project04() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/vIZegSfQztU?&mute=1&controls=1&loop=1&playlist=vIZegSfQztU&vq=hd720&playsinline=1&rel=0"
-                  title="Teraenergy website mobile preview video"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/tera-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div

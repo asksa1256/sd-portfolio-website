@@ -259,12 +259,10 @@ export default function Project01() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/kfB0Pa9sItk?si=4CsonfECNJ8M-Uki&mute=1&controls=1&loop=1&playlist=kfB0Pa9sItk&playsinline=1&rel=0"
-              title="Groupware Hi5 preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/hi5-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -340,15 +338,11 @@ export default function Project01() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/pD5YUcStZ30?si=QHu7lOgLW2QaXrWT&mute=1&controls=1&loop=1&playlist=pD5YUcStZ30&vq=hd720&playsinline=1&rel=0"
-                  title="Groupware Hi5 responsive preview video - dashboard"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/hi5-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div
