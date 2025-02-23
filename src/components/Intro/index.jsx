@@ -15,6 +15,8 @@ export default function Intro() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    if (sessionStorage.getItem("IntroAnimated") === true) return;
+
     const textWrapChildren = textWrap.current.children;
     const childrenArr = Array.prototype.slice.call(textWrapChildren);
     childrenArr.forEach((el, i) => {
@@ -106,7 +108,9 @@ export default function Intro() {
     scrollTl
       .from(backgroundImage.current, { clipPath: "inset(10%)" })
       .to(introImage.current, { clipPath: "inset(50%)" }, 0); // to에서 마지막에 ',0' => from과 to의 동작이 동시에 일어나도록 함
-  });
+
+    sessionStorage.setItem("IntroAnimated", true);
+  }, []);
 
   return (
     <section id="main" className={styles.intro}>
