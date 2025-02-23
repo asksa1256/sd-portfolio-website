@@ -67,7 +67,7 @@ const setScrollY = () => {
   sessionStorage.setItem("scrollY", JSON.stringify(window.scrollY));
 };
 
-export default function Projects(props) {
+export default function Projects() {
   const container = useRef(null);
   const { height } = useDimension();
 

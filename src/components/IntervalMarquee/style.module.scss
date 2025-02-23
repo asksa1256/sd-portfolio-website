@@ -20,7 +20,6 @@
     transform: rotate(-3deg);
     &:nth-child(2) {
       transform: rotate(7deg) translateY(150px);
-      z-index: -1;
       p {
         transform: translateX(-100%);
       }

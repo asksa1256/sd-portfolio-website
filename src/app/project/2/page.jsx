@@ -209,12 +209,10 @@ export default function Project02() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/mkrOtfUn4c4?&mute=1&controls=1&loop=1&playlist=mkrOtfUn4c4&playsinline=1&rel=0"
-              title="Dong Il ent. preview video"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/dient-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="detailContent"
@@ -254,12 +252,10 @@ export default function Project02() {
             initial="hidden"
             whileInView="show"
           >
-            <iframe
-              className="videoIframe"
-              src="https://www.youtube.com/embed/Zi9gcllzYvI?&mute=1&controls=1&loop=1&playlist=Zi9gcllzYvI&playsinline=1&rel=0"
-              title="Dong Il ent. preview video 2"
-              frameBorder="0"
-            ></iframe>
+            <video controls>
+              <source src="/images/dient-2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </m.div>
           <m.div
             className="responsiveWrap"
@@ -273,15 +269,11 @@ export default function Project02() {
             >
               <h4 className="contentTitle">Responsive</h4>
             </m.div>
-            <m.div variants={Item} className="align-center">
-              <div className="previewMobile">
-                <iframe
-                  className="videoIframe"
-                  src="https://youtube.com/embed/iewyAT26t50?&mute=1&controls=1&loop=1&playlist=iewyAT26t50&vq=hd720&playsinline=1&rel=0"
-                  title="Dong Il ent. mobile preview video"
-                  frameBorder="0"
-                ></iframe>
-              </div>
+            <m.div variants={Item} className="previewMobile">
+              <video controls>
+                <source src="/images/dient-mb-1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </m.div>
           </m.div>
           <m.div

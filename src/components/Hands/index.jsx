@@ -11,8 +11,6 @@ export default function Hands() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const isTouchDevice =
-      navigator.maxTouchPoints || "ontouchstart" in document.documentElement;
 
     if (canvasRef.current) {
       const scene = new THREE.Scene();
@@ -22,7 +20,11 @@ export default function Hands() {
         antialias: true,
       });
       renderer.outputColorSpace = THREE.SRGBColorSpace;
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      if (window.innerWidth >= 767) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      } else {
+        renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
+      }
 
       const camera = new THREE.PerspectiveCamera(
         10,
@@ -30,13 +32,14 @@ export default function Hands() {
         0.1,
         1000
       );
-      camera.position.set(5, 0, 5);
+      if (window.innerWidth >= 767) {
+        camera.position.set(5, 0, 5);
+      } else {
+        camera.position.set(5, 0, 10);
+      }
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableZoom = false;
-      // if (isTouchDevice) {
-      //   controls.enabled = false;
-      // }
 
       const light = new THREE.DirectionalLight(0xffffff, 0);
       scene.add(light);

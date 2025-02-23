@@ -367,6 +367,10 @@ h3 {
   text-align: center;
 }
 
+main {
+  transition: background-color 0.3s ease-in-out;
+}
+
 .text-center {
   text-align: center;
 }
@@ -536,10 +540,6 @@ h3 {
   margin-bottom: 60px;
 }
 
-.detailContent .detailList li {
-  width: 50%;
-}
-
 .detailContent .detailList .phrase {
   width: 80%;
   margin-bottom: 24px;
@@ -554,14 +554,11 @@ h3 {
 
 .chip {
   display: inline-block;
+  margin: 0 8px 8px 0;
   padding: 8px 12px;
-  border: 2px solid gray;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   font-size: 14px;
-}
-
-.chip + .chip {
-  margin-left: 8px;
 }
 
 .marqueeContainer {
@@ -686,16 +683,19 @@ h3 {
 
 .previewDesktop {
   position: relative;
-  width: 1440px;
-  height: 700px;
-  margin: 120px auto;
-  border-radius: 8px;
-  aspect-ratio: 16/9;
-  overflow: hidden;
+  margin: 120px 0 40px;
 }
 
 .previewDesktop + .previewDesktop {
   margin-top: 24px;
+}
+
+.previewDesktop video {
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .responsiveWrap {
@@ -716,25 +716,17 @@ h3 {
 
 .previewMobile {
   position: relative;
-  flex-shrink: 0;
-  width: 280px;
-  height: 600px;
-  margin: 0 auto;
-  border-radius: 24px;
-  overflow: hidden;
+  align-items: center;
 }
 
 .previewMobile + .previewMobile {
   margin-left: 24px;
 }
 
-.videoIframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 100%;
-  margin-left: -100%;
+.previewMobile video {
+  width: 360px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .responsiveWrap .detailContent {
@@ -897,16 +889,37 @@ h3 {
   display: none;
 }
 
+/* horizontal scroll pin */
+#horizonScrollPin {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  left: 0;
+}
+
+#horizonScrollPin .pin-wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 15vw 50px 10vw;
+}
+
+#horizonScrollPin .pin-wrap > * {
+  min-width: 40vw;
+  max-width: 100%;
+  margin: 0 40px;
+}
+
+#horizonScrollPin .pin-wrap h2 {
+  margin: 0;
+  font-size: 40px;
+  word-break: keep-all;
+}
+
 /*************************** 
   반응형 
 ****************************/
-@media (max-width: 1500px) {
-  .previewDesktop {
-    width: 90%;
-    height: 44vw;
-  }
-}
-
 @media (max-width: 1440px) {
   h2 {
     font-size: 64px;
@@ -935,10 +948,6 @@ h3 {
     padding-right: 60px;
   }
 
-  .chip {
-    margin: 0 8px 8px 0;
-  }
-
   .chip + .chip {
     margin-left: 0;
   }
@@ -959,7 +968,7 @@ h3 {
 
   .responsiveWrap {
     flex-direction: column;
-    margin-bottom: 200px;
+    height: auto;
   }
 
   .responsiveWrap > div {
@@ -972,6 +981,10 @@ h3 {
 
   .previewMobile {
     margin: 160px auto;
+  }
+
+  #horizonScrollPin .pin-wrap > * {
+    min-width: 760px;
   }
 }
 
@@ -1067,11 +1080,6 @@ h3 {
     margin-left: 16px;
   }
 
-  .previewDesktop {
-    width: 95%;
-    height: 40%;
-  }
-
   .imgContainer:nth-of-type(odd) {
     justify-content: center;
     padding-left: 0;
@@ -1096,6 +1104,15 @@ h3 {
     width: 100%;
     padding: 48px 0;
     font-size: 20px;
+  }
+
+  #horizonScrollPin .pin-wrap > * {
+    min-width: 600px;
+  }
+
+  #horizonScrollPin .pin-wrap h2 {
+    font-size: 32px;
+    text-align: left;
   }
 }
 
@@ -1135,16 +1152,17 @@ h3 {
     font-size: 16px;
   }
 
-  .previewDesktop {
-    width: 92%;
-    height: 22%;
-  }
-
   .imgContainer {
     margin: 0;
   }
 
   .imgWrap {
     width: 92%;
+  }
+
+  #horizonScrollPin .pin-wrap h2 {
+    font-size: 24px;
+    min-width: initial;
+    width: 70vw;
   }
 }

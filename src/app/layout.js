@@ -48,6 +48,15 @@ export default function RootLayout({ children }) {
         link.addEventListener("mouseleave", onMouseLeaveLink);
         link.addEventListener("click", onMouseClickLink);
       });
+
+      // 커서 인터랙션 클린업
+      return () => {
+        links.forEach((link) => {
+          link.removeEventListener("mouseenter", onMouseEnterLink);
+          link.removeEventListener("mouseleave", onMouseLeaveLink);
+          link.removeEventListener("click", onMouseClickLink);
+        });
+      };
     } else {
       cursor.style.display = "none";
     }

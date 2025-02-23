@@ -1,7 +1,8 @@
 @import "../../styles/mixin";
 
 .detailTop {
-  background-image: url(/images/hi5-1.png);
+  background: url(/images/hi5-1.png) no-repeat center;
+  background-size: cover;
 }
 
 .next:before {
@@ -14,11 +15,11 @@
 ****************************/
 
 @include tablet {
-  
 }
 
 @include mobile {
   .detailTop {
-    background-image: url(/images/hi5-1-mb.png);
+    background: url(/images/hi5-1-mb.png) no-repeat center;
+    background-size: cover;
   }
 }

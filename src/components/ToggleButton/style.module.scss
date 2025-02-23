@@ -73,21 +73,6 @@
 /*************************** 
   반응형 
 ****************************/
-
-@include laptop-all {
-  .button {
-    width: 84px;
-    height: 32px;
-    .slider {
-      .el {
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1023px) {
   .button {
     top: 24px;
