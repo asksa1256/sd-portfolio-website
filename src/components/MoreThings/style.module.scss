@@ -3,7 +3,7 @@
 .moreThings {
   padding: 0 !important;
   .sectionTitle {
-    padding: 300px 0 0 40px;
+    padding: 0 0 0 40px;
     h2 {
       text-align: left;
       .headingWrap {
@@ -69,5 +69,38 @@
 
   .chips {
     margin-top: 8px;
+  }
+}
+
+/*************************** 
+  반응형 
+****************************/
+@include laptop-all {
+  .moreThings {
+    .card {
+      .desc {
+        h4 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .moreThings {
+    .card {
+      .desc {
+        h4 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

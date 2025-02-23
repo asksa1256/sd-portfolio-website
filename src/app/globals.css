@@ -912,8 +912,9 @@ main {
 }
 
 #horizonScrollPin .pin-wrap h2 {
-  margin: 0;
+  margin: 0 100px 0 0;
   font-size: 40px;
+  text-align: left;
   word-break: keep-all;
 }
 
@@ -984,7 +985,7 @@ main {
   }
 
   #horizonScrollPin .pin-wrap > * {
-    min-width: 760px;
+    min-width: 600px;
   }
 }
 
@@ -1107,12 +1108,11 @@ main {
   }
 
   #horizonScrollPin .pin-wrap > * {
-    min-width: 600px;
+    min-width: 500px;
   }
 
   #horizonScrollPin .pin-wrap h2 {
     font-size: 32px;
-    text-align: left;
   }
 }
 
@@ -1158,6 +1158,10 @@ main {
 
   .imgWrap {
     width: 92%;
+  }
+
+  #horizonScrollPin .pin-wrap > * {
+    min-width: 400px;
   }
 
   #horizonScrollPin .pin-wrap h2 {
