@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <div className={styles.textWrap}>
         <h3>Contact</h3>
-        <p>publee226@gmail.com</p>
+        <p>asksa1256@gmail.com</p>
       </div>
       <Hands />
       <p className={styles.copy}>
